@@ -12,6 +12,7 @@ import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { ResumeModal } from './components/ResumeModal';
 import { ProfileEditModal } from './components/ProfileEditModal';
+import { BegetGuideModal } from './components/BegetGuideModal';
 
 export default function App() {
   const [lang, setLang] = useState<Language>(() => {
@@ -35,6 +36,7 @@ export default function App() {
 
   const [resumeOpen, setResumeOpen] = useState(false);
   const [editOpen, setEditOpen] = useState(false);
+  const [begetGuideOpen, setBegetGuideOpen] = useState(false);
 
   useEffect(() => {
     localStorage.setItem('camal_lang', lang);
@@ -100,6 +102,7 @@ export default function App() {
       <Footer
         lang={lang}
         profile={profile}
+        onOpenBegetGuide={() => setBegetGuideOpen(true)}
       />
 
       {/* Interactive Modals */}
@@ -116,6 +119,12 @@ export default function App() {
         lang={lang}
         profile={profile}
         onSave={handleSaveProfile}
+      />
+
+      <BegetGuideModal
+        isOpen={begetGuideOpen}
+        onClose={() => setBegetGuideOpen(false)}
+        lang={lang}
       />
     </div>
   );

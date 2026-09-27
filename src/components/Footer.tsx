@@ -5,9 +5,10 @@ import { Language, ProfileData } from '../types';
 interface FooterProps {
   lang: Language;
   profile: ProfileData;
+  onOpenBegetGuide: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ lang, profile }) => {
+export const Footer: React.FC<FooterProps> = ({ lang, profile, onOpenBegetGuide }) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -49,6 +50,12 @@ export const Footer: React.FC<FooterProps> = ({ lang, profile }) => {
             <a href="#contact" className="hover:text-white transition-colors">
               {lang === 'az' ? 'Əlaqə' : 'Contact'}
             </a>
+            <button
+              onClick={onOpenBegetGuide}
+              className="text-amber-400 hover:text-amber-300 transition-colors font-medium underline underline-offset-4"
+            >
+              {lang === 'az' ? 'Beget Hosting Təlimatı' : 'Beget Hosting Guide'}
+            </button>
           </nav>
 
           {/* Copyright & Scroll To Top */}

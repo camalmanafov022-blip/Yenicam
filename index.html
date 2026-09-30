@@ -8,14 +8,950 @@
     <meta property="og:title" content="Camal Manafov — Şəxsi Veb Sayt" />
     <meta property="og:description" content="Camal Manafovun rəsmi şəxsi portfoliosu və veb saytı. Haqqında məlumat, bacarıqlar, layihələr, təcrübə və birbaşa əlaqə." />
     <meta property="og:type" content="profile" />
-    <meta name="twitter:card" content="summary_large_image" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Syne:wght@500;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+              display: ['Syne', 'sans-serif'],
+              mono: ['"JetBrains Mono"', 'monospace'],
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      ::-webkit-scrollbar { width: 8px; }
+      ::-webkit-scrollbar-track { background: #09090b; }
+      ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 4px; }
+      ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+    </style>
   </head>
   <body class="bg-neutral-950 text-neutral-100 font-sans antialiased selection:bg-amber-400 selection:text-neutral-950">
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Navbar -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-40 transition-all duration-200 border-b border-transparent bg-neutral-950/40 backdrop-blur-xs">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between">
+        <a href="#" class="text-lg sm:text-xl font-bold tracking-tight text-neutral-100 hover:text-amber-400 transition-colors font-display" data-profile-name>
+          Camal Manafov
+        </a>
+
+        <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-neutral-300">
+          <a href="#about" class="hover:text-white transition-colors" data-i18n-nav-about>Haqqımda</a>
+          <a href="#skills" class="hover:text-white transition-colors" data-i18n-nav-skills>Bacarıqlar</a>
+          <a href="#projects" class="hover:text-white transition-colors" data-i18n-nav-projects>Layihələr</a>
+          <a href="#experience" class="hover:text-white transition-colors" data-i18n-nav-experience>Təcrübə</a>
+          <a href="#articles" class="hover:text-white transition-colors" data-i18n-nav-articles>Məqalələr</a>
+          <a href="#contact" class="hover:text-white transition-colors" data-i18n-nav-contact>Əlaqə</a>
+        </nav>
+
+        <div class="flex items-center gap-2 sm:gap-3">
+          <button id="lang-toggle" class="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium text-neutral-300 hover:text-white bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 rounded-md transition-colors">
+            <span class="text-amber-400">🌐</span>
+            <span id="lang-label" class="uppercase font-mono">AZ</span>
+          </button>
+
+          <button id="edit-profile-btn" class="hidden sm:flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium text-neutral-400 hover:text-neutral-200 bg-neutral-900/50 hover:bg-neutral-800 border border-neutral-800 rounded-md transition-colors">
+            <span>⚙️</span>
+            <span data-i18n-btn-edit>Redaktə</span>
+          </button>
+
+          <button id="resume-btn" class="flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-medium text-neutral-950 bg-amber-400 hover:bg-amber-300 active:bg-amber-500 rounded-md transition-colors shadow-xs whitespace-nowrap">
+            <span>📄</span>
+            <span data-i18n-btn-resume>Rezüme / CV</span>
+          </button>
+
+          <button id="mobile-menu-btn" class="md:hidden p-2 text-neutral-300 hover:text-white rounded-md hover:bg-neutral-900">
+            ☰
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden bg-neutral-950 border-b border-neutral-800 px-5 pt-3 pb-6 space-y-3">
+        <nav class="flex flex-col space-y-2 text-sm font-medium">
+          <a href="#about" class="mobile-link py-2 text-neutral-300 hover:text-white border-b border-neutral-900" data-i18n-nav-about>Haqqımda</a>
+          <a href="#skills" class="mobile-link py-2 text-neutral-300 hover:text-white border-b border-neutral-900" data-i18n-nav-skills>Bacarıqlar</a>
+          <a href="#projects" class="mobile-link py-2 text-neutral-300 hover:text-white border-b border-neutral-900" data-i18n-nav-projects>Layihələr</a>
+          <a href="#experience" class="mobile-link py-2 text-neutral-300 hover:text-white border-b border-neutral-900" data-i18n-nav-experience>Təcrübə</a>
+          <a href="#articles" class="mobile-link py-2 text-neutral-300 hover:text-white border-b border-neutral-900" data-i18n-nav-articles>Məqalələr</a>
+          <a href="#contact" class="mobile-link py-2 text-neutral-300 hover:text-white" data-i18n-nav-contact>Əlaqə</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1">
+      
+      <!-- Hero Section -->
+      <section class="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden border-b border-neutral-900">
+        <div class="pointer-events-none absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-amber-500/5 blur-[140px] rounded-full" aria-hidden="true"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+            <div class="lg:col-span-7 space-y-6">
+              <div class="flex items-center gap-2 text-xs font-mono text-emerald-400">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span data-i18n-status>Yeni layihələr və əməkdaşlıq üçün açıqdır</span>
+              </div>
+
+              <div class="space-y-3">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1] font-display" data-i18n-hero-title>
+                  Zərif kod, yüksək performans və <span class="text-amber-400">müasir veb</span> həlləri.
+                </h1>
+                <p class="text-lg sm:text-xl text-neutral-300 font-medium max-w-2xl leading-relaxed" data-i18n-hero-subtitle>
+                  Müasir veb texnologiyaları, yüksək performans və intuitiv istifadəçi təcrübələri yaradıcısı
+                </p>
+              </div>
+
+              <div class="flex flex-wrap items-center gap-2 sm:gap-3 text-xs sm:text-sm text-neutral-400">
+                <span class="flex items-center gap-1.5 text-neutral-300">
+                  📍 <span data-i18n-location>Bakı, Azərbaycan</span>
+                </span>
+                <span class="text-neutral-700">·</span>
+                <span class="font-mono text-neutral-300" data-profile-email>camalmanafov022@gmail.com</span>
+                <span class="text-neutral-700">·</span>
+                <span class="text-neutral-300" data-i18n-hero-exp>5+ il mühəndislik təcrübəsi</span>
+              </div>
+
+              <p class="text-sm sm:text-base text-neutral-400 max-w-2xl leading-relaxed" data-i18n-hero-bio>
+                Salam! Mən Camal Manafov — veb sahəsində müasir, etibarlı və estetik rəqəmsal sistemlər quran mütəxəssisəm. Məqsədim hər bir layihəyə dəqiqlik, sürət və istifadəçi rahatlığı qazandırmaqdır.
+              </p>
+
+              <div class="pt-2 flex flex-wrap items-center gap-3">
+                <a href="#projects" class="inline-flex items-center gap-2 px-5 py-3 text-sm font-semibold text-neutral-950 bg-amber-400 hover:bg-amber-300 active:bg-amber-500 rounded-lg transition-colors shadow-sm">
+                  <span data-i18n-btn-projects>Layihələrimə Bax</span>
+                  <span>→</span>
+                </a>
+                <button id="hero-resume-btn" class="inline-flex items-center gap-2 px-5 py-3 text-sm font-medium text-neutral-200 hover:text-white bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 rounded-lg transition-colors">
+                  <span class="text-amber-400">📥</span>
+                  <span data-i18n-btn-cv>CV Yüklə / Rezüme</span>
+                </button>
+                <a href="#contact" class="inline-flex items-center gap-2 px-5 py-3 text-sm font-medium text-neutral-400 hover:text-white transition-colors">
+                  <span>✉️</span>
+                  <span data-i18n-btn-contact>Əlaqə Saxla</span>
+                </a>
+              </div>
+
+              <div class="pt-6 border-t border-neutral-900 grid grid-cols-3 gap-4 max-w-lg">
+                <div>
+                  <div class="text-2xl sm:text-3xl font-bold font-mono text-white tabular-nums">5+</div>
+                  <div class="text-xs text-neutral-400 uppercase tracking-wider mt-0.5" data-i18n-stat-exp>İl Təcrübə</div>
+                </div>
+                <div>
+                  <div class="text-2xl sm:text-3xl font-bold font-mono text-white tabular-nums">28+</div>
+                  <div class="text-xs text-neutral-400 uppercase tracking-wider mt-0.5" data-i18n-stat-projects>Layihə</div>
+                </div>
+                <div>
+                  <div class="text-2xl sm:text-3xl font-bold font-mono text-amber-400 tabular-nums">99.8%</div>
+                  <div class="text-xs text-neutral-400 uppercase tracking-wider mt-0.5" data-i18n-stat-satisfaction>Məmnuniyyət</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="lg:col-span-5 flex justify-center lg:justify-end">
+              <div class="relative w-full max-w-md">
+                <div class="relative rounded-2xl overflow-hidden border border-neutral-800 bg-neutral-900 shadow-2xl">
+                  <img src="./assets/images/hero_portrait_camal_1790373660160.jpg" alt="Camal Manafov" class="w-full aspect-4/3 object-cover object-top" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/20 to-transparent pointer-events-none"></div>
+                  <div class="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-neutral-950/80 backdrop-blur-md border border-neutral-800">
+                    <div class="flex items-center justify-between">
+                      <div>
+                        <h2 class="text-base font-bold text-white tracking-tight font-display" data-profile-name>Camal Manafov</h2>
+                        <p class="text-xs text-neutral-400 font-mono" data-i18n-hero-card-sub>Bakı · Rəqəmsal Mühəndis</p>
+                      </div>
+                      <div class="w-8 h-8 rounded-full bg-amber-400/10 border border-amber-400/30 flex items-center justify-center text-amber-400">✨</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="py-20 md:py-28 border-b border-neutral-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="mb-14">
+            <div class="text-xs font-mono uppercase tracking-wider text-amber-400 mb-2" data-i18n-about-tag>Tanışlıq</div>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white font-display" data-i18n-about-title>Mən Kiməm? Hekayəm və Dəyərlərim</h2>
+            <p class="mt-3 text-base text-neutral-400 max-w-2xl" data-i18n-about-desc>Rəqəmsal dünyada zərif və funksional məhsullar quran tərtibatçının pərdəarxası dünyası.</p>
+          </div>
+
+          <div class="flex items-center gap-1.5 p-1 bg-neutral-900/80 border border-neutral-800 rounded-lg w-fit mb-10">
+            <button onclick="switchAboutTab('story')" id="tab-story-btn" class="px-4 py-2 text-xs sm:text-sm font-medium rounded-md transition-colors bg-amber-400 text-neutral-950 font-semibold">
+              <span data-i18n-tab-story>Hekayəm & Bioqrafiya</span>
+            </button>
+            <button onclick="switchAboutTab('philosophy')" id="tab-phil-btn" class="px-4 py-2 text-xs sm:text-sm font-medium rounded-md transition-colors text-neutral-400 hover:text-white">
+              <span data-i18n-tab-phil>İş Prinsiplərim</span>
+            </button>
+            <button onclick="switchAboutTab('workspace')" id="tab-work-btn" class="px-4 py-2 text-xs sm:text-sm font-medium rounded-md transition-colors text-neutral-400 hover:text-white">
+              <span data-i18n-tab-work>İş Mühitim & Alətlər</span>
+            </button>
+          </div>
+
+          <!-- Story Tab -->
+          <div id="about-story" class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+            <div class="lg:col-span-7 space-y-6 text-neutral-300 leading-relaxed text-sm sm:text-base">
+              <p data-i18n-story-1>Texnologiya və proqramlaşdırma dünyası mənim üçün sadəcə bir peşə deyil, daim öyrənmək və faydalı məhsullar yaratmaq sənətidir. İllər ərzində müxtəlif miqyaslı veb tətbiqlər, korporativ portallar və interaktiv interfeyslər hazırlamışam.</p>
+              <p data-i18n-story-2>Mənim yanaşmam təmiz arxitektura, detallara həssaslıq və hər bir istifadəçinin rahatlığına fokuslanmaqdır. Hər sətir kodun həm texniki cəhətdən dayanıqlı, həm də vizual baxımdan qüsursuz olmasına diqqət yetirirəm.</p>
+              
+              <div class="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="p-4 rounded-xl bg-neutral-900/50 border border-neutral-800">
+                  <div class="text-amber-400 text-sm font-semibold mb-1" data-i18n-box1-title>🛡️ Etibarlılıq və Zəmanət</div>
+                  <p class="text-xs text-neutral-400" data-i18n-box1-desc>Layihələrin vaxtında, yüksək standartlara və texniki tələblərə tam uyğun çatdırılması.</p>
+                </div>
+                <div class="p-4 rounded-xl bg-neutral-900/50 border border-neutral-800">
+                  <div class="text-amber-400 text-sm font-semibold mb-1" data-i18n-box2-title>🤝 Şəffaf Əməkdaşlıq</div>
+                  <p class="text-xs text-neutral-400" data-i18n-box2-desc>İş prosesi zamanı aydın ünsiyyət, daimi məlumatlandırma və qarşılıqlı etimad.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="lg:col-span-5">
+              <div class="p-6 rounded-2xl bg-neutral-900/60 border border-neutral-800 space-y-5">
+                <h3 class="text-lg font-bold text-white font-display" data-i18n-dossier-title>👤 Qısa Məlumatlar</h3>
+                <div class="divide-y divide-neutral-800 text-sm">
+                  <div class="py-2.5 flex justify-between items-center"><span class="text-neutral-400" data-i18n-dossier-name>Ad və Soyad</span><span class="text-white font-medium" data-profile-name>Camal Manafov</span></div>
+                  <div class="py-2.5 flex justify-between items-center"><span class="text-neutral-400" data-i18n-dossier-loc>Yerləşmə</span><span class="text-white font-medium" data-i18n-location>Bakı, Azərbaycan</span></div>
+                  <div class="py-2.5 flex justify-between items-center"><span class="text-neutral-400" data-i18n-dossier-role>Əsas Sahə</span><span class="text-white font-medium">Veb Mühəndisliyi</span></div>
+                  <div class="py-2.5 flex justify-between items-center"><span class="text-neutral-400" data-i18n-dossier-status>İş Rejimi</span><span class="text-emerald-400 font-mono text-xs">Tam Ştat / Sərbəst</span></div>
+                </div>
+                <a href="#contact" class="block text-center w-full py-2.5 px-4 text-xs font-semibold text-neutral-900 bg-amber-400 hover:bg-amber-300 rounded-lg transition-colors" data-i18n-dossier-btn>
+                  Mənimlə Birgə İşləyin
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Philosophy Tab -->
+          <div id="about-phil" class="hidden grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="p-6 rounded-2xl bg-neutral-900/60 border border-neutral-800 space-y-4">
+              <div class="text-amber-400 font-mono text-xs">01 //</div>
+              <h3 class="text-lg font-bold text-white">Təmiz Kod & Arxitektura</h3>
+              <p class="text-sm text-neutral-400">Kod təkcə bu gün işləməməli, sabah da asanlıqla oxunmalı və genişləndirilməlidir.</p>
+            </div>
+            <div class="p-6 rounded-2xl bg-neutral-900/60 border border-neutral-800 space-y-4">
+              <div class="text-amber-400 font-mono text-xs">02 //</div>
+              <h3 class="text-lg font-bold text-white">Sürət və Erqonomika</h3>
+              <p class="text-sm text-neutral-400">Hər animasiya və keçid istifadəçi məqsədinə xidmət etməli, sayt ani yüklənməlidir.</p>
+            </div>
+            <div class="p-6 rounded-2xl bg-neutral-900/60 border border-neutral-800 space-y-4">
+              <div class="text-amber-400 font-mono text-xs">03 //</div>
+              <h3 class="text-lg font-bold text-white">Davamlı Təkamül</h3>
+              <p class="text-sm text-neutral-400">Veb texnologiyalarındakı ən son yenilikləri və təhlükəsizlik standartlarını daima izləyirəm.</p>
+            </div>
+          </div>
+
+          <!-- Workspace Tab -->
+          <div id="about-work" class="hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-6 rounded-2xl overflow-hidden border border-neutral-800 bg-neutral-900">
+              <img src="./assets/images/about_workspace_ambient_1790373696449.jpg" alt="Workspace" class="w-full aspect-16/9 object-cover" />
+            </div>
+            <div class="lg:col-span-6 space-y-5">
+              <h3 class="text-2xl font-bold text-white font-display">Fokuslanmış və Səliqəli Mühit</h3>
+              <p class="text-sm text-neutral-300 leading-relaxed">Keyfiyyətli proqram təminatı səliqəli düşüncə tələb edir. Gündəlik işimdə minimalist fiziki masa quruluşu, mexaniki klaviatura və yüksək dəqiqlikli ekranlardan istifadə edirəm.</p>
+              <div class="space-y-2 text-xs font-mono text-neutral-400">
+                <div>• Əsas OS: macOS & Linux mühiti</div>
+                <div>• Redaktor: VS Code & Vim keybindings</div>
+                <div>• Terminal: zsh + tmux + git cli</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills" class="py-20 md:py-28 border-b border-neutral-900 bg-neutral-950/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+            <div>
+              <div class="text-xs font-mono uppercase tracking-wider text-amber-400 mb-2">Texnoloji Baza</div>
+              <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white font-display">Bacarıqlar & Texnologiyalar</h2>
+              <p class="mt-3 text-base text-neutral-400 max-w-xl">İllər ərzində formalaşmış, real istehsalatda sınaqdan keçmiş müasir mühəndislik alətləri.</p>
+            </div>
+            <div class="relative w-full md:w-64">
+              <input type="text" id="skill-search" oninput="filterSkills()" placeholder="Texnologiya axtar..." class="w-full bg-neutral-900 border border-neutral-800 rounded-lg px-4 py-2 text-xs sm:text-sm text-neutral-200 placeholder:text-neutral-500 focus:outline-hidden focus:border-amber-400" />
+            </div>
+          </div>
+
+          <div class="flex items-center gap-1.5 p-1 bg-neutral-900 border border-neutral-800 rounded-lg w-fit overflow-x-auto mb-8">
+            <button onclick="filterSkillCat('all')" id="scat-all" class="px-3.5 py-1.5 text-xs sm:text-sm font-medium rounded-md bg-amber-400 text-neutral-950 font-semibold">Hamısı</button>
+            <button onclick="filterSkillCat('frontend')" id="scat-front" class="px-3.5 py-1.5 text-xs sm:text-sm font-medium rounded-md text-neutral-400 hover:text-white">Frontend</button>
+            <button onclick="filterSkillCat('backend')" id="scat-back" class="px-3.5 py-1.5 text-xs sm:text-sm font-medium rounded-md text-neutral-400 hover:text-white">Backend & DB</button>
+            <button onclick="filterSkillCat('tools')" id="scat-tools" class="px-3.5 py-1.5 text-xs sm:text-sm font-medium rounded-md text-neutral-400 hover:text-white">DevOps & Tools</button>
+          </div>
+
+          <div id="skills-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="py-20 md:py-28 border-b border-neutral-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+            <div>
+              <div class="text-xs font-mono uppercase tracking-wider text-amber-400 mb-2">Portfel</div>
+              <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white font-display">Seçilmiş Layihələr & Həllər</h2>
+              <p class="mt-3 text-base text-neutral-400 max-w-xl">Biznes tələblərinə uyğunlaşdırılmış, performans və istifadəçi mərkəzli həllər.</p>
+            </div>
+            <div class="flex items-center gap-1.5 p-1 bg-neutral-900 border border-neutral-800 rounded-lg w-fit">
+              <button onclick="filterProjCat('all')" id="pcat-all" class="px-3.5 py-1.5 text-xs sm:text-sm font-medium rounded-md bg-amber-400 text-neutral-950 font-semibold">Hamısı</button>
+              <button onclick="filterProjCat('web')" id="pcat-web" class="px-3.5 py-1.5 text-xs sm:text-sm font-medium rounded-md text-neutral-400 hover:text-white">Veb Platformalar</button>
+              <button onclick="filterProjCat('system')" id="pcat-system" class="px-3.5 py-1.5 text-xs sm:text-sm font-medium rounded-md text-neutral-400 hover:text-white">Sistemlər</button>
+            </div>
+          </div>
+
+          <div id="projects-grid" class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience & Education Section -->
+      <section id="experience" class="py-20 md:py-28 border-b border-neutral-900 bg-neutral-950/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="mb-14">
+            <div class="text-xs font-mono uppercase tracking-wider text-amber-400 mb-2">Yol Xəritəsi</div>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white font-display">Peşəkar Təcrübə & Təhsil</h2>
+            <p class="mt-3 text-base text-neutral-400 max-w-xl">Müxtəlif miqyaslı komandalarda aparıcı və mühəndis rollarında qazanılmış real təcrübə.</p>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            <div class="lg:col-span-7 space-y-8">
+              <h3 class="text-xl font-bold text-white font-display flex items-center gap-2">💼 İşi Təcrübəsi</h3>
+              <div id="experience-list" class="relative pl-6 sm:pl-8 border-l border-neutral-800 space-y-10">
+                <!-- Rendered by JS -->
+              </div>
+            </div>
+
+            <div class="lg:col-span-5 space-y-10">
+              <div>
+                <h3 class="text-xl font-bold text-white font-display mb-4 flex items-center gap-2">🎓 Təhsil</h3>
+                <div class="p-5 rounded-2xl bg-neutral-900/60 border border-neutral-800 space-y-2">
+                  <div class="flex justify-between items-center text-xs font-mono text-neutral-400">
+                    <span>2017 — 2021</span>
+                    <span class="text-amber-400">Bakalavr</span>
+                  </div>
+                  <h4 class="text-sm font-bold text-white">Kompüter Elmləri və İnformasiya Texnologiyaları</h4>
+                  <p class="text-xs text-neutral-300 font-medium">Azərbaycan Dövlət Neft və Sənaye Universiteti</p>
+                </div>
+              </div>
+
+              <div>
+                <h3 class="text-xl font-bold text-white font-display mb-4 flex items-center gap-2">💬 Həmkarların Rəyləri</h3>
+                <div class="space-y-4">
+                  <div class="p-5 rounded-2xl bg-neutral-900/60 border border-neutral-800 space-y-3">
+                    <p class="text-xs sm:text-sm text-neutral-300 italic">"Camal ilə işləmək böyük rahatlıqdır. Mürəkkəb texniki tapşırıqları sadələşdirir və gözləntilərimizdən daha yüksək keyfiyyətli iş təhvil verir."</p>
+                    <div class="text-xs font-bold text-white">Rəşad Əliyev · <span class="text-amber-400">FinTech Innovations</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Articles Section -->
+      <section id="articles" class="py-20 md:py-28 border-b border-neutral-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="mb-14">
+            <div class="text-xs font-mono uppercase tracking-wider text-amber-400 mb-2">Yazılar və Düşüncələr</div>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white font-display">Məqalələr & Mühəndislik Fəlsəfəsi</h2>
+            <p class="mt-3 text-base text-neutral-400 max-w-xl">Təmiz kod, arxitektura, veب performansı və minimalist dizayn barədə şəxsi qeydlərim.</p>
+          </div>
+
+          <div id="articles-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="py-20 md:py-28 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="mb-14">
+            <div class="text-xs font-mono uppercase tracking-wider text-amber-400 mb-2">Əlaqə & Dialoq</div>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white font-display">Gəlin Birlikdə Dəyər Yaradaq</h2>
+            <p class="mt-3 text-base text-neutral-400 max-w-xl">Yeni layihəniz, texniki ehtiyaclarınız və ya sadəcə salam vermək üçün birbaşa yazın.</p>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+            <div class="lg:col-span-5 space-y-6">
+              <div class="p-6 rounded-2xl bg-neutral-900/60 border border-neutral-800 space-y-4">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-mono uppercase tracking-wider text-neutral-400">Birbaşa E-Poçt</span>
+                  <span class="text-xs font-mono text-emerald-400 flex items-center gap-1">● Tez Cavab</span>
+                </div>
+                <div class="flex items-center justify-between gap-3 p-3 bg-neutral-950 rounded-xl border border-neutral-800">
+                  <span class="font-mono text-xs sm:text-sm text-neutral-200 truncate" data-profile-email>camalmanafov022@gmail.com</span>
+                  <button onclick="copyEmail()" class="px-3 py-1.5 text-xs font-medium bg-neutral-800 hover:bg-neutral-700 text-neutral-200 rounded-md transition-colors shrink-0">Kopyala</button>
+                </div>
+                <div class="text-xs text-neutral-400 pt-1">📍 Bakı, Azərbaycan · GMT+4</div>
+              </div>
+
+              <div class="p-6 rounded-2xl bg-neutral-900/60 border border-neutral-800 space-y-4">
+                <h3 class="text-sm font-bold text-white font-mono uppercase tracking-wider">Rəqəmsal Kanallar</h3>
+                <div class="space-y-2 text-xs sm:text-sm">
+                  <a href="https://github.com" target="_blank" class="flex items-center justify-between p-2.5 rounded-lg hover:bg-neutral-800 text-neutral-300"><span>GitHub</span> ↗</a>
+                  <a href="https://linkedin.com" target="_blank" class="flex items-center justify-between p-2.5 rounded-lg hover:bg-neutral-800 text-neutral-300"><span>LinkedIn</span> ↗</a>
+                  <a href="https://t.me" target="_blank" class="flex items-center justify-between p-2.5 rounded-lg hover:bg-neutral-800 text-neutral-300"><span>Telegram</span> ↗</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="lg:col-span-7">
+              <div class="p-6 sm:p-8 rounded-2xl bg-neutral-900/60 border border-neutral-800">
+                <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-5">
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label class="block text-xs font-medium text-neutral-300 mb-1.5">Adınız və Soyadınız</label>
+                      <input type="text" id="cf-name" required placeholder="Məs: Elvin Əhmədov" class="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-3.5 py-2.5 text-xs sm:text-sm text-neutral-100 focus:border-amber-400 focus:outline-hidden" />
+                    </div>
+                    <div>
+                      <label class="block text-xs font-medium text-neutral-300 mb-1.5">E-poçt Ünvanınız</label>
+                      <input type="email" id="cf-email" required placeholder="you@example.com" class="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-3.5 py-2.5 text-xs sm:text-sm text-neutral-100 focus:border-amber-400 focus:outline-hidden font-mono" />
+                    </div>
+                  </div>
+                  <div>
+                    <label class="block text-xs font-medium text-neutral-300 mb-1.5">Mesajınız</label>
+                    <textarea id="cf-msg" rows="4" required placeholder="Layihənizin detalları..." class="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-3.5 py-2.5 text-xs sm:text-sm text-neutral-100 focus:border-amber-400 focus:outline-hidden leading-relaxed"></textarea>
+                  </div>
+                  <button type="submit" class="w-full py-3 px-5 text-sm font-semibold text-neutral-950 bg-amber-400 hover:bg-amber-300 rounded-lg transition-colors shadow-sm">
+                    Mesajı Göndər
+                  </button>
+                </form>
+                <div id="contact-success" class="hidden py-12 text-center space-y-3">
+                  <div class="w-12 h-12 rounded-full bg-emerald-500/10 text-emerald-400 flex items-center justify-center mx-auto text-xl">✓</div>
+                  <h3 class="text-xl font-bold text-white font-display">Təşəkkür edirəm!</h3>
+                  <p class="text-xs sm:text-sm text-neutral-300">Mesajınız qəbul edildi. Tezliklə sizinlə əlaqə saxlayacağam.</p>
+                  <button onclick="resetContactForm()" class="px-4 py-2 text-xs font-semibold text-neutral-950 bg-amber-400 rounded-lg">Yeni Mesaj Yaz</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-neutral-900 bg-neutral-950 py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <span class="text-lg font-bold text-white tracking-tight font-display" data-profile-name>Camal Manafov</span>
+          <p class="text-xs text-neutral-400 mt-1" data-i18n-footer-sub>Müasir veb arxitekturaları və yüksək performanslı platformalar</p>
+        </div>
+        <div class="flex items-center gap-4 text-xs">
+          <button onclick="openBegetGuide()" class="text-amber-400 hover:text-amber-300 underline underline-offset-4">Beget Hosting Təlimatı</button>
+          <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="p-2 rounded-lg bg-neutral-900 text-neutral-400 hover:text-white border border-neutral-800">↑ Yuxarı</button>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modals -->
+
+    <!-- Project Modal -->
+    <div id="project-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+      <div class="relative w-full max-w-3xl bg-neutral-900 border border-neutral-800 rounded-2xl overflow-hidden shadow-2xl">
+        <div class="flex items-center justify-between p-4 sm:p-6 border-b border-neutral-800 bg-neutral-950">
+          <h2 id="pm-title" class="text-xl font-bold text-white font-display"></h2>
+          <button onclick="closeProjectModal()" class="text-neutral-400 hover:text-white p-2">✕</button>
+        </div>
+        <div class="p-4 sm:p-6 space-y-5 max-h-[75vh] overflow-y-auto">
+          <img id="pm-img" src="" alt="" class="w-full aspect-16/9 object-cover rounded-xl border border-neutral-800" />
+          <p id="pm-summary" class="text-sm text-neutral-300 leading-relaxed"></p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="p-4 rounded-xl bg-neutral-950 border border-neutral-800">
+              <h5 class="text-xs font-semibold text-neutral-400 uppercase mb-1">Problem & Çağırış</h5>
+              <p id="pm-challenge" class="text-xs text-neutral-300"></p>
+            </div>
+            <div class="p-4 rounded-xl bg-neutral-950 border border-neutral-800">
+              <h5 class="text-xs font-semibold text-neutral-400 uppercase mb-1">Həll Yolu</h5>
+              <p id="pm-solution" class="text-xs text-neutral-300"></p>
+            </div>
+          </div>
+          <div class="p-4 rounded-xl bg-amber-400/5 border border-amber-400/20">
+            <h5 class="text-xs font-semibold text-amber-300 uppercase mb-1">Nəticə və Təsir</h5>
+            <p id="pm-impact" class="text-xs text-neutral-300"></p>
+          </div>
+        </div>
+        <div class="p-4 border-t border-neutral-800 bg-neutral-950 flex justify-end">
+          <button onclick="closeProjectModal()" class="px-4 py-2 text-xs font-semibold text-neutral-900 bg-amber-400 rounded-lg">Bağla</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Modal -->
+    <div id="article-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+      <div class="relative w-full max-w-2xl bg-neutral-900 border border-neutral-800 rounded-2xl overflow-hidden shadow-2xl">
+        <div class="flex items-center justify-between p-4 sm:p-6 border-b border-neutral-800 bg-neutral-950">
+          <h2 id="am-title" class="text-xl font-bold text-white font-display"></h2>
+          <button onclick="closeArticleModal()" class="text-neutral-400 hover:text-white p-2">✕</button>
+        </div>
+        <div id="am-content" class="p-6 space-y-4 max-h-[75vh] overflow-y-auto text-sm text-neutral-300 leading-relaxed"></div>
+        <div class="p-4 border-t border-neutral-800 bg-neutral-950 flex justify-end">
+          <button onclick="closeArticleModal()" class="px-4 py-2 text-xs font-semibold text-neutral-900 bg-amber-400 rounded-lg">Bağla</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Resume / CV Modal -->
+    <div id="resume-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-sm">
+      <div class="relative w-full max-w-4xl bg-neutral-900 border border-neutral-800 rounded-2xl overflow-hidden shadow-2xl">
+        <div class="flex items-center justify-between p-4 border-b border-neutral-800 bg-neutral-950">
+          <span class="text-sm font-bold text-white font-mono">Curriculum Vitae</span>
+          <div class="flex gap-2">
+            <button onclick="window.print()" class="px-3 py-1.5 text-xs font-semibold text-neutral-950 bg-amber-400 rounded-md">Çap Et / PDF</button>
+            <button onclick="closeResumeModal()" class="p-1.5 text-neutral-400 hover:text-white bg-neutral-800 rounded-md">✕</button>
+          </div>
+        </div>
+        <div class="p-8 max-h-[80vh] overflow-y-auto bg-neutral-950 text-neutral-100 space-y-6">
+          <div class="border-b border-neutral-800 pb-6 flex justify-between items-center">
+            <div>
+              <h1 class="text-3xl font-bold font-display" data-profile-name>Camal Manafov</h1>
+              <p class="text-amber-400 text-sm mt-1" data-i18n-hero-subtitle>Full-Stack Veb Tərtibatçısı & Rəqəmsal Həllər Memarı</p>
+            </div>
+            <div class="text-xs font-mono text-neutral-400 text-right space-y-1">
+              <div data-profile-email>camalmanafov022@gmail.com</div>
+              <div data-i18n-location>Bakı, Azərbaycan</div>
+            </div>
+          </div>
+          <div>
+            <h2 class="text-xs font-mono uppercase tracking-wider text-amber-400 font-bold mb-2">01 // Xülasə</h2>
+            <p class="text-xs text-neutral-300 leading-relaxed" data-i18n-hero-bio></p>
+          </div>
+          <div>
+            <h2 class="text-xs font-mono uppercase tracking-wider text-amber-400 font-bold mb-2">02 // İş Təcrübəsi</h2>
+            <div class="space-y-4 text-xs">
+              <div>
+                <div class="font-bold text-white">Baş Full-Stack Tərtibatçı · Apex Digital Solutions</div>
+                <div class="text-amber-400 font-mono">2023 — İndiyədək · Bakı</div>
+                <p class="text-neutral-300 mt-1">Mürəkkəb veb tətbiqlərinin arxitekturasının qurulması və yüksək performans standartlarının tətbiqi.</p>
+              </div>
+              <div>
+                <div class="font-bold text-white">Frontend Mühəndisi · Nexus Tech Lab</div>
+                <div class="text-amber-400 font-mono">2021 — 2023 · Bakı</div>
+                <p class="text-neutral-300 mt-1">İstifadəçi interfeyslərinin hazırlanması və dizayn sistemlərinin qurulması.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit Profile Modal -->
+    <div id="edit-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+      <div class="relative w-full max-w-lg bg-neutral-900 border border-neutral-800 rounded-2xl overflow-hidden shadow-2xl">
+        <div class="flex items-center justify-between p-4 border-b border-neutral-800 bg-neutral-950">
+          <h2 class="text-lg font-bold text-white font-display">Profili Redaktə Et</h2>
+          <button onclick="closeEditModal()" class="text-neutral-400 hover:text-white p-1">✕</button>
+        </div>
+        <form onsubmit="saveProfileEdit(event)" class="p-6 space-y-4 text-xs">
+          <div>
+            <label class="block font-medium text-neutral-300 mb-1">Ad və Soyad</label>
+            <input type="text" id="edit-name" class="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-3 py-2 text-white" required />
+          </div>
+          <div>
+            <label class="block font-medium text-neutral-300 mb-1">E-poçt</label>
+            <input type="email" id="edit-email" class="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-3 py-2 text-white font-mono" required />
+          </div>
+          <div>
+            <label class="block font-medium text-neutral-300 mb-1">Şəhər / Ölkə</label>
+            <input type="text" id="edit-location" class="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-3 py-2 text-white" />
+          </div>
+          <div class="flex justify-end gap-2 pt-2">
+            <button type="button" onclick="closeEditModal()" class="px-4 py-2 text-neutral-400">Ləğv Et</button>
+            <button type="submit" class="px-4 py-2 font-semibold text-neutral-950 bg-amber-400 rounded-lg">Yadda Saxla</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Beget Guide Modal -->
+    <div id="beget-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+      <div class="relative w-full max-w-lg bg-neutral-900 border border-neutral-800 rounded-2xl overflow-hidden shadow-2xl">
+        <div class="flex items-center justify-between p-4 border-b border-neutral-800 bg-neutral-950">
+          <h2 class="text-lg font-bold text-white font-display">Beget Hosting Yerləşdirmə Qaydası</h2>
+          <button onclick="closeBegetGuide()" class="text-neutral-400 hover:text-white p-1">✕</button>
+        </div>
+        <div class="p-6 space-y-3 text-xs sm:text-sm text-neutral-300 leading-relaxed">
+          <div class="p-3 rounded-lg bg-amber-400/10 border border-amber-400/30 text-amber-300">
+            ✓ Bu sayt tək bir <b>index.html</b> və statik fayllardan ibarətdir. Heç bir build (npm run build) tələb olunmur!
+          </div>
+          <ol class="list-decimal list-inside space-y-2">
+            <li>Depozitdəki (və ya yüklədiyiniz) faylları birbaşa Beget-də <b>public_html</b> qovluğuna atın.</li>
+            <li>Sayt dərhal heç bir ağ səhifə vermədən açılacaq.</li>
+          </ol>
+        </div>
+        <div class="p-4 border-t border-neutral-800 bg-neutral-950 flex justify-end">
+          <button onclick="closeBegetGuide()" class="px-4 py-2 text-xs font-semibold text-neutral-900 bg-amber-400 rounded-lg">Aydındır</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Client-side App Logic -->
+    <script>
+      // State & Data
+      let currentLang = localStorage.getItem('camal_lang') || 'az';
+      let profile = JSON.parse(localStorage.getItem('camal_profile')) || {
+        name: 'Camal Manafov',
+        email: 'camalmanafov022@gmail.com',
+        locationAz: 'Bakı, Azərbaycan',
+        locationEn: 'Baku, Azerbaijan'
+      };
+
+      const i18n = {
+        az: {
+          navAbout: 'Haqqımda', navSkills: 'Bacarıqlar', navProjects: 'Layihələr', navExperience: 'Təcrübə', navArticles: 'Məqalələr', navContact: 'Əlaqə',
+          btnEdit: 'Redaktə', btnResume: 'Rezüme / CV', status: 'Yeni layihələr və əməkdaşlıq üçün açıqdır',
+          heroTitle: 'Zərif kod, yüksək performans və <span class="text-amber-400">müasir veb</span> həlləri.',
+          heroSub: 'Müasir veb texnologiyaları, yüksək performans və intuitiv istifadəçi təcrübələri yaradıcısı',
+          location: 'Bakı, Azərbaycan', heroExp: '5+ il mühəndislik təcrübəsi',
+          heroBio: 'Salam! Mən Camal Manafov — veb sahəsində müasir, etibarlı və estetik rəqəmsal sistemlər quran mütəxəssisəm. Məqsədim hər bir layihəyə dəqiqlik, sürət və istifadəçi rahatlığı qazandırmaqdır.',
+          btnProj: 'Layihələrimə Bax', btnCv: 'CV Yüklə / Rezüme', btnContact: 'Əlaqə Saxla',
+          statExp: 'İl Təcrübə', statProj: 'Layihə', statSatis: 'Məmnuniyyət',
+          aboutTag: 'Tanışlıq', aboutTitle: 'Mən Kiməm? Hekayəm və Dəyərlərim', aboutDesc: 'Rəqəmsal dünyada zərif və funksional məhsullar quran tərtibatçının pərdəarxası dünyası.',
+          tabStory: 'Hekayəm & Bioqrafiya', tabPhil: 'İş Prinsiplərim', tabWork: 'İş Mühitim & Alətlər',
+          story1: 'Texnologiya və proqramlaşdırma dünyası mənim üçün sadəcə bir peşə deyil, daim öyrənmək və faydalı məhsullar yaratmaq sənətidir. İllər ərzində müxtəlif miqyaslı veb tətbiqlər, korporativ portallar və interaktiv interfeyslər hazırlamışam.',
+          story2: 'Mənim yanaşmam təmiz arxitektura, detallara həssaslıq və hər bir istifadəçinin rahatlığına fokuslanmaqdır. Hər sətir kodun həm texniki cəhətdən dayanıqlı, həm də vizual baxımdan qüsursuz olmasına diqqət yetirirəm.',
+          box1Title: '🛡️ Etibarlılıq və Zəmanət', box1Desc: 'Layihələrin vaxtında, yüksək standartlara və texniki tələblərə tam uyğun çatdırılması.',
+          box2Title: '🤝 Şəffaf Əməkdaşlıq', box2Desc: 'İş prosesi zamanı aydın ünsiyyət, daimi məlumatlandırma və qarşılıqlı etimad.',
+          dossierTitle: '👤 Qısa Məlumatlar', dossierName: 'Ad və Soyad', dossierLoc: 'Yerləşmə', dossierRole: 'Əsas Sahə', dossierStatus: 'İş Rejimi', dossierBtn: 'Mənimlə Birgə İşləyin',
+          footerSub: 'Müasir veb arxitekturaları və yüksək performanslı platformalar'
+        },
+        en: {
+          navAbout: 'About', navSkills: 'Skills', navProjects: 'Projects', navExperience: 'Experience', navArticles: 'Insights', navContact: 'Contact',
+          btnEdit: 'Edit', btnResume: 'Resume', status: 'Available for new projects & collaborations',
+          heroTitle: 'Refined code, peak performance and <span class="text-amber-400">modern web</span> architecture.',
+          heroSub: 'Crafting modern web architectures, high-performance platforms & human-centered UX',
+          location: 'Baku, Azerbaijan', heroExp: '5+ years engineering exp',
+          heroBio: 'Hello! I am Camal Manafov — a passionate engineer crafting robust, aesthetic, and high-performance digital systems. My mission is bringing precision, speed, and refined usability to every web experience.',
+          btnProj: 'Explore Projects', btnCv: 'Download CV', btnContact: 'Get in Touch',
+          statExp: 'Years Experience', statProj: 'Completed Works', statSatis: 'Satisfaction',
+          aboutTag: 'Identity', aboutTitle: 'Who I Am: Journey, Vision & Values', aboutDesc: 'A closer look at my professional background, engineering discipline, and personal ethos.',
+          tabStory: 'Story & Bio', tabPhil: 'Guiding Principles', tabWork: 'Workspace & Rituals',
+          story1: 'The world of technology and development is more than a career for me; it is an ongoing craft of continuous learning and building meaningful digital solutions. Over the years, I have architected and delivered varied web platforms.',
+          story2: 'My engineering philosophy centers on clean architecture, meticulous attention to detail, and a relentless focus on end-user delight. Every line of code is structured for resilience, scalability, and aesthetic clarity.',
+          box1Title: '🛡️ Reliability Guarantee', box1Desc: 'Delivering resilient, thoroughly tested solutions aligned strictly with release timelines.',
+          box2Title: '🤝 Transparent Synergy', box2Desc: 'Unambiguous roadmaps, regular sprint showcases, and open engineering dialogue.',
+          dossierTitle: '👤 Personal Dossier', dossierName: 'Full Name', dossierLoc: 'Location', dossierRole: 'Discipline', dossierStatus: 'Availability', dossierBtn: 'Initiate Collaboration',
+          footerSub: 'Crafting modern web architectures, high-performance platforms & human-centered UX'
+        }
+      };
+
+      const skills = [
+        { name: 'React & TypeScript', level: 95, cat: 'frontend', desc: 'Strictly typed component architecture and state management.' },
+        { name: 'Next.js & SSR', level: 92, cat: 'frontend', desc: 'Server-side rendering, static site generation, and SEO.' },
+        { name: 'Tailwind CSS', level: 96, cat: 'frontend', desc: 'Design systems, micro-interactions, responsive typography.' },
+        { name: 'Node.js & Express', level: 90, cat: 'backend', desc: 'Scalable RESTful microservices and asynchronous task pipelines.' },
+        { name: 'PostgreSQL & SQL', level: 88, cat: 'backend', desc: 'Relational database schema design, migrations, indexing.' },
+        { name: 'Git, GitHub & CI/CD', level: 94, cat: 'tools', desc: 'Version control branching strategies and automated pipelines.' }
+      ];
+
+      const projects = [
+        {
+          id: 'finflow',
+          title: 'FinFlow — Rəqəmsal Maliyyə & Analitika Portalı',
+          cat: 'web', year: '2025',
+          summary: 'Bizneslər üçün real-vaxt maliyyə axınlarını izləyən, interaktiv qrafiklər və hesabatlar təqdim edən kompleks platforma.',
+          challenge: 'Böyük həcmdə maliyyə əməliyyatlarını brauzerdə gecikməsiz vizuallaşdırmaq.',
+          solution: 'React, TypeScript və optimallaşdırılmış WebGL/Canvas qrafik mühərriki istifadə olundu.',
+          impact: 'Müştərilərin maliyyə qərarları qəbul etmə vaxtı 45% azaldı.',
+          img: './assets/images/project_showcase_one_1790373673004.jpg',
+          tech: ['React', 'TypeScript', 'Tailwind', 'Node.js', 'PostgreSQL']
+        },
+        {
+          id: 'aura',
+          title: 'Aura Commerce — Minimalist E-Ticarət Sistemi',
+          cat: 'web', year: '2025',
+          summary: 'Zərif vizual dizayn, 0.4 saniyəlik səhifə yüklənməsi və 2 addımlı sürətli sifariş təcrübəsi təqdim edən premium mağaza.',
+          challenge: 'Klassik e-ticarət platformalarının qarışıq interfeysindən uzaqlaşmaq.',
+          solution: 'Server-Driven UI prinsipləri və ani axtarış mexanizmi inteqrasiya edildi.',
+          impact: 'Səbətdən çıxış nisbəti 32% azaldı, mobil konversiya yüksəldi.',
+          img: './assets/images/project_showcase_two_1790373685274.jpg',
+          tech: ['Next.js', 'React', 'Tailwind', 'Stripe', 'Redis']
+        },
+        {
+          id: 'devpulse',
+          title: 'DevPulse — Mühəndis Komandaları üçün İş Mühiti',
+          cat: 'system', year: '2024',
+          summary: 'Proqram tərtibatçılarının kod commits, tapşırıqlar və sprint məqsədlərini vahid ekranda sinxronlaşdıran daxili platforma.',
+          challenge: 'Fərqli Git depoları və tapşırıq izləmə xidmətlərini birləşdirmək.',
+          solution: 'WebSockets üzərindən canlı hadisə axını hazırlandı.',
+          impact: 'Komanda daxili koordinasiya sürəti 2 qat artdı.',
+          img: './assets/images/about_workspace_ambient_1790373696449.jpg',
+          tech: ['TypeScript', 'Express', 'React', 'WebSocket', 'Docker']
+        }
+      ];
+
+      const experiences = [
+        { role: 'Baş Full-Stack Tərtibatçı', company: 'Apex Digital Solutions', period: '2023 — İndiyədək', loc: 'Bakı', desc: 'Mürəkkəb veb tətbiqlərinin arxitekturasının qurulması və yüksək performans standartlarının tətbiqi.', skills: ['React', 'TypeScript', 'Node.js', 'PostgreSQL'] },
+        { role: 'Frontend Mühəndisi', company: 'Nexus Tech Lab', period: '2021 — 2023', loc: 'Bakı', desc: 'İstifadəçi interfeyslərinin hazırlanması, dizayn sistemlərinin qurulması.', skills: ['React', 'Tailwind', 'REST API', 'Figma'] }
+      ];
+
+      const articles = [
+        { id: '1', title: 'Böyük Layihələrdə Təmiz Arxitektura: React və TypeScript', time: '5 dəq', cat: 'Mühəndislik', excerpt: 'Layihələr böyüdükcə kod bazasını necə səliqəli saxlamaq olar?', content: ['Veb tətbiqləri ilk başda sadə görünsə də, tələblər artdıqca asılılıqlar çoxalır.', 'Təmiz arxitektura tətbiq edərkən ən vacib prinsip məsuliyyətlərin ayrılmasıdır (Separation of Concerns).'] },
+        { id: '2', title: 'Müasir Vebdə Sürət: 100 millisaniyə niyə fərq yaradır?', time: '4 dəq', cat: 'Optimizasiya', excerpt: 'Hər bir saniyəlik gecikmə istifadəçi məmnuniyyətini azaldır.', content: ['İnternet istifadəçiləri daha səbirsiz olur. 3 saniyədən gec açılan səhifələr tərk edilir.', 'Sürət sadəcə server deyil, brauzer render mexanizmidir.'] },
+        { id: '3', title: 'Minimalist Dizayn: Sadəlik Ən Yüksək Mürəkkəblikdir', time: '3 dəq', cat: 'Dizayn', excerpt: 'Gözü yormayan, hər elementin öz yerində olduğu interfeyslər.', content: ['Dizayn çox vaxt bəzək kimi başa düşülür. Halbuki yaxşı dizayn görünməz olandır.', 'Minimalizm boşluq demək deyil, məqsədyönlü vizual rahatlıqdır.'] }
+      ];
+
+      // Initialization
+      function init() {
+        applyLanguage();
+        applyProfileData();
+        renderSkills(skills);
+        renderProjects(projects);
+        renderExperience();
+        renderArticles();
+
+        // Event listeners
+        document.getElementById('lang-toggle').addEventListener('click', toggleLang);
+        document.getElementById('resume-btn').addEventListener('click', openResumeModal);
+        document.getElementById('hero-resume-btn').addEventListener('click', openResumeModal);
+        document.getElementById('edit-profile-btn').addEventListener('click', openEditModal);
+        document.getElementById('mobile-menu-btn').addEventListener('click', toggleMobileMenu);
+
+        document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', () => {
+          document.getElementById('mobile-menu').classList.add('hidden');
+        }));
+      }
+
+      function applyLanguage() {
+        document.getElementById('lang-label').innerText = currentLang.toUpperCase();
+        document.documentElement.lang = currentLang;
+        const dict = i18n[currentLang];
+
+        for (const [key, val] of Object.entries(dict)) {
+          const el = document.querySelector(`[data-i18n-${key.toLowerCase().replace(/([A-Z])/g, '-$1')}]`);
+          if (el) {
+            if (val.includes('<span')) el.innerHTML = val;
+            else el.innerText = val;
+          }
+        }
+      }
+
+      function toggleLang() {
+        currentLang = currentLang === 'az' ? 'en' : 'az';
+        localStorage.setItem('camal_lang', currentLang);
+        applyLanguage();
+      }
+
+      function applyProfileData() {
+        document.querySelectorAll('[data-profile-name]').forEach(el => el.innerText = profile.name);
+        document.querySelectorAll('[data-profile-email]').forEach(el => el.innerText = profile.email);
+        document.querySelectorAll('[data-i18n-location]').forEach(el => el.innerText = currentLang === 'az' ? profile.locationAz : profile.locationEn);
+      }
+
+      // About Tabs
+      function switchAboutTab(tab) {
+        document.getElementById('about-story').classList.add('hidden');
+        document.getElementById('about-phil').classList.add('hidden');
+        document.getElementById('about-work').classList.add('hidden');
+        document.getElementById('tab-story-btn').className = 'px-4 py-2 text-xs sm:text-sm font-medium rounded-md transition-colors text-neutral-400 hover:text-white';
+        document.getElementById('tab-phil-btn').className = 'px-4 py-2 text-xs sm:text-sm font-medium rounded-md transition-colors text-neutral-400 hover:text-white';
+        document.getElementById('tab-work-btn').className = 'px-4 py-2 text-xs sm:text-sm font-medium rounded-md transition-colors text-neutral-400 hover:text-white';
+
+        if (tab === 'story') {
+          document.getElementById('about-story').classList.remove('hidden');
+          document.getElementById('tab-story-btn').className = 'px-4 py-2 text-xs sm:text-sm font-medium rounded-md transition-colors bg-amber-400 text-neutral-950 font-semibold';
+        } else if (tab === 'philosophy') {
+          document.getElementById('about-phil').classList.remove('hidden');
+          document.getElementById('tab-phil-btn').className = 'px-4 py-2 text-xs sm:text-sm font-medium rounded-md transition-colors bg-amber-400 text-neutral-950 font-semibold';
+        } else {
+          document.getElementById('about-work').classList.remove('hidden');
+          document.getElementById('tab-work-btn').className = 'px-4 py-2 text-xs sm:text-sm font-medium rounded-md transition-colors bg-amber-400 text-neutral-950 font-semibold';
+        }
+      }
+
+      // Render Skills
+      function renderSkills(list) {
+        const grid = document.getElementById('skills-grid');
+        grid.innerHTML = list.map(s => `
+          <div class="p-5 rounded-xl bg-neutral-900/60 border border-neutral-800 space-y-3 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="text-base font-bold text-white">${s.name}</h3>
+                <span class="text-xs font-mono text-amber-400 font-semibold">${s.level}%</span>
+              </div>
+              <p class="text-xs text-neutral-400 leading-relaxed">${s.desc}</p>
+            </div>
+            <div class="w-full bg-neutral-800 h-1.5 rounded-full overflow-hidden mt-3">
+              <div class="bg-amber-400 h-full rounded-full" style="width: ${s.level}%"></div>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      function filterSkillCat(cat) {
+        document.querySelectorAll('#skills + div button').forEach(b => b.className = 'px-3.5 py-1.5 text-xs sm:text-sm font-medium rounded-md text-neutral-400 hover:text-white');
+        if(cat==='all') document.getElementById('scat-all').className = 'px-3.5 py-1.5 text-xs sm:text-sm font-medium rounded-md bg-amber-400 text-neutral-950 font-semibold';
+        if(cat==='frontend') document.getElementById('scat-front').className = 'px-3.5 py-1.5 text-xs sm:text-sm font-medium rounded-md bg-amber-400 text-neutral-950 font-semibold';
+        if(cat==='backend') document.getElementById('scat-back').className = 'px-3.5 py-1.5 text-xs sm:text-sm font-medium rounded-md bg-amber-400 text-neutral-950 font-semibold';
+        if(cat==='tools') document.getElementById('scat-tools').className = 'px-3.5 py-1.5 text-xs sm:text-sm font-medium rounded-md bg-amber-400 text-neutral-950 font-semibold';
+
+        const filtered = cat === 'all' ? skills : skills.filter(s => s.cat === cat);
+        renderSkills(filtered);
+      }
+
+      function filterSkills() {
+        const q = document.getElementById('skill-search').value.toLowerCase();
+        const filtered = skills.filter(s => s.name.toLowerCase().includes(q) || s.desc.toLowerCase().includes(q));
+        renderSkills(filtered);
+      }
+
+      // Render Projects
+      function renderProjects(list) {
+        const grid = document.getElementById('projects-grid');
+        grid.innerHTML = list.map(p => `
+          <div onclick="openProjectModal('${p.id}')" class="group cursor-pointer rounded-2xl bg-neutral-900/60 border border-neutral-800 hover:border-neutral-700 transition-all flex flex-col justify-between overflow-hidden shadow-lg">
+            <div class="relative aspect-16/10 overflow-hidden bg-neutral-950">
+              <img src="${p.img}" alt="${p.title}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div>
+                <div class="flex items-center gap-2 text-xs text-neutral-400 font-mono mb-2">
+                  <span>${p.cat === 'web' ? 'Veb Platforma' : 'Sistem'}</span> · <span>${p.year}</span>
+                </div>
+                <h3 class="text-lg font-bold text-white group-hover:text-amber-400 transition-colors font-display">${p.title}</h3>
+                <p class="mt-2.5 text-xs text-neutral-400 line-clamp-3 leading-relaxed">${p.summary}</p>
+              </div>
+              <div class="pt-4 border-t border-neutral-800 flex flex-wrap gap-1.5 text-[11px] font-mono text-neutral-400">
+                ${p.tech.map(t => `<span>${t}</span>`).join(' / ')}
+              </div>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      function filterProjCat(cat) {
+        document.querySelectorAll('#projects .flex.gap-1.5 button').forEach(b => b.className = 'px-3.5 py-1.5 text-xs sm:text-sm font-medium rounded-md text-neutral-400 hover:text-white');
+        if(cat==='all') document.getElementById('pcat-all').className = 'px-3.5 py-1.5 text-xs sm:text-sm font-medium rounded-md bg-amber-400 text-neutral-950 font-semibold';
+        if(cat==='web') document.getElementById('pcat-web').className = 'px-3.5 py-1.5 text-xs sm:text-sm font-medium rounded-md bg-amber-400 text-neutral-950 font-semibold';
+        if(cat==='system') document.getElementById('pcat-system').className = 'px-3.5 py-1.5 text-xs sm:text-sm font-medium rounded-md bg-amber-400 text-neutral-950 font-semibold';
+
+        const filtered = cat === 'all' ? projects : projects.filter(p => p.cat === cat);
+        renderProjects(filtered);
+      }
+
+      // Render Experience
+      function renderExperience() {
+        const list = document.getElementById('experience-list');
+        list.innerHTML = experiences.map(e => `
+          <div class="relative">
+            <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-3.5 h-3.5 rounded-full bg-neutral-950 border-2 border-amber-400"></div>
+            <div class="space-y-2">
+              <div class="flex justify-between items-center">
+                <h4 class="text-base sm:text-lg font-bold text-white">${e.role}</h4>
+                <span class="text-xs font-mono text-neutral-400">${e.period}</span>
+              </div>
+              <div class="text-xs text-amber-400 font-semibold">${e.company} · ${e.loc}</div>
+              <p class="text-xs sm:text-sm text-neutral-300">${e.desc}</p>
+              <div class="flex flex-wrap gap-1.5 pt-1 text-[11px] font-mono text-neutral-400">
+                ${e.skills.map(s => `<span class="px-2 py-0.5 rounded bg-neutral-900 border border-neutral-800">${s}</span>`).join('')}
+              </div>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      // Render Articles
+      function renderArticles() {
+        const grid = document.getElementById('articles-grid');
+        grid.innerHTML = articles.map(a => `
+          <div onclick="openArticleModal('${a.id}')" class="group cursor-pointer p-6 rounded-2xl bg-neutral-900/60 border border-neutral-800 hover:border-neutral-700 transition-all flex flex-col justify-between space-y-5">
+            <div class="space-y-3">
+              <div class="flex items-center gap-2 text-xs text-neutral-400 font-mono">
+                <span class="text-amber-400 font-semibold">${a.cat}</span> · <span>${a.time} oxu</span>
+              </div>
+              <h3 class="text-lg font-bold text-white group-hover:text-amber-400 transition-colors font-display">${a.title}</h3>
+              <p class="text-xs sm:text-sm text-neutral-400 leading-relaxed line-clamp-3">${a.excerpt}</p>
+            </div>
+            <div class="pt-4 border-t border-neutral-800 flex items-center justify-between text-xs font-semibold text-neutral-300 group-hover:text-amber-400">
+              <span>Məqaləni Oxu</span> <span>→</span>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      // Modals
+      function openProjectModal(id) {
+        const p = projects.find(item => item.id === id);
+        if(!p) return;
+        document.getElementById('pm-title').innerText = p.title;
+        document.getElementById('pm-img').src = p.img;
+        document.getElementById('pm-summary').innerText = p.summary;
+        document.getElementById('pm-challenge').innerText = p.challenge;
+        document.getElementById('pm-solution').innerText = p.solution;
+        document.getElementById('pm-impact').innerText = p.impact;
+        document.getElementById('project-modal').classList.remove('hidden');
+      }
+      function closeProjectModal() { document.getElementById('project-modal').classList.add('hidden'); }
+
+      function openArticleModal(id) {
+        const a = articles.find(item => item.id === id);
+        if(!a) return;
+        document.getElementById('am-title').innerText = a.title;
+        document.getElementById('am-content').innerHTML = a.content.map(para => `<p>${para}</p>`).join('');
+        document.getElementById('article-modal').classList.remove('hidden');
+      }
+      function closeArticleModal() { document.getElementById('article-modal').classList.add('hidden'); }
+
+      function openResumeModal() { document.getElementById('resume-modal').classList.remove('hidden'); }
+      function closeResumeModal() { document.getElementById('resume-modal').classList.add('hidden'); }
+
+      function openEditModal() {
+        document.getElementById('edit-name').value = profile.name;
+        document.getElementById('edit-email').value = profile.email;
+        document.getElementById('edit-location').value = profile.locationAz;
+        document.getElementById('edit-modal').classList.remove('hidden');
+      }
+      function closeEditModal() { document.getElementById('edit-modal').classList.add('hidden'); }
+
+      function saveProfileEdit(e) {
+        e.preventDefault();
+        profile.name = document.getElementById('edit-name').value;
+        profile.email = document.getElementById('edit-email').value;
+        profile.locationAz = document.getElementById('edit-location').value;
+        localStorage.setItem('camal_profile', JSON.stringify(profile));
+        applyProfileData();
+        closeEditModal();
+      }
+
+      function openBegetGuide() { document.getElementById('beget-modal').classList.remove('hidden'); }
+      function closeBegetGuide() { document.getElementById('beget-modal').classList.add('hidden'); }
+
+      function toggleMobileMenu() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+      }
+
+      function copyEmail() {
+        navigator.clipboard.writeText(profile.email);
+        alert('E-poçt kopyalandı: ' + profile.email);
+      }
+
+      function handleContactSubmit(e) {
+        e.preventDefault();
+        document.getElementById('contact-form').classList.add('hidden');
+        document.getElementById('contact-success').classList.remove('hidden');
+      }
+
+      function resetContactForm() {
+        document.getElementById('contact-form').reset();
+        document.getElementById('contact-form').classList.remove('hidden');
+        document.getElementById('contact-success').classList.add('hidden');
+      }
+
+      window.onload = init;
+    </script>
   </body>
 </html>
-

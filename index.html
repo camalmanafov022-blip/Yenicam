@@ -109,31 +109,31 @@
 
           <!-- Creative Light Desktop Navigation Menu -->
           <nav class="hidden lg:flex items-center gap-1 xl:gap-2">
-            <a href="#about" class="nav-item group relative px-3.5 py-2 text-[13px] font-bold tracking-wider uppercase text-neutral-700 dark:text-neutral-300 hover:text-amber-600 dark:hover:text-amber-400 transition-colors" data-target="about">
+            <a href="#about" onclick="navigateTo('home', 'about'); return false;" class="nav-item group relative px-3.5 py-2 text-[13px] font-bold tracking-wider uppercase text-neutral-700 dark:text-neutral-300 hover:text-amber-600 dark:hover:text-amber-400 transition-colors" data-target="about">
               <span data-i18n-nav-about>Haqqımda</span>
               <span class="nav-indicator absolute bottom-0 left-3 right-3 h-[2px] bg-amber-500 dark:bg-amber-400 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></span>
             </a>
-            <a href="#services" class="nav-item group relative px-3.5 py-2 text-[13px] font-bold tracking-wider uppercase text-neutral-700 dark:text-neutral-300 hover:text-amber-600 dark:hover:text-amber-400 transition-colors" data-target="services">
+            <a href="#services-view" onclick="navigateTo('services'); return false;" class="nav-item group relative px-3.5 py-2 text-[13px] font-bold tracking-wider uppercase text-neutral-700 dark:text-neutral-300 hover:text-amber-600 dark:hover:text-amber-400 transition-colors" data-target="services">
               <span data-i18n-nav-services>Xidmətlər</span>
               <span class="nav-indicator absolute bottom-0 left-3 right-3 h-[2px] bg-amber-500 dark:bg-amber-400 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></span>
             </a>
-            <a href="#skills" class="nav-item group relative px-3.5 py-2 text-[13px] font-bold tracking-wider uppercase text-neutral-700 dark:text-neutral-300 hover:text-amber-600 dark:hover:text-amber-400 transition-colors" data-target="skills">
+            <a href="#skills" onclick="navigateTo('home', 'skills'); return false;" class="nav-item group relative px-3.5 py-2 text-[13px] font-bold tracking-wider uppercase text-neutral-700 dark:text-neutral-300 hover:text-amber-600 dark:hover:text-amber-400 transition-colors" data-target="skills">
               <span data-i18n-nav-skills>Bacarıqlar</span>
               <span class="nav-indicator absolute bottom-0 left-3 right-3 h-[2px] bg-amber-500 dark:bg-amber-400 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></span>
             </a>
-            <a href="#projects" class="nav-item group relative px-3.5 py-2 text-[13px] font-bold tracking-wider uppercase text-neutral-700 dark:text-neutral-300 hover:text-amber-600 dark:hover:text-amber-400 transition-colors" data-target="projects">
+            <a href="#projects" onclick="navigateTo('home', 'projects'); return false;" class="nav-item group relative px-3.5 py-2 text-[13px] font-bold tracking-wider uppercase text-neutral-700 dark:text-neutral-300 hover:text-amber-600 dark:hover:text-amber-400 transition-colors" data-target="projects">
               <span data-i18n-nav-projects>Portfel</span>
               <span class="nav-indicator absolute bottom-0 left-3 right-3 h-[2px] bg-amber-500 dark:bg-amber-400 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></span>
             </a>
-            <a href="#experience" class="nav-item group relative px-3.5 py-2 text-[13px] font-bold tracking-wider uppercase text-neutral-700 dark:text-neutral-300 hover:text-amber-600 dark:hover:text-amber-400 transition-colors" data-target="experience">
+            <a href="#experience" onclick="navigateTo('home', 'experience'); return false;" class="nav-item group relative px-3.5 py-2 text-[13px] font-bold tracking-wider uppercase text-neutral-700 dark:text-neutral-300 hover:text-amber-600 dark:hover:text-amber-400 transition-colors" data-target="experience">
               <span data-i18n-nav-experience>Təcrübə</span>
               <span class="nav-indicator absolute bottom-0 left-3 right-3 h-[2px] bg-amber-500 dark:bg-amber-400 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></span>
             </a>
-            <a href="#articles" class="nav-item group relative px-3.5 py-2 text-[13px] font-bold tracking-wider uppercase text-neutral-700 dark:text-neutral-300 hover:text-amber-600 dark:hover:text-amber-400 transition-colors" data-target="articles">
+            <a href="#articles" onclick="navigateTo('home', 'articles'); return false;" class="nav-item group relative px-3.5 py-2 text-[13px] font-bold tracking-wider uppercase text-neutral-700 dark:text-neutral-300 hover:text-amber-600 dark:hover:text-amber-400 transition-colors" data-target="articles">
               <span data-i18n-nav-articles>Məqalələr</span>
               <span class="nav-indicator absolute bottom-0 left-3 right-3 h-[2px] bg-amber-500 dark:bg-amber-400 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></span>
             </a>
-            <a href="#contact" class="nav-item group relative px-3.5 py-2 text-[13px] font-bold tracking-wider uppercase text-neutral-700 dark:text-neutral-300 hover:text-amber-600 dark:hover:text-amber-400 transition-colors" data-target="contact">
+            <a href="#contact" onclick="navigateTo('home', 'contact'); return false;" class="nav-item group relative px-3.5 py-2 text-[13px] font-bold tracking-wider uppercase text-neutral-700 dark:text-neutral-300 hover:text-amber-600 dark:hover:text-amber-400 transition-colors" data-target="contact">
               <span data-i18n-nav-contact>Əlaqə</span>
               <span class="nav-indicator absolute bottom-0 left-3 right-3 h-[2px] bg-amber-500 dark:bg-amber-400 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></span>
             </a>
@@ -149,7 +149,7 @@
             </div>
 
             <!-- The7 Creative CTA Button -->
-            <a href="#contact" class="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 text-xs font-bold uppercase tracking-wider text-neutral-950 bg-amber-400 hover:bg-amber-300 active:scale-95 transition-all duration-200 rounded-full shadow-sm shadow-amber-400/20">
+            <a href="#contact" onclick="navigateTo('home', 'contact'); return false;" class="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 text-xs font-bold uppercase tracking-wider text-neutral-950 bg-amber-400 hover:bg-amber-300 active:scale-95 transition-all duration-200 rounded-full shadow-sm shadow-amber-400/20">
               <span data-i18n-nav-contact>Əlaqə</span>
               <span>→</span>
             </a>
@@ -167,31 +167,31 @@
       <!-- The7 Creative Light Mobile Dropdown Drawer -->
       <div id="mobile-menu" class="hidden lg:hidden bg-white/95 dark:bg-neutral-950/95 backdrop-blur-2xl border-b border-neutral-200 dark:border-neutral-800 shadow-2xl transition-all duration-300">
         <nav class="max-w-7xl mx-auto px-6 py-4 flex flex-col space-y-1 divide-y divide-neutral-100 dark:divide-neutral-900">
-          <a href="#about" class="mobile-link py-3 flex items-center justify-between text-sm font-bold uppercase tracking-wider text-neutral-700 dark:text-neutral-200 hover:text-amber-500 dark:hover:text-amber-400 transition-colors" data-target="about">
+          <a href="#about" onclick="navigateTo('home', 'about'); return false;" class="mobile-link py-3 flex items-center justify-between text-sm font-bold uppercase tracking-wider text-neutral-700 dark:text-neutral-200 hover:text-amber-500 dark:hover:text-amber-400 transition-colors" data-target="about">
             <span data-i18n-nav-about>Haqqımda</span>
             <span class="text-xs text-neutral-400 font-mono">01</span>
           </a>
-          <a href="#services" class="mobile-link py-3 flex items-center justify-between text-sm font-bold uppercase tracking-wider text-neutral-700 dark:text-neutral-200 hover:text-amber-500 dark:hover:text-amber-400 transition-colors" data-target="services">
+          <a href="#services-view" onclick="navigateTo('services'); return false;" class="mobile-link py-3 flex items-center justify-between text-sm font-bold uppercase tracking-wider text-neutral-700 dark:text-neutral-200 hover:text-amber-500 dark:hover:text-amber-400 transition-colors" data-target="services">
             <span data-i18n-nav-services>Xidmətlər</span>
             <span class="text-xs text-neutral-400 font-mono">02</span>
           </a>
-          <a href="#skills" class="mobile-link py-3 flex items-center justify-between text-sm font-bold uppercase tracking-wider text-neutral-700 dark:text-neutral-200 hover:text-amber-500 dark:hover:text-amber-400 transition-colors" data-target="skills">
+          <a href="#skills" onclick="navigateTo('home', 'skills'); return false;" class="mobile-link py-3 flex items-center justify-between text-sm font-bold uppercase tracking-wider text-neutral-700 dark:text-neutral-200 hover:text-amber-500 dark:hover:text-amber-400 transition-colors" data-target="skills">
             <span data-i18n-nav-skills>Bacarıqlar</span>
             <span class="text-xs text-neutral-400 font-mono">03</span>
           </a>
-          <a href="#projects" class="mobile-link py-3 flex items-center justify-between text-sm font-bold uppercase tracking-wider text-neutral-700 dark:text-neutral-200 hover:text-amber-500 dark:hover:text-amber-400 transition-colors" data-target="projects">
+          <a href="#projects" onclick="navigateTo('home', 'projects'); return false;" class="mobile-link py-3 flex items-center justify-between text-sm font-bold uppercase tracking-wider text-neutral-700 dark:text-neutral-200 hover:text-amber-500 dark:hover:text-amber-400 transition-colors" data-target="projects">
             <span data-i18n-nav-projects>Portfel</span>
             <span class="text-xs text-neutral-400 font-mono">04</span>
           </a>
-          <a href="#experience" class="mobile-link py-3 flex items-center justify-between text-sm font-bold uppercase tracking-wider text-neutral-700 dark:text-neutral-200 hover:text-amber-500 dark:hover:text-amber-400 transition-colors" data-target="experience">
+          <a href="#experience" onclick="navigateTo('home', 'experience'); return false;" class="mobile-link py-3 flex items-center justify-between text-sm font-bold uppercase tracking-wider text-neutral-700 dark:text-neutral-200 hover:text-amber-500 dark:hover:text-amber-400 transition-colors" data-target="experience">
             <span data-i18n-nav-experience>Təcrübə</span>
             <span class="text-xs text-neutral-400 font-mono">05</span>
           </a>
-          <a href="#articles" class="mobile-link py-3 flex items-center justify-between text-sm font-bold uppercase tracking-wider text-neutral-700 dark:text-neutral-200 hover:text-amber-500 dark:hover:text-amber-400 transition-colors" data-target="articles">
+          <a href="#articles" onclick="navigateTo('home', 'articles'); return false;" class="mobile-link py-3 flex items-center justify-between text-sm font-bold uppercase tracking-wider text-neutral-700 dark:text-neutral-200 hover:text-amber-500 dark:hover:text-amber-400 transition-colors" data-target="articles">
             <span data-i18n-nav-articles>Məqalələr</span>
             <span class="text-xs text-neutral-400 font-mono">06</span>
           </a>
-          <a href="#contact" class="mobile-link py-3 flex items-center justify-between text-sm font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 transition-colors" data-target="contact">
+          <a href="#contact" onclick="navigateTo('home', 'contact'); return false;" class="mobile-link py-3 flex items-center justify-between text-sm font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 transition-colors" data-target="contact">
             <span data-i18n-nav-contact>Əlaqə</span>
             <span class="text-xs text-amber-600 dark:text-amber-400 font-mono">07 →</span>
           </a>
@@ -200,110 +200,120 @@
     </header>
 
     <main class="flex-1">
-
-      <!-- Hero Section -->
-      <section class="relative pt-24 pb-20 md:pt-36 md:pb-32 overflow-hidden border-b border-neutral-200 dark:border-neutral-900 bg-white dark:bg-neutral-950">
-        <div class="pointer-events-none absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-amber-500/10 blur-[160px] rounded-full" aria-hidden="true"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-            
-            <div class="lg:col-span-7 space-y-8">
-              <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-400/10 border border-amber-400/30 text-amber-600 dark:text-amber-400 text-xs font-mono font-semibold">
-                <span>✦</span>
-                <span data-i18n-hero-badge>Apex Digital Engineering & Architecture</span>
-              </div>
-
-              <div class="space-y-4">
-                <h1 class="text-4xl sm:text-6xl font-bold tracking-tight text-neutral-900 dark:text-white leading-[1.12] wave-animate" data-i18n-hero-title>
-                  Gələcəyin Veb Həlləri & <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-amber-400 dark:from-amber-400 dark:to-amber-200">Mühəndislik Sənəti</span>
-                </h1>
-                <p class="text-base sm:text-lg text-neutral-600 dark:text-neutral-300 max-w-2xl leading-relaxed font-normal" data-i18n="heroSub" data-i18n-hero-subtitle>
-                  Biznesinizi rəqəmsal dünyada zirvəyə daşıyan, sürətli, təhlükəsiz və qüsursuz interfeysə malik veb platformalar və sistemlər qururam.
-                </p>
-              </div>
-
-              <div class="flex flex-wrap items-center gap-4 pt-2">
-                <a href="#projects" class="inline-flex items-center gap-2.5 px-7 py-3.5 text-sm font-semibold text-neutral-950 bg-amber-400 hover:bg-amber-300 active:bg-amber-500 rounded-xl transition-all shadow-lg shadow-amber-400/20">
-                  <span data-i18n-btn-projects>Seçilmiş İşlərə Bax</span>
-                  <span>→</span>
-                </a>
-                <a href="#contact" class="inline-flex items-center gap-2.5 px-7 py-3.5 text-sm font-semibold text-neutral-800 dark:text-neutral-200 hover:text-neutral-950 dark:hover:text-white bg-neutral-100 dark:bg-neutral-900 hover:bg-neutral-200 dark:hover:bg-neutral-800 border border-neutral-300 dark:border-neutral-800 rounded-xl transition-all">
-                  <span class="text-amber-500 dark:text-amber-400">💬</span>
-                  <span data-i18n-btn-consult>Konsultasiya Al</span>
-                </a>
-              </div>
-
-              <!-- Trust Stats Bar -->
-              <div class="pt-8 border-t border-neutral-200 dark:border-neutral-900 grid grid-cols-3 gap-6 max-w-lg">
-                <div class="p-4 rounded-2xl bg-neutral-50 dark:bg-neutral-900/40 border border-neutral-200 dark:border-neutral-800/80 shadow-sm">
-                  <div class="text-2xl sm:text-3xl font-bold font-mono text-neutral-900 dark:text-white tabular-nums">5+</div>
-                  <div class="text-xs text-neutral-500 dark:text-neutral-400 uppercase tracking-wider mt-1" data-i18n-stat-exp>İl Təcrübə</div>
+      <!-- HOME VIEW CONTAINER -->
+      <div id="home-view">
+        <!-- Hero Section -->
+        <section class="relative pt-24 pb-20 md:pt-36 md:pb-32 overflow-hidden border-b border-neutral-200 dark:border-neutral-900 bg-white dark:bg-neutral-950">
+          <div class="pointer-events-none absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-amber-500/10 blur-[160px] rounded-full" aria-hidden="true"></div>
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+              
+              <div class="lg:col-span-7 space-y-8">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-400/10 border border-amber-400/30 text-amber-600 dark:text-amber-400 text-xs font-mono font-semibold">
+                  <span>✦</span>
+                  <span data-i18n-hero-badge>Apex Digital Engineering & Architecture</span>
                 </div>
-                <div class="p-4 rounded-2xl bg-neutral-50 dark:bg-neutral-900/40 border border-neutral-200 dark:border-neutral-800/80 shadow-sm">
-                  <div class="text-2xl sm:text-3xl font-bold font-mono text-neutral-900 dark:text-white tabular-nums">28+</div>
-                  <div class="text-xs text-neutral-500 dark:text-neutral-400 uppercase tracking-wider mt-1" data-i18n-stat-projects>Uğurlu Layihə</div>
-                </div>
-                <div class="p-4 rounded-2xl bg-neutral-50 dark:bg-neutral-900/40 border border-neutral-200 dark:border-neutral-800/80 shadow-sm">
-                  <div class="text-2xl sm:text-3xl font-bold font-mono text-amber-600 dark:text-amber-400 tabular-nums">100%</div>
-                  <div class="text-xs text-neutral-500 dark:text-neutral-400 uppercase tracking-wider mt-1" data-i18n="statSatis" data-i18n-stat-satisfaction>Keyfiyyət</div>
-                </div>
-              </div>
-            </div>
 
-            <!-- Hero Creative Visual Card -->
-            <div class="lg:col-span-5 flex justify-center">
-              <div class="relative w-full max-w-md">
-                <div class="absolute -inset-3 rounded-3xl bg-gradient-to-r from-amber-400/90 via-amber-100/80 to-yellow-300/90 opacity-95 blur-3xl animate-spread-glow"></div>
-                <div class="relative rounded-2xl overflow-hidden border-0 bg-transparent shadow-none p-0">
-                  <img src="src/assets/images/regenerated_image_1790931747522.png" alt="Camal Manafov" class="w-full aspect-4/3 object-cover rounded-xl object-top shadow-xl" />
-                  <div class="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-white/90 dark:bg-neutral-950/90 backdrop-blur-md border border-neutral-200 dark:border-neutral-800 flex items-center justify-between shadow-lg">
-                    <div>
-                      <div class="text-sm font-bold text-neutral-900 dark:text-white" data-profile-name>Camal Manafov</div>
-                      <div class="text-xs text-amber-600 dark:text-amber-400 font-mono" data-i18n-hero-card-sub>Lead Full-Stack Engineer</div>
-                    </div>
-                    <div class="w-10 h-10 rounded-xl bg-amber-400/10 border border-amber-400/30 flex items-center justify-center text-amber-600 dark:text-amber-400 text-lg">✦</div>
+                <div class="space-y-4">
+                  <h1 class="text-4xl sm:text-6xl font-bold tracking-tight text-neutral-900 dark:text-white leading-[1.12] wave-animate" data-i18n-hero-title>
+                    Gələcəyin Veb Həlləri & <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-amber-400 dark:from-amber-400 dark:to-amber-200">Mühəndislik Sənəti</span>
+                  </h1>
+                  <p class="text-base sm:text-lg text-neutral-600 dark:text-neutral-300 max-w-2xl leading-relaxed font-normal" data-i18n="heroSub" data-i18n-hero-subtitle>
+                    Biznesinizi rəqəmsal dünyada zirvəyə daşıyan, sürətli, təhlükəsiz və qüsursuz interfeysə malik veb platformalar və sistemlər qururam.
+                  </p>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-4 pt-2">
+                  <a href="#projects" onclick="navigateTo('home', 'projects'); return false;" class="inline-flex items-center gap-2.5 px-7 py-3.5 text-sm font-semibold text-neutral-950 bg-amber-400 hover:bg-amber-300 active:bg-amber-500 rounded-xl transition-all shadow-lg shadow-amber-400/20">
+                    <span data-i18n-btn-projects>Seçilmiş İşlərə Bax</span>
+                    <span>→</span>
+                  </a>
+                  <a href="#contact" onclick="navigateTo('home', 'contact'); return false;" class="inline-flex items-center gap-2.5 px-7 py-3.5 text-sm font-semibold text-neutral-800 dark:text-neutral-200 hover:text-neutral-950 dark:hover:text-white bg-neutral-100 dark:bg-neutral-900 hover:bg-neutral-200 dark:hover:bg-neutral-800 border border-neutral-300 dark:border-neutral-800 rounded-xl transition-all">
+                    <span class="text-amber-500 dark:text-amber-400">💬</span>
+                    <span data-i18n-btn-consult>Konsultasiya Al</span>
+                  </a>
+                </div>
+
+                <!-- Trust Stats Bar -->
+                <div class="pt-8 border-t border-neutral-200 dark:border-neutral-900 grid grid-cols-3 gap-6 max-w-lg">
+                  <div class="p-4 rounded-2xl bg-neutral-50 dark:bg-neutral-900/40 border border-neutral-200 dark:border-neutral-800/80 shadow-sm">
+                    <div class="text-2xl sm:text-3xl font-bold font-mono text-neutral-900 dark:text-white tabular-nums">5+</div>
+                    <div class="text-xs text-neutral-500 dark:text-neutral-400 uppercase tracking-wider mt-1" data-i18n-stat-exp>İl Təcrübə</div>
+                  </div>
+                  <div class="p-4 rounded-2xl bg-neutral-50 dark:bg-neutral-900/40 border border-neutral-200 dark:border-neutral-800/80 shadow-sm">
+                    <div class="text-2xl sm:text-3xl font-bold font-mono text-neutral-900 dark:text-white tabular-nums">28+</div>
+                    <div class="text-xs text-neutral-500 dark:text-neutral-400 uppercase tracking-wider mt-1" data-i18n-stat-projects>Uğurlu Layihə</div>
+                  </div>
+                  <div class="p-4 rounded-2xl bg-neutral-50 dark:bg-neutral-900/40 border border-neutral-200 dark:border-neutral-800/80 shadow-sm">
+                    <div class="text-2xl sm:text-3xl font-bold font-mono text-amber-600 dark:text-amber-400 tabular-nums">100%</div>
+                    <div class="text-xs text-neutral-500 dark:text-neutral-400 uppercase tracking-wider mt-1" data-i18n="statSatis" data-i18n-stat-satisfaction>Keyfiyyət</div>
                   </div>
                 </div>
               </div>
-            </div>
 
-          </div>
-        </div>
-      </section>
+              <!-- Hero Creative Visual Card -->
+              <div class="lg:col-span-5 flex justify-center">
+                <div class="relative w-full max-w-md">
+                  <div class="absolute -inset-3 rounded-3xl bg-gradient-to-r from-amber-400/90 via-amber-100/80 to-yellow-300/90 opacity-95 blur-3xl animate-spread-glow"></div>
+                  <div class="relative rounded-2xl overflow-hidden border-0 bg-transparent shadow-none p-0">
+                    <img src="src/assets/images/regenerated_image_1790931747522.png" alt="Camal Manafov" class="w-full aspect-4/3 object-cover rounded-xl object-top shadow-xl" />
+                    <div class="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-white/90 dark:bg-neutral-950/90 backdrop-blur-md border border-neutral-200 dark:border-neutral-800 flex items-center justify-between shadow-lg">
+                      <div>
+                        <div class="text-sm font-bold text-neutral-900 dark:text-white" data-profile-name>Camal Manafov</div>
+                        <div class="text-xs text-amber-600 dark:text-amber-400 font-mono" data-i18n-hero-card-sub>Lead Full-Stack Engineer</div>
+                      </div>
+                      <div class="w-10 h-10 rounded-xl bg-amber-400/10 border border-amber-400/30 flex items-center justify-center text-amber-600 dark:text-amber-400 text-lg">✦</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-      <!-- Services / Expertise Grid -->
-      <section id="services" class="py-20 md:py-28 border-b border-neutral-200 dark:border-neutral-900 bg-neutral-50 dark:bg-neutral-950">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <span class="text-xs font-mono uppercase tracking-widest text-amber-600 dark:text-amber-400 bg-amber-400/10 px-3 py-1 rounded-full border border-amber-400/20" data-i18n-srv-tag>Peşəkar Xidmətlər</span>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-neutral-900 dark:text-white" data-i18n-srv-title>Biznesinizi Böyüdən Xüsusi Həllər</h2>
-            <p class="text-neutral-600 dark:text-neutral-400 text-sm sm:text-base" data-i18n-srv-desc>Yüksək performanslı veb tətbiqlərdən tutmuş mürəkkəb rəqəmsal arxitekturalara qədər tam spektrli mühəndislik xidmətləri.</p>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="p-8 rounded-2xl bg-white dark:bg-neutral-900/50 border border-neutral-200 dark:border-neutral-800 hover:border-amber-400/50 transition-all group space-y-4 shadow-sm">
-              <div class="w-14 h-14 rounded-2xl bg-amber-400/10 border border-amber-400/30 flex items-center justify-center text-amber-500 dark:text-amber-400 text-2xl group-hover:scale-110 transition-transform">💻</div>
-              <h3 class="text-xl font-bold text-neutral-900 dark:text-white" data-i18n-s1-title>Full-Stack Veb Tətbiqlər</h3>
-              <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed" data-i18n-s1-desc>React, Next.js və Node.js üzərindən sürətli, etibarlı və genişlənə bilən müasir platformaların hazırlanması.</p>
-              <div class="pt-2 text-xs font-mono text-amber-600 dark:text-amber-400 flex items-center gap-1">Daha ətraflı →</div>
-            </div>
-
-            <div class="p-8 rounded-2xl bg-white dark:bg-neutral-900/50 border border-neutral-200 dark:border-neutral-800 hover:border-amber-400/50 transition-all group space-y-4 shadow-sm">
-              <div class="w-14 h-14 rounded-2xl bg-amber-400/10 border border-amber-400/30 flex items-center justify-center text-amber-500 dark:text-amber-400 text-2xl group-hover:scale-110 transition-transform">⚡</div>
-              <h3 class="text-xl font-bold text-neutral-900 dark:text-white" data-i18n-s2-title>UI/UX & Performans Optimizasiyası</h3>
-              <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed" data-i18n-s2-desc>İstifadəçi təcrübəsinin təkmilləşdirilməsi, səhifə yüklənmə sürətinin artırılması və SEO optimizasiyası.</p>
-              <div class="pt-2 text-xs font-mono text-amber-600 dark:text-amber-400 flex items-center gap-1">Daha ətraflı →</div>
-            </div>
-
-            <div class="p-8 rounded-2xl bg-white dark:bg-neutral-900/50 border border-neutral-200 dark:border-neutral-800 hover:border-amber-400/50 transition-all group space-y-4 shadow-sm">
-              <div class="w-14 h-14 rounded-2xl bg-amber-400/10 border border-amber-400/30 flex items-center justify-center text-amber-500 dark:text-amber-400 text-2xl group-hover:scale-110 transition-transform">🛡️</div>
-              <h3 class="text-xl font-bold text-neutral-900 dark:text-white" data-i18n-s3-title>Texniki Arxiv & Məsləhət</h3>
-              <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed" data-i18n-s3-desc>Mövcud layihələrinizin kod bazasının auditi, təhlükəsizlik analizi və memarlıq məsləhətləri.</p>
-              <div class="pt-2 text-xs font-mono text-amber-600 dark:text-amber-400 flex items-center gap-1">Daha ətraflı →</div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+        <!-- Services / Expertise Grid -->
+        <section id="services" class="py-20 md:py-28 border-b border-neutral-200 dark:border-neutral-900 bg-neutral-50 dark:bg-neutral-950">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+              <span class="text-xs font-mono uppercase tracking-widest text-amber-600 dark:text-amber-400 bg-amber-400/10 px-3 py-1 rounded-full border border-amber-400/20" data-i18n-srv-tag>Peşəkar Xidmətlər</span>
+              <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-neutral-900 dark:text-white" data-i18n-srv-title>Biznesinizi Böyüdən Xüsusi Həllər</h2>
+              <p class="text-neutral-600 dark:text-neutral-400 text-sm sm:text-base" data-i18n-srv-desc>Yüksək performanslı veb tətbiqlərdən tutmuş mürəkkəb rəqəmsal arxitekturalara qədər tam spektrli mühəndislik xidmətləri.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div onclick="navigateTo('services', 'fullstack')" class="cursor-pointer p-8 rounded-2xl bg-white dark:bg-neutral-900/50 border border-neutral-200 dark:border-neutral-800 hover:border-amber-400/50 transition-all group space-y-4 shadow-sm hover:shadow-md hover:-translate-y-1">
+                <div class="w-14 h-14 rounded-2xl bg-amber-400/10 border border-amber-400/30 flex items-center justify-center text-amber-500 dark:text-amber-400 text-2xl group-hover:scale-110 transition-transform">💻</div>
+                <h3 class="text-xl font-bold text-neutral-900 dark:text-white group-hover:text-amber-500 transition-colors" data-i18n-s1-title>Full-Stack Veb Tətbiqlər</h3>
+                <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed" data-i18n-s1-desc>React, Next.js və Node.js üzərindən sürətli, etibarlı və genişlənə bilən müasir platformaların hazırlanması.</p>
+                <div class="pt-2 text-xs font-mono font-bold text-amber-600 dark:text-amber-400 flex items-center gap-1 group-hover:translate-x-1 transition-transform">Xidmətin Bütün Detalları →</div>
+              </div>
+
+              <div onclick="navigateTo('services', 'uiux')" class="cursor-pointer p-8 rounded-2xl bg-white dark:bg-neutral-900/50 border border-neutral-200 dark:border-neutral-800 hover:border-amber-400/50 transition-all group space-y-4 shadow-sm hover:shadow-md hover:-translate-y-1">
+                <div class="w-14 h-14 rounded-2xl bg-amber-400/10 border border-amber-400/30 flex items-center justify-center text-amber-500 dark:text-amber-400 text-2xl group-hover:scale-110 transition-transform">⚡</div>
+                <h3 class="text-xl font-bold text-neutral-900 dark:text-white group-hover:text-amber-500 transition-colors" data-i18n-s2-title>UI/UX & Performans Optimizasiyası</h3>
+                <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed" data-i18n-s2-desc>İstifadəçi təcrübəsinin təkmilləşdirilməsi, səhifə yüklənmə sürətinin artırılması və SEO optimizasiyası.</p>
+                <div class="pt-2 text-xs font-mono font-bold text-amber-600 dark:text-amber-400 flex items-center gap-1 group-hover:translate-x-1 transition-transform">Xidmətin Bütün Detalları →</div>
+              </div>
+
+              <div onclick="navigateTo('services', 'audit')" class="cursor-pointer p-8 rounded-2xl bg-white dark:bg-neutral-900/50 border border-neutral-200 dark:border-neutral-800 hover:border-amber-400/50 transition-all group space-y-4 shadow-sm hover:shadow-md hover:-translate-y-1">
+                <div class="w-14 h-14 rounded-2xl bg-amber-400/10 border border-amber-400/30 flex items-center justify-center text-amber-500 dark:text-amber-400 text-2xl group-hover:scale-110 transition-transform">🛡️</div>
+                <h3 class="text-xl font-bold text-neutral-900 dark:text-white group-hover:text-amber-500 transition-colors" data-i18n-s3-title>Texniki Arxiv & Məsləhət</h3>
+                <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed" data-i18n-s3-desc>Mövcud layihələrinizin kod bazasının auditi, təhlükəsizlik analizi və memarlıq məsləhətləri.</p>
+                <div class="pt-2 text-xs font-mono font-bold text-amber-600 dark:text-amber-400 flex items-center gap-1 group-hover:translate-x-1 transition-transform">Xidmətin Bütün Detalları →</div>
+              </div>
+            </div>
+
+            <!-- View All Services CTA Button -->
+            <div class="mt-12 text-center">
+              <button onclick="navigateTo('services')" class="inline-flex items-center gap-3 px-8 py-4 text-sm font-bold text-neutral-950 bg-gradient-to-r from-amber-400 to-amber-300 hover:from-amber-300 hover:to-amber-400 active:scale-98 rounded-full shadow-lg shadow-amber-400/25 transition-all">
+                <span>✦</span>
+                <span data-i18n="btnViewAllServices">Bütün 8+ Xidmət və Paketlərə Səhifədə Bax</span>
+                <span>→</span>
+              </button>
+            </div>
+          </div>
+        </section>
 
       <!-- About Section -->
       <section id="about" class="py-20 md:py-28 border-b border-neutral-900 relative">
@@ -470,6 +480,146 @@
           </div>
         </div>
       </section>
+      </div>
+      <!-- END HOME VIEW CONTAINER -->
+
+      <!-- DEDICATED SERVICES PAGE VIEW -->
+      <div id="services-view" class="hidden pt-24 pb-20 md:pt-32 md:pb-28">
+        
+        <!-- Services Page Hero & Navigation Header -->
+        <section class="relative py-12 md:py-16 border-b border-neutral-200 dark:border-neutral-900 bg-white dark:bg-neutral-950 overflow-hidden">
+          <div class="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-amber-500/10 blur-[140px] rounded-full" aria-hidden="true"></div>
+          
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Breadcrumb and Back Action -->
+            <div class="flex flex-wrap items-center justify-between gap-4 mb-8">
+              <button onclick="navigateTo('home')" class="group inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider text-neutral-700 dark:text-neutral-300 bg-neutral-100 dark:bg-neutral-900 hover:bg-amber-400 hover:text-neutral-950 border border-neutral-200 dark:border-neutral-800 transition-all">
+                <span class="group-hover:-translate-x-1 transition-transform">←</span>
+                <span data-i18n="btnBackToHome">Ana Səhifəyə Qayıt</span>
+              </button>
+
+              <div class="flex items-center gap-2 text-xs font-mono text-neutral-500 dark:text-neutral-400">
+                <a href="#home" onclick="navigateTo('home'); return false;" class="hover:text-amber-500 transition-colors">Ana Səhifə</a>
+                <span>/</span>
+                <span class="text-amber-600 dark:text-amber-400 font-semibold" data-i18n="navServices">Xidmətlər</span>
+              </div>
+            </div>
+
+            <!-- Page Title Header -->
+            <div class="max-w-4xl space-y-5">
+              <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-400/10 border border-amber-400/30 text-amber-600 dark:text-amber-400 text-xs font-mono font-semibold">
+                <span>✦</span>
+                <span data-i18n="servicesPageBadge">Tam Spektrli Mühəndislik & Veb Həlləri</span>
+              </div>
+              <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-neutral-900 dark:text-white leading-tight">
+                Biznesinizi Rəqəmsal Zirvəyə Qaldıran <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 via-amber-500 to-amber-300 dark:from-amber-400 dark:via-amber-300 dark:to-yellow-200">Bütün Xidmətlər</span>
+              </h1>
+              <p class="text-base sm:text-lg text-neutral-600 dark:text-neutral-300 max-w-3xl leading-relaxed" data-i18n="servicesPageSub">
+                Mürəkkəb SaaS platformalarından tutmuş, yüksək konversiyalı e-ticarət mağazalarına, mobil PWA tətbiqlərinə və texniki auditə qədər hər bir xidmət ən yüksək kod və sürət standartları ilə icra olunur.
+              </p>
+            </div>
+
+            <!-- Interactive Filters & Search -->
+            <div class="mt-10 pt-8 border-t border-neutral-200 dark:border-neutral-900 flex flex-col md:flex-row md:items-center justify-between gap-6">
+              <!-- Category Filter Buttons -->
+              <div class="flex flex-wrap items-center gap-2" id="services-filter-tabs">
+                <button onclick="filterServicesCategory('all')" id="scat-all" class="px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-full bg-amber-400 text-neutral-950 transition-all shadow-sm">Hamısı (8)</button>
+                <button onclick="filterServicesCategory('web')" id="scat-web" class="px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-full text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 transition-all">Veb & SaaS</button>
+                <button onclick="filterServicesCategory('ecommerce')" id="scat-ecommerce" class="px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-full text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 transition-all">E-Commerce</button>
+                <button onclick="filterServicesCategory('design')" id="scat-design" class="px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-full text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 transition-all">UI/UX & Dizayn</button>
+                <button onclick="filterServicesCategory('mobile')" id="scat-mobile" class="px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-full text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 transition-all">Mobil & PWA</button>
+                <button onclick="filterServicesCategory('consulting')" id="scat-consulting" class="px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-full text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 transition-all">Audit & Optimizasiya</button>
+              </div>
+
+              <!-- Search Input -->
+              <div class="relative w-full md:w-80">
+                <input type="text" id="services-search-input" oninput="filterServicesSearch()" placeholder="Xidmət və ya texnologiya axtar..." class="w-full bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-full px-4 py-2.5 text-xs text-neutral-900 dark:text-neutral-100 placeholder:text-neutral-500 focus:outline-hidden focus:border-amber-400 shadow-inner" />
+                <span class="absolute right-4 top-2.5 text-xs text-neutral-400">🔍</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Services Cards Catalog Grid Section -->
+        <section class="py-16 md:py-24 bg-neutral-50 dark:bg-neutral-950/60 border-b border-neutral-200 dark:border-neutral-900">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div id="services-catalog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <!-- Rendered Dynamically via JS -->
+            </div>
+          </div>
+        </section>
+
+        <!-- Engineering Workflow Process (5 Steps) -->
+        <section class="py-20 md:py-28 border-b border-neutral-200 dark:border-neutral-900 bg-white dark:bg-neutral-950">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+              <span class="text-xs font-mono uppercase tracking-widest text-amber-600 dark:text-amber-400 bg-amber-400/10 px-3 py-1 rounded-full border border-amber-400/20">İş Prosesi & Metodologiya</span>
+              <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-neutral-900 dark:text-white">İdeyadan Mükəmməl Nəticəyə: 5 Mərhələli Proses</h2>
+              <p class="text-neutral-600 dark:text-neutral-400 text-sm sm:text-base">Hər bir layihə dəqiq planlaşdırma, şəffaf ünsiyyət və vaxtında çatdırılma zəmanəti ilə idarə olunur.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+              <div class="p-6 rounded-2xl bg-neutral-50 dark:bg-neutral-900/50 border border-neutral-200 dark:border-neutral-800 space-y-3 relative group hover:border-amber-400/50 transition-all">
+                <div class="text-2xl font-black font-mono text-amber-600 dark:text-amber-400">01</div>
+                <h4 class="text-base font-bold text-neutral-900 dark:text-white">Təhlil & Tapşırıq</h4>
+                <p class="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">Biznes məqsədlərinin, hədəf kütlənin və texniki tələblərin dərindən araşdırılması.</p>
+              </div>
+
+              <div class="p-6 rounded-2xl bg-neutral-50 dark:bg-neutral-900/50 border border-neutral-200 dark:border-neutral-800 space-y-3 relative group hover:border-amber-400/50 transition-all">
+                <div class="text-2xl font-black font-mono text-amber-600 dark:text-amber-400">02</div>
+                <h4 class="text-base font-bold text-neutral-900 dark:text-white">Arxitektura & UX</h4>
+                <p class="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">İnteraktiv prototiplərin və genişlənə bilən sistem arxitekturasının qurulması.</p>
+              </div>
+
+              <div class="p-6 rounded-2xl bg-neutral-50 dark:bg-neutral-900/50 border border-neutral-200 dark:border-neutral-800 space-y-3 relative group hover:border-amber-400/50 transition-all">
+                <div class="text-2xl font-black font-mono text-amber-600 dark:text-amber-400">03</div>
+                <h4 class="text-base font-bold text-neutral-900 dark:text-white">Təmiz Kodlaşdırma</h4>
+                <p class="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">Müasir texnologiyalarla (React, Next.js, Node.js) sürətli sprintlərdə inkişaf.</p>
+              </div>
+
+              <div class="p-6 rounded-2xl bg-neutral-50 dark:bg-neutral-900/50 border border-neutral-200 dark:border-neutral-800 space-y-3 relative group hover:border-amber-400/50 transition-all">
+                <div class="text-2xl font-black font-mono text-amber-600 dark:text-amber-400">04</div>
+                <h4 class="text-base font-bold text-neutral-900 dark:text-white">QA Sınağı & Sürət</h4>
+                <p class="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">Çarpaz brauzer testləri, təhlükəsizlik auditi və PageSpeed 95+ optimizasiyası.</p>
+              </div>
+
+              <div class="p-6 rounded-2xl bg-neutral-50 dark:bg-neutral-900/50 border border-neutral-200 dark:border-neutral-800 space-y-3 relative group hover:border-amber-400/50 transition-all">
+                <div class="text-2xl font-black font-mono text-amber-600 dark:text-amber-400">05</div>
+                <h4 class="text-base font-bold text-neutral-900 dark:text-white">Buraxılış & Dəstək</h4>
+                <p class="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">Serverə yerləşdirmə, domen sazlamaları və 24/7 zəmanətli texniki xidmət.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Interactive Project Scope & Consultation CTA -->
+        <section class="py-20 bg-gradient-to-b from-neutral-50 to-white dark:from-neutral-950 dark:to-neutral-900">
+          <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="p-8 sm:p-12 rounded-3xl bg-neutral-900 text-white border border-neutral-800 shadow-2xl relative overflow-hidden">
+              <div class="absolute -right-16 -top-16 w-64 h-64 bg-amber-400/20 blur-3xl rounded-full"></div>
+              
+              <div class="relative z-10 space-y-6 max-w-2xl">
+                <span class="text-xs font-mono uppercase tracking-widest text-amber-400 font-semibold">Layihənizi Başlayaq</span>
+                <h3 class="text-2xl sm:text-4xl font-bold tracking-tight">Xüsusi Layihəniz üçün Dərhal Konsultasiya Alın</h3>
+                <p class="text-sm sm:text-base text-neutral-300 leading-relaxed">
+                  Fikrinizi bölüşün — ehtiyaclarınıza ən uyğun texnoloji həlli, vaxt cədvəlini və büdcə planını birlikdə müəyyənləşdirək.
+                </p>
+                <div class="flex flex-wrap items-center gap-4 pt-4">
+                  <a href="#contact" onclick="navigateTo('home', 'contact'); return false;" class="inline-flex items-center gap-2 px-8 py-4 text-xs font-bold uppercase tracking-wider text-neutral-950 bg-amber-400 hover:bg-amber-300 rounded-full transition-all shadow-lg shadow-amber-400/20">
+                    <span>Birbaşa Müzakirə Et</span>
+                    <span>→</span>
+                  </a>
+                  <button onclick="navigateTo('home')" class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-neutral-300 hover:text-white bg-neutral-800 hover:bg-neutral-700 rounded-full transition-all">
+                    Portfellə Tanış Ol
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+      <!-- END DEDICATED SERVICES PAGE VIEW -->
     </main>
 
     <!-- Footer -->
@@ -800,6 +950,104 @@
             { id: '1', title: 'Böyük Layihələrdə Təmiz Arxitektura: React və TypeScript', time: '5 dəq', cat: 'Mühəndislik', excerpt: 'Layihələr böyüdükcə kod bazasını necə səliqəli saxlamaq olar?', content: ['Veb tətbiqləri ilk başda sadə görünsə də, tələblər artdıqca asılılıqlar çoxalır.', 'Təmiz arxitektura tətbiq edərkən ən vacib prinsip məsuliyyətlərin ayrılmasıdır.'] },
             { id: '2', title: 'Müasir Vebdə Sürət: 100 millisaniyə niyə fərq yaradır?', time: '4 dəq', cat: 'Optimizasiya', excerpt: 'Hər bir saniyəlik gecikmə istifadəçi məmnuniyyətini azaldır.', content: ['İnternet istifadəçiləri daha səbirsiz olur. 3 saniyədən gec açılan səhifələr tərk edilir.', 'Sürət sadəcə server deyil, brauzer render mexanizmidir.'] },
             { id: '3', title: 'Minimalist Dizayn: Sadəlik Ən Yüksək Mürəkkəblikdir', time: '3 dəq', cat: 'Dizayn', excerpt: 'Gözü yormayan, hər elementin öz yerində olduğu interfeyslər.', content: ['Dizayn çox vaxt bəzək kimi başa düşülür. Halbuki yaxşı dizayn görünməz olandır.', 'Minimalizm boşluq demək deyil, məqsədyönlü vizual rahatlıqdır.'] }
+          ],
+          services: [
+            {
+              id: 'fullstack',
+              cat: 'web',
+              icon: '💻',
+              badge: 'Ən Çox Tələb Olunan',
+              title: 'Full-Stack Veb Platformalar & SaaS',
+              tagline: 'Genişlənə bilən, etibarlı və yüksək performanslı bulud sistemləri',
+              desc: 'Sıfırdan yüksək yüklənməyə davamlı, etibarlı və çevik SaaS platformalarının və mürəkkəb veb tətbiqlərin qurulması. Next.js/React frontend, Node.js mikroservislər və PostgreSQL arxitekturası.',
+              features: ['Server-Side Rendering (SSR/SSG)', 'Təhlükəsiz REST & GraphQL API', 'Daxili Analitika & Admin Panel', 'CI/CD & Avtomatlaşdırılmış Deploy'],
+              tech: ['React', 'Next.js', 'TypeScript', 'Node.js', 'PostgreSQL', 'Docker'],
+              timeline: '2–4 həftə'
+            },
+            {
+              id: 'ecommerce',
+              cat: 'ecommerce',
+              icon: '🛍️',
+              badge: 'Yüksək Konversiya',
+              title: 'E-Commerce & Onlayn Mağazalar',
+              tagline: '0.4s sürət və maksimum satış konversiyası',
+              desc: 'İstifadəçilərin rahat alış-veriş etməsi üçün hazırlanmış sürətli e-ticarət sistemləri. Bütün yerli və beynəlxalq bank kartları və ödəniş şlüzləri ilə tam inteqrasiya.',
+              features: ['Ani Axtarış & Çoxpilləli Filtrlər', 'Yerli/Xarici Bank Ödənişləri (Stripe, 3DSecure)', 'Avtomatlaşdırılmış Səbət & Sifariş İzləmə', 'İnventar, Stok & Kuryer İdarəetməsi'],
+              tech: ['Next.js', 'Tailwind CSS', 'Stripe', 'Redis', 'PostgreSQL'],
+              timeline: '2–3 həftə'
+            },
+            {
+              id: 'uiux',
+              cat: 'design',
+              icon: '✨',
+              badge: 'Pixel-Perfect',
+              title: 'UI/UX Dizayn Sistemləri & Frontend',
+              tagline: 'Estetik, rahat və insan mərkəzli interaktiv təcrübə',
+              desc: 'Figma dizaynlarının 100% dəqiqliklə təmiz koda çevrilməsi, dizayn sistemləri, mikro-qarşılıqlı əlaqələr və istənilən cihazda qüsursuz responsivlik.',
+              features: ['Figma to Pixel-Perfect Kod', 'Dark/Light Rejim Tam Dəstəyi', 'Zərif Mikro-Animasiyalar & Keçidlər', 'WCAG AA Əlçatanlıq & Tipografiya'],
+              tech: ['Tailwind CSS', 'Figma', 'Framer Motion', 'TypeScript'],
+              timeline: '1–2 həftə'
+            },
+            {
+              id: 'mobile',
+              cat: 'mobile',
+              icon: '📱',
+              badge: 'Cross-Platform',
+              title: 'Mobil Veb Tətbiqlər & PWA',
+              tagline: 'Tətbiq mağazasına ehtiyac olmadan bir toxunuşla quraşdırma',
+              desc: 'Həm iOS, həm də Android cihazlarında native tətbiq kimi işləyən, offline rejim və push bildirişləri dəstəkləyən müasir PWA platformaları.',
+              features: ['Offline Rejim Dəstəyi', 'Push Bildiriş Sistemi', 'Ana Ekrana Quraşdırma (Add to Home)', 'Ultra Yüngül & Çevik Həcm'],
+              tech: ['PWA', 'Service Workers', 'Web Manifest', 'React'],
+              timeline: '2–3 həftə'
+            },
+            {
+              id: 'speed',
+              cat: 'consulting',
+              icon: '⚡',
+              badge: '95+ PageSpeed',
+              title: 'Sürət Optimizasiyası & Core Web Vitals (SEO)',
+              tagline: 'Google PageSpeed 95+ bal və 0.5s açılış zəmanəti',
+              desc: 'Saytınızın açılış sürətini 0.5 saniyənin altına endirərək axtarış sistemlərində (Google SEO) birinci yerlərə çıxarılması və müştəri itkisinin qarşısının alınması.',
+              features: ['Google PageSpeed 95+ Bal', 'LCP / FID / CLS Optimizasiyası', 'Şəkil & Asset Sıxılma', 'Server Cache & Edge CDN'],
+              tech: ['Core Web Vitals', 'Lighthouse', 'Edge CDN', 'Brotli'],
+              timeline: '3–7 gün'
+            },
+            {
+              id: 'audit',
+              cat: 'consulting',
+              icon: '🛡️',
+              badge: 'Ekspert Rəyi',
+              title: 'Texniki Audit, Təhlükəsizlik & Kod Baxışı',
+              tagline: 'Mövcud layihələrin dərin mühəndislik diaqnostikası',
+              desc: 'Hazır veb platformalarınızın təhlükəsizlik boşluqlarının, kod xətalarının və memarlıq çatışmazlıqlarının peşəkar hesabatla təhlil edilməsi.',
+              features: ['Təhlükəsizlik Boşluqlarının Təhlili', 'Kod Bazası Refaktorinqi', 'Memarlıq Məsləhətləri', 'Dəqiq PDF Audit Hesabatı'],
+              tech: ['Security Audit', 'SonarQube', 'Code Review', 'DevSecOps'],
+              timeline: '3–5 gün'
+            },
+            {
+              id: 'crm',
+              cat: 'web',
+              icon: '📊',
+              badge: 'Avtomatlaşdırma',
+              title: 'Xüsusi CRM, ERP & Daxili İdarəetmə Panelləri',
+              tagline: 'Biznes proseslərinizin tam avtomatlaşdırılması',
+              desc: 'Şirkətinizin daxili iş axınına, satışlarına və müştəri bazasına uyğunlaşdırılmış təhlükəsiz və çoxfunksiyalı daxili idarəetmə sistemləri.',
+              features: ['Rol Əsaslı Giriş (RBAC)', 'Real-Vaxt Qrafiklər & Statistika', 'Excel / PDF Avto Hesabatlar', 'İnteqrasiyalı Komanda İdarəsi'],
+              tech: ['React', 'Express', 'PostgreSQL', 'Tailwind'],
+              timeline: '3–5 həftə'
+            },
+            {
+              id: 'api',
+              cat: 'web',
+              icon: '🤖',
+              badge: 'API & AI',
+              title: 'API İnteqrasiyaları & Süni İntellekt (AI) Həlləri',
+              tagline: 'Xarici servislər və AI modelləri ilə inteqrasiya',
+              desc: 'Ödəniş sistemləri, SMS provayderləri, Google Workspace və müasir süni intellekt servislərinin biznesinizə dərhal tətbiqi.',
+              features: ['Ödəniş & SMS Şlüzləri', 'Google Workspace & CRM Sync', 'Ağıllı Məlumat Emalı', 'Webhook & Asinxron Axınlar'],
+              tech: ['REST / GraphQL', 'Webhooks', 'Stripe', 'Gemini API'],
+              timeline: '1–2 həftə'
+            }
           ]
         },
         en: {
@@ -854,6 +1102,104 @@
             { id: '1', title: 'Clean Architecture in Large Projects: React & TypeScript', time: '5 min', cat: 'Engineering', excerpt: 'How to keep your codebase clean as projects scale?', content: ['Although web applications start simple, dependencies multiply as requirements grow.', 'The most important principle when implementing clean architecture is separation of concerns.'] },
             { id: '2', title: 'Speed in the Modern Web: Why 100ms Makes a Difference', time: '4 min', cat: 'Optimization', excerpt: 'Every second of latency diminishes user satisfaction.', content: ['Internet users are becoming more impatient. Pages taking longer than 3 seconds are abandoned.', 'Speed is not just server-side, it is browser rendering optimization.'] },
             { id: '3', title: 'Minimalist Design: Simplicity is the Highest Complexity', time: '3 min', cat: 'Design', excerpt: 'Interfaces that are easy on the eyes where every element has a purpose.', content: ['Design is often misunderstood as mere decoration. Good design is invisible.', 'Minimalism does not mean empty space, but purposeful visual comfort.'] }
+          ],
+          services: [
+            {
+              id: 'fullstack',
+              cat: 'web',
+              icon: '💻',
+              badge: 'Most Popular',
+              title: 'Full-Stack Web Platforms & SaaS',
+              tagline: 'Scalable, secure, high-performance cloud architectures',
+              desc: 'Building resilient, production-grade SaaS solutions and complex platforms from scratch. Next.js/React frontend, Node.js microservices, and PostgreSQL database.',
+              features: ['Server-Side Rendering (SSR/SSG)', 'Secure REST & GraphQL APIs', 'Built-in Analytics & Admin Dashboard', 'CI/CD & Automated Deployment'],
+              tech: ['React', 'Next.js', 'TypeScript', 'Node.js', 'PostgreSQL', 'Docker'],
+              timeline: '2–4 weeks'
+            },
+            {
+              id: 'ecommerce',
+              cat: 'ecommerce',
+              icon: '🛍️',
+              badge: 'High Conversion',
+              title: 'E-Commerce & High-Converting Stores',
+              tagline: '0.4s load speed and seamless checkout experiences',
+              desc: 'Modern online stores engineered for frictionless shopping. Complete payment integrations with Stripe, regional banks, inventory tracking, and blazing speed.',
+              features: ['Instant Search & Multi-Faceted Filters', 'Local & Global Payment Gateways', 'Automated Cart & Order Workflows', 'Inventory & Stock Management'],
+              tech: ['Next.js', 'Tailwind CSS', 'Stripe', 'Redis', 'PostgreSQL'],
+              timeline: '2–3 weeks'
+            },
+            {
+              id: 'uiux',
+              cat: 'design',
+              icon: '✨',
+              badge: 'Pixel-Perfect',
+              title: 'UI/UX Design Systems & Frontend',
+              tagline: 'Aesthetic, intuitive, and human-centered design',
+              desc: 'Converting Figma mockups to 100% pixel-perfect code with design systems, smooth micro-interactions, and accessibility standards.',
+              features: ['Figma to Pixel-Perfect Code', 'Full Dark/Light Mode Support', 'Fluid Micro-Interactions & Transitions', 'WCAG AA Accessibility Compliance'],
+              tech: ['Tailwind CSS', 'Figma', 'Framer Motion', 'TypeScript'],
+              timeline: '1–2 weeks'
+            },
+            {
+              id: 'mobile',
+              cat: 'mobile',
+              icon: '📱',
+              badge: 'Cross-Platform',
+              title: 'Mobile Web Apps & PWAs',
+              tagline: 'One-tap install without app store friction',
+              desc: 'Progressive Web Apps that look and feel like native apps on iOS and Android with offline functionality and push notifications.',
+              features: ['Offline Functionality Support', 'Push Notification Engine', 'Add-to-Home Screen Installability', 'Ultra-Lightweight & Fast'],
+              tech: ['PWA', 'Service Workers', 'Web Manifest', 'React'],
+              timeline: '2–3 weeks'
+            },
+            {
+              id: 'speed',
+              cat: 'consulting',
+              icon: '⚡',
+              badge: '95+ PageSpeed',
+              title: 'Performance & Core Web Vitals (SEO)',
+              tagline: 'Google PageSpeed 95+ and sub-second load times',
+              desc: 'Accelerating page speed to sub-0.5s to rank higher on Google search results and eliminate user bounce rates.',
+              features: ['Google PageSpeed 95+ Score', 'LCP / FID / CLS Optimization', 'Image & Asset Compression', 'Server Caching & Edge CDN'],
+              tech: ['Core Web Vitals', 'Lighthouse', 'Edge CDN', 'Brotli'],
+              timeline: '3–7 days'
+            },
+            {
+              id: 'audit',
+              cat: 'consulting',
+              icon: '🛡️',
+              badge: 'Expert Review',
+              title: 'Technical Audit, Security & Code Review',
+              tagline: 'Deep diagnostics and architecture reviews',
+              desc: 'Auditing your codebase, identifying security vulnerabilities, resolving technical debt, and providing a comprehensive PDF action plan.',
+              features: ['Security Vulnerability Audit', 'Codebase Refactoring Roadmap', 'Architectural Guidance', 'Detailed PDF Audit Report'],
+              tech: ['Security Audit', 'SonarQube', 'Code Review', 'DevSecOps'],
+              timeline: '3–5 days'
+            },
+            {
+              id: 'crm',
+              cat: 'web',
+              icon: '📊',
+              badge: 'Automation',
+              title: 'Custom CRM, ERP & Internal Dashboards',
+              tagline: 'Full automation for your business workflows',
+              desc: 'Tailor-made management panels to track sales, manage inventory, and oversee internal team operations securely.',
+              features: ['Role-Based Access Control (RBAC)', 'Real-Time Analytics & Charts', 'Automated Excel & PDF Reports', 'Integrated Team Workspaces'],
+              tech: ['React', 'Express', 'PostgreSQL', 'Tailwind'],
+              timeline: '3–5 weeks'
+            },
+            {
+              id: 'api',
+              cat: 'web',
+              icon: '🤖',
+              badge: 'API & AI',
+              title: 'API Integrations & AI Engineering',
+              tagline: 'Third-party connectivity and smart AI models',
+              desc: 'Connecting payment gateways, messaging services, Google Workspace, and integrating generative AI into your business.',
+              features: ['Payment & SMS Gateways', 'Google Workspace Sync', 'Intelligent Data Processing', 'Webhook & Event Pipelines'],
+              tech: ['REST / GraphQL', 'Webhooks', 'Stripe', 'Gemini API'],
+              timeline: '1–2 weeks'
+            }
           ]
         },
         ru: {
@@ -908,9 +1254,273 @@
             { id: '1', title: 'Чистая архитектура в крупных проектах: React и TypeScript', time: '5 мин', cat: 'Инженерия', excerpt: 'Как поддерживать чистоту кодовой базы по мере роста проектов?', content: ['Хотя веб-приложения начинаются просто, с ростом требований зависимости увеличиваются.', 'Важнейший принцип чистой архитектуры — разделение ответственности.'] },
             { id: '2', title: 'Скорость в современном веб: почему 100 мс имеют значение', time: '4 мин', cat: 'Оптимизация', excerpt: 'Каждая секунда задержки снижает удовлетворенность пользователей.', content: ['Интернет-пользователи становятся менее терпеливыми. Страницы, загружающиеся дольше 3 секунд, покидают.', 'Скорость — это не только сервер, это оптимизация рендеринга в браузере.'] },
             { id: '3', title: 'Минималистичный дизайн: простота — высшая сложность', time: '3 мин', cat: 'Дизайн', excerpt: 'Интерфейсы, не утомляющие глаз, где каждый элемент находится на своем месте.', content: ['Дизайн часто понимают как просто украшение. Хороший дизайн — это незаметный дизайн.', 'Минимализм — это не пустота, а целенаправленный визуальный комфорт.'] }
+          ],
+          services: [
+            {
+              id: 'fullstack',
+              cat: 'web',
+              icon: '💻',
+              badge: 'Популярно',
+              title: 'Full-Stack Веб-платформы & SaaS',
+              tagline: 'Масштабируемая, безопасная и надежная архитектура',
+              desc: 'Разработка высоконагруженных SaaS-платформ и веб-систем с нуля. React/Next.js фронтенд, микросервисы Node.js и база данных PostgreSQL.',
+              features: ['Server-Side Rendering (SSR/SSG)', 'Безопасные REST & GraphQL API', 'Встроенная аналитика и админ-панель', 'CI/CD и автодеплой'],
+              tech: ['React', 'Next.js', 'TypeScript', 'Node.js', 'PostgreSQL', 'Docker'],
+              timeline: '2–4 недели'
+            },
+            {
+              id: 'ecommerce',
+              cat: 'ecommerce',
+              icon: '🛍️',
+              badge: 'Высокие продажи',
+              title: 'E-Commerce & Онлайн-магазины',
+              tagline: 'Скорость 0.4 сек и максимальная конверсия',
+              desc: 'Современные интернет-магазины с быстрой оплатой картами, мгновенным поиском, управлением складом и продуманным интерфейсом.',
+              features: ['Мгновенный поиск и фильтры', 'Интеграция банковских шлюзов (Stripe)', 'Автоматизация корзины и заказов', 'Управление складом и товарами'],
+              tech: ['Next.js', 'Tailwind CSS', 'Stripe', 'Redis', 'PostgreSQL'],
+              timeline: '2–3 недели'
+            },
+            {
+              id: 'uiux',
+              cat: 'design',
+              icon: '✨',
+              badge: 'Pixel-Perfect',
+              title: 'UI/UX Дизайн-системы & Frontend',
+              tagline: 'Эстетичный, интуитивный и интерактивный опыт',
+              desc: 'Перенос дизайна из Figma в чистый код с точностью до пикселя, разработка дизайн-систем, микроанимаций и адаптивность.',
+              features: ['Figma в Pixel-Perfect код', 'Поддержка Dark/Light тем', 'Плавные микроанимации', 'Стандарты доступности WCAG AA'],
+              tech: ['Tailwind CSS', 'Figma', 'Framer Motion', 'TypeScript'],
+              timeline: '1–2 недели'
+            },
+            {
+              id: 'mobile',
+              cat: 'mobile',
+              icon: '📱',
+              badge: 'Cross-Platform',
+              title: 'Мобильные Веб-приложения & PWA',
+              tagline: 'Установка в один клик без App Store и Google Play',
+              desc: 'Progressive Web Apps, работающие как нативные приложения на iOS и Android с поддержкой оффлайн-режима и push-уведомлений.',
+              features: ['Поддержка оффлайн-режима', 'Система Push-уведомлений', 'Установка на главный экран', 'Ультра-легкий вес приложения'],
+              tech: ['PWA', 'Service Workers', 'Web Manifest', 'React'],
+              timeline: '2–3 недели'
+            },
+            {
+              id: 'speed',
+              cat: 'consulting',
+              icon: '⚡',
+              badge: '95+ PageSpeed',
+              title: 'Оптимизация скорости & Core Web Vitals (SEO)',
+              tagline: 'Google PageSpeed 95+ и загрузка до 0.5 сек',
+              desc: 'Ускорение работы сайта для выхода в топ Google SEO и снижения показателя отказов пользователей.',
+              features: ['Оценка 95+ в Google PageSpeed', 'Оптимизация метрик LCP/FID/CLS', 'Сжатие изображений и ассетов', 'Серверное кэширование и Edge CDN'],
+              tech: ['Core Web Vitals', 'Lighthouse', 'Edge CDN', 'Brotli'],
+              timeline: '3–7 дней'
+            },
+            {
+              id: 'audit',
+              cat: 'consulting',
+              icon: '🛡️',
+              badge: 'Экспертный аудит',
+              title: 'Технический аудит, безопасность & код-ревью',
+              tagline: 'Глубокая диагностика существующих проектов',
+              desc: 'Анализ уязвимостей, проверка качества кода, устранение технического долга и подробный PDF-отчет с рекомендациями.',
+              features: ['Аудит безопасности', 'Рефакторинг кодовой базы', 'Архитектурный консалтинг', 'Подробный отчет в PDF'],
+              tech: ['Security Audit', 'SonarQube', 'Code Review', 'DevSecOps'],
+              timeline: '3–5 дней'
+            },
+            {
+              id: 'crm',
+              cat: 'web',
+              icon: '📊',
+              badge: 'Автоматизация',
+              title: 'CRM, ERP и внутренние дашборды',
+              tagline: 'Полная автоматизация бизнес-процессов',
+              desc: 'Индивидуальные панели управления под специфику вашего бизнеса с разделением ролей и аналитикой в реальном времени.',
+              features: ['Ролевой доступ (RBAC)', 'Графики и аналитика в реальном времени', 'Экспорт в Excel и PDF', 'Управление командой'],
+              tech: ['React', 'Express', 'PostgreSQL', 'Tailwind'],
+              timeline: '3–5 недель'
+            },
+            {
+              id: 'api',
+              cat: 'web',
+              icon: '🤖',
+              badge: 'API & AI',
+              title: 'Интеграция API & Решения с ИИ (AI)',
+              tagline: 'Интеграция внешних сервисов и моделей искусственного интеллекта',
+              desc: 'Подключение платежных систем, SMS-шлюзов, сервисов Google и внедрение генеративного ИИ в ваши продукты.',
+              features: ['Платежные и SMS шлюзы', 'Синхронизация с CRM и Google', 'Интеллектуальная обработка данных', 'Вебхуки и асинхронные потоки'],
+              tech: ['REST / GraphQL', 'Webhooks', 'Stripe', 'Gemini API'],
+              timeline: '1–2 недели'
+            }
           ]
         }
       };
+
+      let currentView = 'home';
+      let currentServicesCategory = 'all';
+
+      function navigateTo(view, anchor) {
+        currentView = view;
+        const homeView = document.getElementById('home-view');
+        const servicesView = document.getElementById('services-view');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+
+        if(mobileMenu) mobileMenu.classList.add('hidden');
+        if(mobileBtn) mobileBtn.classList.remove('menu-open');
+
+        if (view === 'services') {
+          if (homeView) homeView.classList.add('hidden');
+          if (servicesView) servicesView.classList.remove('hidden');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          history.pushState(null, '', '#/services');
+
+          document.querySelectorAll('.nav-item').forEach(item => {
+            if (item.getAttribute('data-target') === 'services') {
+              item.classList.add('nav-link-active');
+            } else {
+              item.classList.remove('nav-link-active');
+            }
+          });
+
+          renderServicesPage();
+
+          if (anchor) {
+            setTimeout(() => {
+              const el = document.getElementById('service-card-' + anchor);
+              if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 100);
+          }
+        } else {
+          if (servicesView) servicesView.classList.add('hidden');
+          if (homeView) homeView.classList.remove('hidden');
+          history.pushState(null, '', anchor ? '#' + anchor : '#/');
+
+          if (anchor) {
+            setTimeout(() => {
+              const targetEl = document.getElementById(anchor);
+              if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth' });
+            }, 60);
+          } else {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+        }
+      }
+
+      function renderServicesPage(filterList) {
+        const lData = localizedData[currentLang] || localizedData['az'];
+        const list = filterList || lData.services || [];
+        const grid = document.getElementById('services-catalog-grid');
+        if (!grid) return;
+
+        const orderText = currentLang === 'en' ? 'Discuss / Order Service' : currentLang === 'ru' ? 'Обсудить / Заказать' : 'Bu Xidməti Müzakirə Et';
+        const timelineText = currentLang === 'en' ? 'Timeline' : currentLang === 'ru' ? 'Срок' : 'Təhvil';
+        const deliverablesText = currentLang === 'en' ? 'Included Deliverables:' : currentLang === 'ru' ? 'Включено в пакет:' : 'Paketə Daxildir:';
+
+        grid.innerHTML = list.map(s => `
+          <div id="service-card-${s.id}" class="p-8 rounded-3xl bg-white dark:bg-neutral-900/80 border border-neutral-200/90 dark:border-neutral-800 hover:border-amber-400/60 transition-all duration-300 flex flex-col justify-between space-y-6 shadow-sm hover:shadow-xl hover:-translate-y-1 relative group">
+            
+            <div class="space-y-4">
+              <!-- Top Row: Icon & Badge -->
+              <div class="flex items-start justify-between gap-4">
+                <div class="w-14 h-14 rounded-2xl bg-amber-400/10 border border-amber-400/30 flex items-center justify-center text-amber-500 dark:text-amber-400 text-3xl group-hover:scale-110 transition-transform">
+                  ${s.icon}
+                </div>
+                <div class="flex flex-col items-end gap-1.5">
+                  <span class="text-[11px] font-mono font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-amber-400/15 text-amber-700 dark:text-amber-400 border border-amber-400/30">
+                    ${s.badge}
+                  </span>
+                  <span class="text-[11px] font-mono text-neutral-500 dark:text-neutral-400">
+                    ⏱ ${timelineText}: ${s.timeline}
+                  </span>
+                </div>
+              </div>
+
+              <!-- Title & Description -->
+              <div class="space-y-2">
+                <h3 class="text-xl font-bold text-neutral-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">${s.title}</h3>
+                <div class="text-xs text-amber-600 dark:text-amber-400 font-semibold">${s.tagline}</div>
+                <p class="text-xs sm:text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed pt-1">${s.desc}</p>
+              </div>
+
+              <!-- Deliverables Bullets -->
+              <div class="pt-3 border-t border-neutral-100 dark:border-neutral-800/80 space-y-2">
+                <div class="text-[11px] font-mono font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">${deliverablesText}</div>
+                <ul class="space-y-1.5 text-xs text-neutral-700 dark:text-neutral-300">
+                  ${s.features.map(f => `
+                    <li class="flex items-center gap-2">
+                      <span class="text-amber-500 dark:text-amber-400 text-sm font-bold">✓</span>
+                      <span>${f}</span>
+                    </li>
+                  `).join('')}
+                </ul>
+              </div>
+            </div>
+
+            <!-- Tech Stack & Order CTA -->
+            <div class="pt-4 border-t border-neutral-100 dark:border-neutral-800 space-y-4">
+              <div class="flex flex-wrap gap-1.5 text-[11px] font-mono text-neutral-600 dark:text-neutral-400">
+                ${s.tech.map(t => `<span class="px-2.5 py-1 rounded-md bg-neutral-100 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800">${t}</span>`).join('')}
+              </div>
+
+              <button onclick="orderSpecificService('${s.title.replace(/'/g, "\\'")}')" class="w-full py-3 px-4 rounded-xl text-xs font-bold uppercase tracking-wider text-neutral-950 bg-amber-400 hover:bg-amber-300 active:scale-98 transition-all flex items-center justify-center gap-2 shadow-sm shadow-amber-400/20">
+                <span>${orderText}</span>
+                <span>→</span>
+              </button>
+            </div>
+
+          </div>
+        `).join('');
+      }
+
+      function filterServicesCategory(cat) {
+        currentServicesCategory = cat;
+        document.querySelectorAll('#services-filter-tabs button').forEach(b => {
+          b.className = 'px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-full text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 transition-all';
+        });
+        const activeBtn = document.getElementById('scat-' + cat);
+        if(activeBtn) {
+          activeBtn.className = 'px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-full bg-amber-400 text-neutral-950 transition-all shadow-sm';
+        }
+
+        const lData = localizedData[currentLang] || localizedData['az'];
+        const all = lData.services || [];
+        const filtered = cat === 'all' ? all : all.filter(s => s.cat === cat);
+        renderServicesPage(filtered);
+      }
+
+      function filterServicesSearch() {
+        const query = (document.getElementById('services-search-input')?.value || '').toLowerCase().trim();
+        const lData = localizedData[currentLang] || localizedData['az'];
+        const all = lData.services || [];
+        
+        let list = currentServicesCategory === 'all' ? all : all.filter(s => s.cat === currentServicesCategory);
+        if (query) {
+          list = list.filter(s => 
+            s.title.toLowerCase().includes(query) || 
+            s.desc.toLowerCase().includes(query) || 
+            s.tagline.toLowerCase().includes(query) ||
+            s.tech.some(t => t.toLowerCase().includes(query))
+          );
+        }
+        renderServicesPage(list);
+      }
+
+      function orderSpecificService(serviceTitle) {
+        navigateTo('home', 'contact');
+        setTimeout(() => {
+          const msgInput = document.getElementById('form-message') || document.querySelector('textarea[name="message"]') || document.querySelector('#contact textarea');
+          if(msgInput) {
+            const prefix = currentLang === 'en' 
+              ? `Hello Camal, I would like to inquire about the "${serviceTitle}" service for my project.` 
+              : currentLang === 'ru' 
+              ? `Здравствуйте Джамал, я хотел бы обсудить услугу "${serviceTitle}" для своего проекта.` 
+              : `Salam Camal bəy, "${serviceTitle}" xidməti üzrə layihəmi müzakirə etmək və təklif almaq istərdim.`;
+            msgInput.value = prefix;
+            msgInput.focus();
+          }
+        }, 300);
+      }
 
       function init() {
         loadCmsSettings();
@@ -921,6 +1531,7 @@
         renderProjects(localizedData[currentLang].projects);
         renderExperience();
         renderArticles();
+        renderServicesPage();
         initScrollEffects();
 
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -932,6 +1543,20 @@
           if(menu) menu.classList.add('hidden');
           if(btn) btn.classList.remove('menu-open');
         }));
+
+        // Handle initial URL hash
+        if (location.hash === '#/services' || location.hash === '#services-page' || location.hash === '#services-view') {
+          navigateTo('services');
+        }
+
+        window.addEventListener('popstate', () => {
+          if (location.hash === '#/services' || location.hash === '#services-page' || location.hash === '#services-view') {
+            navigateTo('services');
+          } else {
+            const anchor = location.hash.replace('#', '').replace('/', '');
+            navigateTo('home', anchor);
+          }
+        });
       }
 
       function initScrollEffects() {
@@ -1102,6 +1727,7 @@
         renderProjects(lData.projects);
         renderExperience();
         renderArticles();
+        renderServicesPage();
       }
 
       function setLang(lang) {

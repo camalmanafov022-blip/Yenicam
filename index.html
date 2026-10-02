@@ -53,60 +53,148 @@
       .animate-spread-glow {
         animation: spreadGlow 3s ease-in-out infinite;
       }
+
+      /* The7 Elementor Creative Light Navigation Styles */
+      .nav-link-active {
+        color: #d97706 !important;
+      }
+      .dark .nav-link-active {
+        color: #fbbf24 !important;
+      }
+      .nav-link-active .nav-indicator {
+        transform: scaleX(1) !important;
+        background-color: #d97706 !important;
+      }
+      .dark .nav-link-active .nav-indicator {
+        background-color: #fbbf24 !important;
+      }
+
+      /* Animated Hamburger lines */
+      .menu-open #hbg-line-1 {
+        transform: translateY(6px) rotate(45deg);
+      }
+      .menu-open #hbg-line-2 {
+        opacity: 0;
+        transform: scaleX(0);
+      }
+      .menu-open #hbg-line-3 {
+        transform: translateY(-6px) rotate(-45deg);
+      }
+
+      /* Scroll margin for smooth anchor alignment */
+      section[id] {
+        scroll-margin-top: 88px;
+      }
     </style>
   </head>
   <body class="bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100 antialiased selection:bg-amber-400 selection:text-neutral-950 transition-colors duration-200">
 
-    <!-- Sticky Main Header -->
-    <header id="navbar" class="sticky top-0 z-40 bg-white/95 dark:bg-neutral-950/90 backdrop-blur-md border-b border-neutral-200 dark:border-neutral-800/80 transition-all duration-200">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-        <a href="#" class="flex items-center gap-3 group">
-          <div class="w-10 h-10 rounded-xl bg-amber-400 text-neutral-950 font-bold flex items-center justify-center text-base shadow-lg shadow-amber-400/20 group-hover:scale-105 transition-transform">
-            CM
+    <!-- The7 Creative Light Navigation Header -->
+    <header id="navbar" class="fixed top-0 inset-x-0 z-50 bg-white/90 dark:bg-neutral-950/90 backdrop-blur-xl border-b border-neutral-200/80 dark:border-neutral-800/80 transition-all duration-300">
+      <!-- Reading Progress Hairline Indicator -->
+      <div id="scroll-progress" class="absolute top-0 left-0 h-[2.5px] bg-gradient-to-r from-amber-500 via-amber-400 to-yellow-300 w-0 transition-all duration-75"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div id="navbar-container" class="flex items-center justify-between transition-all duration-300 py-4 sm:py-5">
+          <!-- Brand Zone -->
+          <a href="#" class="flex items-center gap-3.5 group shrink-0">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-amber-500 text-neutral-950 font-bold flex items-center justify-center text-sm shadow-md shadow-amber-500/20 group-hover:scale-105 group-hover:shadow-amber-500/40 transition-all duration-300">
+              CM
+            </div>
+            <div class="flex flex-col">
+              <span class="text-base sm:text-lg font-bold text-neutral-900 dark:text-white tracking-tight group-hover:text-amber-500 dark:group-hover:text-amber-400 transition-colors" data-profile-name>Camal Manafov</span>
+              <span class="text-[10px] sm:text-[11px] font-medium uppercase tracking-widest text-neutral-500 dark:text-neutral-400 font-mono -mt-0.5">Software Engineer</span>
+            </div>
+          </a>
+
+          <!-- Creative Light Desktop Navigation Menu -->
+          <nav class="hidden lg:flex items-center gap-1 xl:gap-2">
+            <a href="#about" class="nav-item group relative px-3.5 py-2 text-[13px] font-bold tracking-wider uppercase text-neutral-700 dark:text-neutral-300 hover:text-amber-600 dark:hover:text-amber-400 transition-colors" data-target="about">
+              <span data-i18n-nav-about>Haqqımda</span>
+              <span class="nav-indicator absolute bottom-0 left-3 right-3 h-[2px] bg-amber-500 dark:bg-amber-400 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></span>
+            </a>
+            <a href="#services" class="nav-item group relative px-3.5 py-2 text-[13px] font-bold tracking-wider uppercase text-neutral-700 dark:text-neutral-300 hover:text-amber-600 dark:hover:text-amber-400 transition-colors" data-target="services">
+              <span data-i18n-nav-services>Xidmətlər</span>
+              <span class="nav-indicator absolute bottom-0 left-3 right-3 h-[2px] bg-amber-500 dark:bg-amber-400 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></span>
+            </a>
+            <a href="#skills" class="nav-item group relative px-3.5 py-2 text-[13px] font-bold tracking-wider uppercase text-neutral-700 dark:text-neutral-300 hover:text-amber-600 dark:hover:text-amber-400 transition-colors" data-target="skills">
+              <span data-i18n-nav-skills>Bacarıqlar</span>
+              <span class="nav-indicator absolute bottom-0 left-3 right-3 h-[2px] bg-amber-500 dark:bg-amber-400 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></span>
+            </a>
+            <a href="#projects" class="nav-item group relative px-3.5 py-2 text-[13px] font-bold tracking-wider uppercase text-neutral-700 dark:text-neutral-300 hover:text-amber-600 dark:hover:text-amber-400 transition-colors" data-target="projects">
+              <span data-i18n-nav-projects>Portfel</span>
+              <span class="nav-indicator absolute bottom-0 left-3 right-3 h-[2px] bg-amber-500 dark:bg-amber-400 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></span>
+            </a>
+            <a href="#experience" class="nav-item group relative px-3.5 py-2 text-[13px] font-bold tracking-wider uppercase text-neutral-700 dark:text-neutral-300 hover:text-amber-600 dark:hover:text-amber-400 transition-colors" data-target="experience">
+              <span data-i18n-nav-experience>Təcrübə</span>
+              <span class="nav-indicator absolute bottom-0 left-3 right-3 h-[2px] bg-amber-500 dark:bg-amber-400 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></span>
+            </a>
+            <a href="#articles" class="nav-item group relative px-3.5 py-2 text-[13px] font-bold tracking-wider uppercase text-neutral-700 dark:text-neutral-300 hover:text-amber-600 dark:hover:text-amber-400 transition-colors" data-target="articles">
+              <span data-i18n-nav-articles>Məqalələr</span>
+              <span class="nav-indicator absolute bottom-0 left-3 right-3 h-[2px] bg-amber-500 dark:bg-amber-400 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></span>
+            </a>
+            <a href="#contact" class="nav-item group relative px-3.5 py-2 text-[13px] font-bold tracking-wider uppercase text-neutral-700 dark:text-neutral-300 hover:text-amber-600 dark:hover:text-amber-400 transition-colors" data-target="contact">
+              <span data-i18n-nav-contact>Əlaqə</span>
+              <span class="nav-indicator absolute bottom-0 left-3 right-3 h-[2px] bg-amber-500 dark:bg-amber-400 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></span>
+            </a>
+          </nav>
+
+          <!-- Right Action Zone -->
+          <div class="flex items-center gap-2.5 sm:gap-3">
+            <!-- Language Switcher Pill (The7 style) -->
+            <div class="flex items-center gap-1 bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-full p-1 shadow-inner">
+              <button onclick="setLang('az')" id="lang-az" class="px-2.5 py-1 text-xs font-mono font-bold rounded-full transition-all text-neutral-600 dark:text-neutral-400 hover:text-neutral-950 dark:hover:text-white">AZ</button>
+              <button onclick="setLang('ru')" id="lang-ru" class="px-2.5 py-1 text-xs font-mono font-bold rounded-full transition-all text-neutral-600 dark:text-neutral-400 hover:text-neutral-950 dark:hover:text-white">RU</button>
+              <button onclick="setLang('en')" id="lang-en" class="px-2.5 py-1 text-xs font-mono font-bold rounded-full transition-all text-neutral-600 dark:text-neutral-400 hover:text-neutral-950 dark:hover:text-white">EN</button>
+            </div>
+
+            <!-- The7 Creative CTA Button -->
+            <a href="#contact" class="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 text-xs font-bold uppercase tracking-wider text-neutral-950 bg-amber-400 hover:bg-amber-300 active:scale-95 transition-all duration-200 rounded-full shadow-sm shadow-amber-400/20">
+              <span data-i18n-nav-contact>Əlaqə</span>
+              <span>→</span>
+            </a>
+
+            <!-- The7 Animated Mobile Hamburger Button -->
+            <button id="mobile-menu-btn" aria-label="Toggle Menu" class="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1 rounded-xl bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-neutral-800 dark:text-neutral-200 hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors">
+              <span id="hbg-line-1" class="w-5 h-[2px] bg-current rounded-full transition-all duration-300 origin-center"></span>
+              <span id="hbg-line-2" class="w-5 h-[2px] bg-current rounded-full transition-all duration-300"></span>
+              <span id="hbg-line-3" class="w-5 h-[2px] bg-current rounded-full transition-all duration-300 origin-center"></span>
+            </button>
           </div>
-          <div>
-            <div class="text-base font-bold text-neutral-900 dark:text-white tracking-tight" data-profile-name>Camal Manafov</div>
-          </div>
-        </a>
-
-        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-neutral-600 dark:text-neutral-300">
-          <a href="#about" class="hover:text-amber-400 transition-colors" data-i18n-nav-about>Haqqımda</a>
-          <a href="#services" class="hover:text-amber-400 transition-colors" data-i18n-nav-services>Xidmətlər</a>
-          <a href="#skills" class="hover:text-amber-400 transition-colors" data-i18n-nav-skills>Bacarıqlar</a>
-          <a href="#projects" class="hover:text-amber-400 transition-colors" data-i18n-nav-projects>Portfel</a>
-          <a href="#experience" class="hover:text-amber-400 transition-colors" data-i18n-nav-experience>Təcrübə</a>
-          <a href="#articles" class="hover:text-amber-400 transition-colors" data-i18n-nav-articles>Məqalələr</a>
-          <a href="#contact" class="hover:text-amber-400 transition-colors" data-i18n-nav-contact>Əlaqə</a>
-        </nav>
-
-        <div class="flex items-center gap-3">
-          <div class="flex items-center gap-1 bg-neutral-100 dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-800 rounded-lg p-1">
-            <button onclick="setLang('az')" id="lang-az" class="px-2.5 py-1 text-xs font-mono font-bold rounded-md transition-colors text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white">AZ</button>
-            <button onclick="setLang('ru')" id="lang-ru" class="px-2.5 py-1 text-xs font-mono font-bold rounded-md transition-colors text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white">RU</button>
-            <button onclick="setLang('en')" id="lang-en" class="px-2.5 py-1 text-xs font-mono font-bold rounded-md transition-colors text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white">EN</button>
-          </div>
-
-
-
-
-
-
-          <button id="mobile-menu-btn" class="md:hidden p-2 text-neutral-300 hover:text-white rounded-lg hover:bg-neutral-900">
-            ☰
-          </button>
         </div>
       </div>
 
-      <!-- Mobile Navigation Drawer -->
-      <div id="mobile-menu" class="hidden md:hidden bg-neutral-950 border-b border-neutral-800 px-6 py-4 space-y-3">
-        <nav class="flex flex-col space-y-3 text-sm font-medium">
-          <a href="#about" class="mobile-link py-2 text-neutral-300 hover:text-amber-400 border-b border-neutral-900" data-i18n-nav-about>Haqqımda</a>
-          <a href="#services" class="mobile-link py-2 text-neutral-300 hover:text-amber-400 border-b border-neutral-900" data-i18n-nav-services>Xidmətlər</a>
-          <a href="#skills" class="mobile-link py-2 text-neutral-300 hover:text-amber-400 border-b border-neutral-900" data-i18n-nav-skills>Bacarıqlar</a>
-          <a href="#projects" class="mobile-link py-2 text-neutral-300 hover:text-amber-400 border-b border-neutral-900" data-i18n-nav-projects>Portfel</a>
-          <a href="#experience" class="mobile-link py-2 text-neutral-300 hover:text-amber-400 border-b border-neutral-900" data-i18n-nav-experience>Təcrübə</a>
-          <a href="#articles" class="mobile-link py-2 text-neutral-300 hover:text-amber-400 border-b border-neutral-900" data-i18n-nav-articles>Məqalələr</a>
-          <a href="#contact" class="mobile-link py-2 text-amber-400 font-semibold" data-i18n-nav-contact>Əlaqə</a>
+      <!-- The7 Creative Light Mobile Dropdown Drawer -->
+      <div id="mobile-menu" class="hidden lg:hidden bg-white/95 dark:bg-neutral-950/95 backdrop-blur-2xl border-b border-neutral-200 dark:border-neutral-800 shadow-2xl transition-all duration-300">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex flex-col space-y-1 divide-y divide-neutral-100 dark:divide-neutral-900">
+          <a href="#about" class="mobile-link py-3 flex items-center justify-between text-sm font-bold uppercase tracking-wider text-neutral-700 dark:text-neutral-200 hover:text-amber-500 dark:hover:text-amber-400 transition-colors" data-target="about">
+            <span data-i18n-nav-about>Haqqımda</span>
+            <span class="text-xs text-neutral-400 font-mono">01</span>
+          </a>
+          <a href="#services" class="mobile-link py-3 flex items-center justify-between text-sm font-bold uppercase tracking-wider text-neutral-700 dark:text-neutral-200 hover:text-amber-500 dark:hover:text-amber-400 transition-colors" data-target="services">
+            <span data-i18n-nav-services>Xidmətlər</span>
+            <span class="text-xs text-neutral-400 font-mono">02</span>
+          </a>
+          <a href="#skills" class="mobile-link py-3 flex items-center justify-between text-sm font-bold uppercase tracking-wider text-neutral-700 dark:text-neutral-200 hover:text-amber-500 dark:hover:text-amber-400 transition-colors" data-target="skills">
+            <span data-i18n-nav-skills>Bacarıqlar</span>
+            <span class="text-xs text-neutral-400 font-mono">03</span>
+          </a>
+          <a href="#projects" class="mobile-link py-3 flex items-center justify-between text-sm font-bold uppercase tracking-wider text-neutral-700 dark:text-neutral-200 hover:text-amber-500 dark:hover:text-amber-400 transition-colors" data-target="projects">
+            <span data-i18n-nav-projects>Portfel</span>
+            <span class="text-xs text-neutral-400 font-mono">04</span>
+          </a>
+          <a href="#experience" class="mobile-link py-3 flex items-center justify-between text-sm font-bold uppercase tracking-wider text-neutral-700 dark:text-neutral-200 hover:text-amber-500 dark:hover:text-amber-400 transition-colors" data-target="experience">
+            <span data-i18n-nav-experience>Təcrübə</span>
+            <span class="text-xs text-neutral-400 font-mono">05</span>
+          </a>
+          <a href="#articles" class="mobile-link py-3 flex items-center justify-between text-sm font-bold uppercase tracking-wider text-neutral-700 dark:text-neutral-200 hover:text-amber-500 dark:hover:text-amber-400 transition-colors" data-target="articles">
+            <span data-i18n-nav-articles>Məqalələr</span>
+            <span class="text-xs text-neutral-400 font-mono">06</span>
+          </a>
+          <a href="#contact" class="mobile-link py-3 flex items-center justify-between text-sm font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 transition-colors" data-target="contact">
+            <span data-i18n-nav-contact>Əlaqə</span>
+            <span class="text-xs text-amber-600 dark:text-amber-400 font-mono">07 →</span>
+          </a>
         </nav>
       </div>
     </header>
@@ -833,13 +921,95 @@
         renderProjects(localizedData[currentLang].projects);
         renderExperience();
         renderArticles();
+        initScrollEffects();
 
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         if(mobileMenuBtn) mobileMenuBtn.addEventListener('click', toggleMobileMenu);
 
         document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', () => {
-          document.getElementById('mobile-menu').classList.add('hidden');
+          const menu = document.getElementById('mobile-menu');
+          const btn = document.getElementById('mobile-menu-btn');
+          if(menu) menu.classList.add('hidden');
+          if(btn) btn.classList.remove('menu-open');
         }));
+      }
+
+      function initScrollEffects() {
+        const navbar = document.getElementById('navbar');
+        const navContainer = document.getElementById('navbar-container');
+        const scrollProgress = document.getElementById('scroll-progress');
+        const sections = ['about', 'services', 'skills', 'projects', 'experience', 'articles', 'contact'];
+        const navItems = document.querySelectorAll('.nav-item');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function onScroll() {
+          const scrollY = window.scrollY || window.pageYOffset;
+          const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+          // Reading progress bar
+          if (scrollProgress && docHeight > 0) {
+            const progress = Math.min(100, Math.max(0, (scrollY / docHeight) * 100));
+            scrollProgress.style.width = progress + '%';
+          }
+
+          // Header height compression & elevation
+          if (scrollY > 30) {
+            if (navContainer) {
+              navContainer.classList.remove('py-4', 'sm:py-5');
+              navContainer.classList.add('py-2.5', 'sm:py-3');
+            }
+            if (navbar) {
+              navbar.classList.add('shadow-md', 'bg-white/95', 'dark:bg-neutral-950/95');
+              navbar.classList.remove('bg-white/90', 'dark:bg-neutral-950/90');
+            }
+          } else {
+            if (navContainer) {
+              navContainer.classList.add('py-4', 'sm:py-5');
+              navContainer.classList.remove('py-2.5', 'sm:py-3');
+            }
+            if (navbar) {
+              navbar.classList.remove('shadow-md', 'bg-white/95', 'dark:bg-neutral-950/95');
+              navbar.classList.add('bg-white/90', 'dark:bg-neutral-950/90');
+            }
+          }
+
+          // Real-time Scrollspy
+          let currentActive = '';
+          const scrollPosition = scrollY + 160;
+
+          for (let i = sections.length - 1; i >= 0; i--) {
+            const secId = sections[i];
+            const el = document.getElementById(secId);
+            if (el) {
+              const top = el.offsetTop;
+              if (scrollPosition >= top) {
+                currentActive = secId;
+                break;
+              }
+            }
+          }
+
+          navItems.forEach(item => {
+            const target = item.getAttribute('data-target');
+            if (target === currentActive) {
+              item.classList.add('nav-link-active');
+            } else {
+              item.classList.remove('nav-link-active');
+            }
+          });
+
+          mobileLinks.forEach(link => {
+            const target = link.getAttribute('data-target');
+            if (target === currentActive) {
+              link.classList.add('text-amber-500', 'dark:text-amber-400', 'font-extrabold');
+            } else {
+              link.classList.remove('font-extrabold');
+            }
+          });
+        }
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
       }
 
       let currentTheme = localStorage.getItem('camal_theme') || 'light';
@@ -897,9 +1067,9 @@
           const btn = document.getElementById('lang-' + l);
           if (btn) {
             if (l === currentLang) {
-              btn.className = 'px-2.5 py-1 text-xs font-mono font-bold rounded-md bg-amber-400 text-neutral-950 transition-colors';
+              btn.className = 'px-2.5 py-1 text-xs font-mono font-bold rounded-full bg-amber-400 text-neutral-950 shadow-sm transition-all';
             } else {
-              btn.className = 'px-2.5 py-1 text-xs font-mono font-bold rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors';
+              btn.className = 'px-2.5 py-1 text-xs font-mono font-bold rounded-full text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-all';
             }
           }
         });
@@ -1088,7 +1258,18 @@
       function closeBegetGuide() { document.getElementById('beget-modal').classList.add('hidden'); }
 
       function toggleMobileMenu() {
-        document.getElementById('mobile-menu').classList.toggle('hidden');
+        const menu = document.getElementById('mobile-menu');
+        const btn = document.getElementById('mobile-menu-btn');
+        if (!menu || !btn) return;
+
+        const isHidden = menu.classList.contains('hidden');
+        if (isHidden) {
+          menu.classList.remove('hidden');
+          btn.classList.add('menu-open');
+        } else {
+          menu.classList.add('hidden');
+          btn.classList.remove('menu-open');
+        }
       }
 
       function copyEmail() {

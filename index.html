@@ -484,16 +484,16 @@
       <!-- END HOME VIEW CONTAINER -->
 
       <!-- DEDICATED SERVICES PAGE VIEW -->
-      <div id="services-view" class="hidden pt-24 pb-20 md:pt-32 md:pb-28">
+      <div id="services-view" class="hidden pt-16 sm:pt-20 md:pt-24 pb-16 md:pb-24">
         
         <!-- Services Page Hero & Navigation Header -->
-        <section class="relative py-12 md:py-16 border-b border-neutral-200 dark:border-neutral-900 bg-white dark:bg-neutral-950 overflow-hidden">
+        <section class="relative pt-4 pb-8 sm:pt-6 sm:pb-10 md:pt-8 md:pb-12 border-b border-neutral-200 dark:border-neutral-900 bg-white dark:bg-neutral-950 overflow-hidden">
           <div class="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-amber-500/10 blur-[140px] rounded-full" aria-hidden="true"></div>
           
           <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <!-- Breadcrumb and Back Action -->
-            <div class="flex flex-wrap items-center justify-between gap-4 mb-8">
-              <button onclick="navigateTo('home')" class="group inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider text-neutral-700 dark:text-neutral-300 bg-neutral-100 dark:bg-neutral-900 hover:bg-amber-400 hover:text-neutral-950 border border-neutral-200 dark:border-neutral-800 transition-all">
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-4 sm:mb-5">
+              <button onclick="navigateTo('home')" class="group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-neutral-700 dark:text-neutral-300 bg-neutral-100 dark:bg-neutral-900 hover:bg-amber-400 hover:text-neutral-950 border border-neutral-200 dark:border-neutral-800 transition-all">
                 <span class="group-hover:-translate-x-1 transition-transform">←</span>
                 <span data-i18n="btnBackToHome">Ana Səhifəyə Qayıt</span>
               </button>
@@ -505,22 +505,22 @@
               </div>
             </div>
 
-            <!-- Page Title Header -->
-            <div class="max-w-4xl space-y-5">
-              <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-400/10 border border-amber-400/30 text-amber-600 dark:text-amber-400 text-xs font-mono font-semibold">
+            <!-- Page Title Header (Lifted Up) -->
+            <div class="max-w-4xl space-y-3.5 sm:space-y-4 -mt-1">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/10 border border-amber-400/30 text-amber-600 dark:text-amber-400 text-xs font-mono font-semibold">
                 <span>✦</span>
                 <span data-i18n="servicesPageBadge">Tam Spektrli Mühəndislik & Veb Həlləri</span>
               </div>
-              <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-neutral-900 dark:text-white leading-tight">
+              <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-neutral-900 dark:text-white leading-tight">
                 Biznesinizi Rəqəmsal Zirvəyə Qaldıran <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 via-amber-500 to-amber-300 dark:from-amber-400 dark:via-amber-300 dark:to-yellow-200">Bütün Xidmətlər</span>
               </h1>
-              <p class="text-base sm:text-lg text-neutral-600 dark:text-neutral-300 max-w-3xl leading-relaxed" data-i18n="servicesPageSub">
+              <p class="text-sm sm:text-base text-neutral-600 dark:text-neutral-300 max-w-3xl leading-relaxed" data-i18n="servicesPageSub">
                 Mürəkkəb SaaS platformalarından tutmuş, yüksək konversiyalı e-ticarət mağazalarına, mobil PWA tətbiqlərinə və texniki auditə qədər hər bir xidmət ən yüksək kod və sürət standartları ilə icra olunur.
               </p>
             </div>
 
             <!-- Interactive Filters & Search -->
-            <div class="mt-10 pt-8 border-t border-neutral-200 dark:border-neutral-900 flex flex-col md:flex-row md:items-center justify-between gap-6">
+            <div class="mt-6 pt-5 sm:mt-8 sm:pt-6 border-t border-neutral-200 dark:border-neutral-900 flex flex-col md:flex-row md:items-center justify-between gap-5">
               <!-- Category Filter Buttons -->
               <div class="flex flex-wrap items-center gap-2" id="services-filter-tabs">
                 <button onclick="filterServicesCategory('all')" id="scat-all" class="px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-full bg-amber-400 text-neutral-950 transition-all shadow-sm">Hamısı (8)</button>

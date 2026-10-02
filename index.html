@@ -28,23 +28,32 @@
       ::-webkit-scrollbar-track { background: #09090b; }
       ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 4px; }
       ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+      @keyframes wavyEntrance {
+        0% { opacity: 0; transform: translateY(20px) skewX(-2deg); }
+        60% { opacity: 1; transform: translateY(-4px) skewX(1deg); }
+        100% { opacity: 1; transform: translateY(0) skewX(0); }
+      }
+      .wave-animate {
+        animation: wavyEntrance 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+      }
     </style>
   </head>
-  <body class="bg-neutral-950 text-neutral-100 antialiased selection:bg-amber-400 selection:text-neutral-950">
+  <body class="bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100 antialiased selection:bg-amber-400 selection:text-neutral-950 transition-colors duration-200">
 
     <!-- Sticky Main Header -->
-    <header id="navbar" class="sticky top-0 z-40 bg-neutral-950/90 backdrop-blur-md border-b border-neutral-800/80 transition-all duration-200">
+    <header id="navbar" class="sticky top-0 z-40 bg-white/95 dark:bg-neutral-950/90 backdrop-blur-md border-b border-neutral-200 dark:border-neutral-800/80 transition-all duration-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         <a href="#" class="flex items-center gap-3 group">
           <div class="w-10 h-10 rounded-xl bg-amber-400 text-neutral-950 font-bold flex items-center justify-center text-base shadow-lg shadow-amber-400/20 group-hover:scale-105 transition-transform">
             CM
           </div>
           <div>
-            <div class="text-base font-bold text-white tracking-tight" data-profile-name>Camal Manafov</div>
+            <div class="text-base font-bold text-neutral-900 dark:text-white tracking-tight" data-profile-name>Camal Manafov</div>
           </div>
         </a>
 
-        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-neutral-300">
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-neutral-600 dark:text-neutral-300">
           <a href="#about" class="hover:text-amber-400 transition-colors" data-i18n-nav-about>Haqqımda</a>
           <a href="#services" class="hover:text-amber-400 transition-colors" data-i18n-nav-services>Xidmətlər</a>
           <a href="#skills" class="hover:text-amber-400 transition-colors" data-i18n-nav-skills>Bacarıqlar</a>
@@ -55,11 +64,16 @@
         </nav>
 
         <div class="flex items-center gap-3">
-          <div class="flex items-center gap-1 bg-neutral-900 border border-neutral-800 rounded-lg p-1">
-            <button onclick="setLang('az')" id="lang-az" class="px-2.5 py-1 text-xs font-mono font-bold rounded-md transition-colors text-neutral-400 hover:text-white">AZ</button>
-            <button onclick="setLang('ru')" id="lang-ru" class="px-2.5 py-1 text-xs font-mono font-bold rounded-md transition-colors text-neutral-400 hover:text-white">RU</button>
-            <button onclick="setLang('en')" id="lang-en" class="px-2.5 py-1 text-xs font-mono font-bold rounded-md transition-colors text-neutral-400 hover:text-white">EN</button>
+          <div class="flex items-center gap-1 bg-neutral-100 dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-800 rounded-lg p-1">
+            <button onclick="setLang('az')" id="lang-az" class="px-2.5 py-1 text-xs font-mono font-bold rounded-md transition-colors text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white">AZ</button>
+            <button onclick="setLang('ru')" id="lang-ru" class="px-2.5 py-1 text-xs font-mono font-bold rounded-md transition-colors text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white">RU</button>
+            <button onclick="setLang('en')" id="lang-en" class="px-2.5 py-1 text-xs font-mono font-bold rounded-md transition-colors text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white">EN</button>
           </div>
+
+          <button onclick="toggleTheme()" id="theme-toggle-btn" class="flex items-center gap-1 px-2.5 py-1.5 text-xs font-semibold rounded-lg bg-neutral-100 dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-800 text-neutral-800 dark:text-neutral-200 hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors" title="Ağ / Qara Rejim">
+            <span id="theme-icon">☀️</span>
+            <span id="theme-text" class="hidden sm:inline">Ağ</span>
+          </button>
 
           <button id="edit-profile-btn" class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-neutral-400 hover:text-white bg-neutral-900/50 hover:bg-neutral-800 border border-neutral-800 rounded-lg transition-colors">
             <span>⚙️</span>
@@ -94,22 +108,22 @@
     <main class="flex-1">
 
       <!-- Hero Section -->
-      <section class="relative pt-24 pb-20 md:pt-36 md:pb-32 overflow-hidden border-b border-neutral-900 bg-gradient-to-b from-neutral-900/40 via-neutral-950 to-neutral-950">
+      <section class="relative pt-24 pb-20 md:pt-36 md:pb-32 overflow-hidden border-b border-neutral-200 dark:border-neutral-900 bg-white dark:bg-neutral-950">
         <div class="pointer-events-none absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-amber-500/10 blur-[160px] rounded-full" aria-hidden="true"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
             
             <div class="lg:col-span-7 space-y-8">
-              <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-400/10 border border-amber-400/30 text-amber-400 text-xs font-mono font-semibold">
+              <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-400/10 border border-amber-400/30 text-amber-600 dark:text-amber-400 text-xs font-mono font-semibold">
                 <span>✦</span>
                 <span data-i18n-hero-badge>Apex Digital Engineering & Architecture</span>
               </div>
 
               <div class="space-y-4">
-                <h1 class="text-4xl sm:text-6xl font-bold tracking-tight text-white leading-[1.12]" data-i18n-hero-title>
-                  Gələcəyin Veb Həlləri & <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-200">Mühəndislik Sənəti</span>
+                <h1 class="text-4xl sm:text-6xl font-bold tracking-tight text-neutral-900 dark:text-white leading-[1.12] wave-animate" data-i18n-hero-title>
+                  Gələcəyin Veb Həlləri & <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-amber-400 dark:from-amber-400 dark:to-amber-200">Mühəndislik Sənəti</span>
                 </h1>
-                <p class="text-base sm:text-lg text-neutral-300 max-w-2xl leading-relaxed font-normal" data-i18n="heroSub" data-i18n-hero-subtitle>
+                <p class="text-base sm:text-lg text-neutral-600 dark:text-neutral-300 max-w-2xl leading-relaxed font-normal" data-i18n="heroSub" data-i18n-hero-subtitle>
                   Biznesinizi rəqəmsal dünyada zirvəyə daşıyan, sürətli, təhlükəsiz və qüsursuz interfeysə malik veb platformalar və sistemlər qururam.
                 </p>
               </div>
@@ -119,25 +133,25 @@
                   <span data-i18n-btn-projects>Seçilmiş İşlərə Bax</span>
                   <span>→</span>
                 </a>
-                <a href="#contact" class="inline-flex items-center gap-2.5 px-7 py-3.5 text-sm font-semibold text-neutral-200 hover:text-white bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 rounded-xl transition-all">
-                  <span class="text-amber-400">💬</span>
+                <a href="#contact" class="inline-flex items-center gap-2.5 px-7 py-3.5 text-sm font-semibold text-neutral-800 dark:text-neutral-200 hover:text-neutral-950 dark:hover:text-white bg-neutral-100 dark:bg-neutral-900 hover:bg-neutral-200 dark:hover:bg-neutral-800 border border-neutral-300 dark:border-neutral-800 rounded-xl transition-all">
+                  <span class="text-amber-500 dark:text-amber-400">💬</span>
                   <span data-i18n-btn-consult>Konsultasiya Al</span>
                 </a>
               </div>
 
               <!-- Trust Stats Bar -->
-              <div class="pt-8 border-t border-neutral-900 grid grid-cols-3 gap-6 max-w-lg">
-                <div class="p-4 rounded-2xl bg-neutral-900/40 border border-neutral-800/80">
-                  <div class="text-2xl sm:text-3xl font-bold font-mono text-white tabular-nums">5+</div>
-                  <div class="text-xs text-neutral-400 uppercase tracking-wider mt-1" data-i18n-stat-exp>İl Təcrübə</div>
+              <div class="pt-8 border-t border-neutral-200 dark:border-neutral-900 grid grid-cols-3 gap-6 max-w-lg">
+                <div class="p-4 rounded-2xl bg-neutral-50 dark:bg-neutral-900/40 border border-neutral-200 dark:border-neutral-800/80 shadow-sm">
+                  <div class="text-2xl sm:text-3xl font-bold font-mono text-neutral-900 dark:text-white tabular-nums">5+</div>
+                  <div class="text-xs text-neutral-500 dark:text-neutral-400 uppercase tracking-wider mt-1" data-i18n-stat-exp>İl Təcrübə</div>
                 </div>
-                <div class="p-4 rounded-2xl bg-neutral-900/40 border border-neutral-800/80">
-                  <div class="text-2xl sm:text-3xl font-bold font-mono text-white tabular-nums">28+</div>
-                  <div class="text-xs text-neutral-400 uppercase tracking-wider mt-1" data-i18n-stat-projects>Uğurlu Layihə</div>
+                <div class="p-4 rounded-2xl bg-neutral-50 dark:bg-neutral-900/40 border border-neutral-200 dark:border-neutral-800/80 shadow-sm">
+                  <div class="text-2xl sm:text-3xl font-bold font-mono text-neutral-900 dark:text-white tabular-nums">28+</div>
+                  <div class="text-xs text-neutral-500 dark:text-neutral-400 uppercase tracking-wider mt-1" data-i18n-stat-projects>Uğurlu Layihə</div>
                 </div>
-                <div class="p-4 rounded-2xl bg-neutral-900/40 border border-neutral-800/80">
-                  <div class="text-2xl sm:text-3xl font-bold font-mono text-amber-400 tabular-nums">100%</div>
-                  <div class="text-xs text-neutral-400 uppercase tracking-wider mt-1" data-i18n="statSatis" data-i18n-stat-satisfaction>Keyfiyyət</div>
+                <div class="p-4 rounded-2xl bg-neutral-50 dark:bg-neutral-900/40 border border-neutral-200 dark:border-neutral-800/80 shadow-sm">
+                  <div class="text-2xl sm:text-3xl font-bold font-mono text-amber-600 dark:text-amber-400 tabular-nums">100%</div>
+                  <div class="text-xs text-neutral-500 dark:text-neutral-400 uppercase tracking-wider mt-1" data-i18n="statSatis" data-i18n-stat-satisfaction>Keyfiyyət</div>
                 </div>
               </div>
             </div>
@@ -146,14 +160,14 @@
             <div class="lg:col-span-5 flex justify-center">
               <div class="relative w-full max-w-md">
                 <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-amber-500 to-amber-200 opacity-30 blur-xl"></div>
-                <div class="relative rounded-2xl overflow-hidden border border-neutral-800 bg-neutral-900 shadow-2xl p-2">
-                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&auto=format&fit=crop&q=80" alt="Camal Manafov" class="w-full aspect-4/3 object-cover rounded-xl object-top" />
-                  <div class="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-neutral-950/90 backdrop-blur-md border border-neutral-800 flex items-center justify-between">
+                <div class="relative rounded-2xl overflow-hidden border-0 bg-transparent shadow-none p-0">
+                  <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&auto=format&fit=crop&q=80" alt="Camal Manafov" class="w-full aspect-4/3 object-cover rounded-xl object-top shadow-xl" />
+                  <div class="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-white/90 dark:bg-neutral-950/90 backdrop-blur-md border border-neutral-200 dark:border-neutral-800 flex items-center justify-between shadow-lg">
                     <div>
-                      <div class="text-sm font-bold text-white" data-profile-name>Camal Manafov</div>
-                      <div class="text-xs text-amber-400 font-mono" data-i18n-hero-card-sub>Lead Full-Stack Engineer</div>
+                      <div class="text-sm font-bold text-neutral-900 dark:text-white" data-profile-name>Camal Manafov</div>
+                      <div class="text-xs text-amber-600 dark:text-amber-400 font-mono" data-i18n-hero-card-sub>Lead Full-Stack Engineer</div>
                     </div>
-                    <div class="w-10 h-10 rounded-xl bg-amber-400/10 border border-amber-400/30 flex items-center justify-center text-amber-400 text-lg">✦</div>
+                    <div class="w-10 h-10 rounded-xl bg-amber-400/10 border border-amber-400/30 flex items-center justify-center text-amber-600 dark:text-amber-400 text-lg">✦</div>
                   </div>
                 </div>
               </div>
@@ -164,34 +178,34 @@
       </section>
 
       <!-- Services / Expertise Grid -->
-      <section id="services" class="py-20 md:py-28 border-b border-neutral-900 bg-neutral-950">
+      <section id="services" class="py-20 md:py-28 border-b border-neutral-200 dark:border-neutral-900 bg-neutral-50 dark:bg-neutral-950">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <span class="text-xs font-mono uppercase tracking-widest text-amber-400 bg-amber-400/10 px-3 py-1 rounded-full border border-amber-400/20" data-i18n-srv-tag>Peşəkar Xidmətlər</span>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white" data-i18n-srv-title>Biznesinizi Böyüdən Xüsusi Həllər</h2>
-            <p class="text-neutral-400 text-sm sm:text-base" data-i18n-srv-desc>Yüksək performanslı veb tətbiqlərdən tutmuş mürəkkəb rəqəmsal arxitekturalara qədər tam spektrli mühəndislik xidmətləri.</p>
+            <span class="text-xs font-mono uppercase tracking-widest text-amber-600 dark:text-amber-400 bg-amber-400/10 px-3 py-1 rounded-full border border-amber-400/20" data-i18n-srv-tag>Peşəkar Xidmətlər</span>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-neutral-900 dark:text-white" data-i18n-srv-title>Biznesinizi Böyüdən Xüsusi Həllər</h2>
+            <p class="text-neutral-600 dark:text-neutral-400 text-sm sm:text-base" data-i18n-srv-desc>Yüksək performanslı veb tətbiqlərdən tutmuş mürəkkəb rəqəmsal arxitekturalara qədər tam spektrli mühəndislik xidmətləri.</p>
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="p-8 rounded-2xl bg-neutral-900/50 border border-neutral-800 hover:border-amber-400/50 transition-all group space-y-4">
-              <div class="w-14 h-14 rounded-2xl bg-amber-400/10 border border-amber-400/30 flex items-center justify-center text-amber-400 text-2xl group-hover:scale-110 transition-transform">💻</div>
-              <h3 class="text-xl font-bold text-white" data-i18n-s1-title>Full-Stack Veb Tətbiqlər</h3>
-              <p class="text-sm text-neutral-400 leading-relaxed" data-i18n-s1-desc>React, Next.js və Node.js üzərindən sürətli, etibarlı və genişlənə bilən müasir platformaların hazırlanması.</p>
-              <div class="pt-2 text-xs font-mono text-amber-400 flex items-center gap-1">Daha ətraflı →</div>
+            <div class="p-8 rounded-2xl bg-white dark:bg-neutral-900/50 border border-neutral-200 dark:border-neutral-800 hover:border-amber-400/50 transition-all group space-y-4 shadow-sm">
+              <div class="w-14 h-14 rounded-2xl bg-amber-400/10 border border-amber-400/30 flex items-center justify-center text-amber-500 dark:text-amber-400 text-2xl group-hover:scale-110 transition-transform">💻</div>
+              <h3 class="text-xl font-bold text-neutral-900 dark:text-white" data-i18n-s1-title>Full-Stack Veb Tətbiqlər</h3>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed" data-i18n-s1-desc>React, Next.js və Node.js üzərindən sürətli, etibarlı və genişlənə bilən müasir platformaların hazırlanması.</p>
+              <div class="pt-2 text-xs font-mono text-amber-600 dark:text-amber-400 flex items-center gap-1">Daha ətraflı →</div>
             </div>
 
-            <div class="p-8 rounded-2xl bg-neutral-900/50 border border-neutral-800 hover:border-amber-400/50 transition-all group space-y-4">
-              <div class="w-14 h-14 rounded-2xl bg-amber-400/10 border border-amber-400/30 flex items-center justify-center text-amber-400 text-2xl group-hover:scale-110 transition-transform">⚡</div>
-              <h3 class="text-xl font-bold text-white" data-i18n-s2-title>UI/UX & Performans Optimizasiyası</h3>
-              <p class="text-sm text-neutral-400 leading-relaxed" data-i18n-s2-desc>İstifadəçi təcrübəsinin təkmilləşdirilməsi, səhifə yüklənmə sürətinin artırılması və SEO optimizasiyası.</p>
-              <div class="pt-2 text-xs font-mono text-amber-400 flex items-center gap-1">Daha ətraflı →</div>
+            <div class="p-8 rounded-2xl bg-white dark:bg-neutral-900/50 border border-neutral-200 dark:border-neutral-800 hover:border-amber-400/50 transition-all group space-y-4 shadow-sm">
+              <div class="w-14 h-14 rounded-2xl bg-amber-400/10 border border-amber-400/30 flex items-center justify-center text-amber-500 dark:text-amber-400 text-2xl group-hover:scale-110 transition-transform">⚡</div>
+              <h3 class="text-xl font-bold text-neutral-900 dark:text-white" data-i18n-s2-title>UI/UX & Performans Optimizasiyası</h3>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed" data-i18n-s2-desc>İstifadəçi təcrübəsinin təkmilləşdirilməsi, səhifə yüklənmə sürətinin artırılması və SEO optimizasiyası.</p>
+              <div class="pt-2 text-xs font-mono text-amber-600 dark:text-amber-400 flex items-center gap-1">Daha ətraflı →</div>
             </div>
 
-            <div class="p-8 rounded-2xl bg-neutral-900/50 border border-neutral-800 hover:border-amber-400/50 transition-all group space-y-4">
-              <div class="w-14 h-14 rounded-2xl bg-amber-400/10 border border-amber-400/30 flex items-center justify-center text-amber-400 text-2xl group-hover:scale-110 transition-transform">🛡️</div>
-              <h3 class="text-xl font-bold text-white" data-i18n-s3-title>Texniki Arxiv & Məsləhət</h3>
-              <p class="text-sm text-neutral-400 leading-relaxed" data-i18n-s3-desc>Mövcud layihələrinizin kod bazasının auditi, təhlükəsizlik analizi və memarlıq məsləhətləri.</p>
-              <div class="pt-2 text-xs font-mono text-amber-400 flex items-center gap-1">Daha ətraflı →</div>
+            <div class="p-8 rounded-2xl bg-white dark:bg-neutral-900/50 border border-neutral-200 dark:border-neutral-800 hover:border-amber-400/50 transition-all group space-y-4 shadow-sm">
+              <div class="w-14 h-14 rounded-2xl bg-amber-400/10 border border-amber-400/30 flex items-center justify-center text-amber-500 dark:text-amber-400 text-2xl group-hover:scale-110 transition-transform">🛡️</div>
+              <h3 class="text-xl font-bold text-neutral-900 dark:text-white" data-i18n-s3-title>Texniki Arxiv & Məsləhət</h3>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed" data-i18n-s3-desc>Mövcud layihələrinizin kod bazasının auditi, təhlükəsizlik analizi və memarlıq məsləhətləri.</p>
+              <div class="pt-2 text-xs font-mono text-amber-600 dark:text-amber-400 flex items-center gap-1">Daha ətraflı →</div>
             </div>
           </div>
         </div>
@@ -811,6 +825,7 @@
 
       function init() {
         loadCmsSettings();
+        applyTheme();
         applyLanguage();
         applyProfileData();
         renderSkills(localizedData[currentLang].skills);
@@ -825,6 +840,34 @@
         document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', () => {
           document.getElementById('mobile-menu').classList.add('hidden');
         }));
+      }
+
+      let currentTheme = localStorage.getItem('camal_theme') || 'light';
+
+      function applyTheme() {
+        const themeIcon = document.getElementById('theme-icon');
+        const themeText = document.getElementById('theme-text');
+        
+        if (currentTheme === 'dark') {
+          document.documentElement.classList.add('dark');
+          if(themeIcon) themeIcon.innerText = '🌙';
+          if(themeText) themeText.innerText = 'Qara';
+        } else {
+          document.documentElement.classList.remove('dark');
+          if(themeIcon) themeIcon.innerText = '☀️';
+          if(themeText) themeText.innerText = 'Ağ';
+        }
+        localStorage.setItem('camal_theme', currentTheme);
+      }
+
+      function toggleTheme() {
+        currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+        applyTheme();
+        const lData = localizedData[currentLang] || localizedData['az'];
+        renderSkills(lData.skills);
+        renderProjects(lData.projects);
+        renderExperience();
+        renderArticles();
       }
 
       function loadCmsSettings() {
@@ -856,7 +899,7 @@
             if (l === currentLang) {
               btn.className = 'px-2.5 py-1 text-xs font-mono font-bold rounded-md bg-amber-400 text-neutral-950 transition-colors';
             } else {
-              btn.className = 'px-2.5 py-1 text-xs font-mono font-bold rounded-md text-neutral-400 hover:text-white transition-colors';
+              btn.className = 'px-2.5 py-1 text-xs font-mono font-bold rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors';
             }
           }
         });
@@ -905,15 +948,15 @@
       function renderSkills(list) {
         const grid = document.getElementById('skills-grid');
         grid.innerHTML = list.map(s => `
-          <div class="p-6 rounded-2xl bg-neutral-900/60 border border-neutral-800 space-y-4 flex flex-col justify-between hover:border-amber-400/40 transition-colors">
+          <div class="p-6 rounded-2xl bg-white dark:bg-neutral-900/60 border border-neutral-200 dark:border-neutral-800 space-y-4 flex flex-col justify-between hover:border-amber-400/40 transition-colors shadow-sm">
             <div>
               <div class="flex items-center justify-between mb-2">
-                <h3 class="text-base font-bold text-white">${s.name}</h3>
-                <span class="text-xs font-mono text-amber-400 font-bold">${s.level}%</span>
+                <h3 class="text-base font-bold text-neutral-900 dark:text-white">${s.name}</h3>
+                <span class="text-xs font-mono text-amber-600 dark:text-amber-400 font-bold">${s.level}%</span>
               </div>
-              <p class="text-xs text-neutral-400 leading-relaxed">${s.desc}</p>
+              <p class="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">${s.desc}</p>
             </div>
-            <div class="w-full bg-neutral-800 h-1.5 rounded-full overflow-hidden">
+            <div class="w-full bg-neutral-200 dark:bg-neutral-800 h-1.5 rounded-full overflow-hidden">
               <div class="bg-gradient-to-r from-amber-500 to-amber-300 h-full rounded-full" style="width: ${s.level}%"></div>
             </div>
           </div>
@@ -930,19 +973,19 @@
       function renderProjects(list) {
         const grid = document.getElementById('projects-grid');
         grid.innerHTML = list.map(p => `
-          <div onclick="openProjectModal('${p.id}')" class="group cursor-pointer rounded-2xl bg-neutral-900/60 border border-neutral-800 hover:border-amber-400/50 transition-all flex flex-col justify-between overflow-hidden shadow-xl">
-            <div class="relative aspect-16/10 overflow-hidden bg-neutral-950">
+          <div onclick="openProjectModal('${p.id}')" class="group cursor-pointer rounded-2xl bg-white dark:bg-neutral-900/60 border border-neutral-200 dark:border-neutral-800 hover:border-amber-400/50 transition-all flex flex-col justify-between overflow-hidden shadow-sm">
+            <div class="relative aspect-16/10 overflow-hidden bg-neutral-100 dark:bg-neutral-950">
               <img src="${p.img}" alt="${p.title}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
             </div>
             <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
               <div>
-                <div class="flex items-center gap-2 text-xs text-neutral-400 font-mono mb-2">
+                <div class="flex items-center gap-2 text-xs text-neutral-500 dark:text-neutral-400 font-mono mb-2">
                   <span>${p.cat === 'web' ? (currentLang === 'en' ? 'Web Platform' : currentLang === 'ru' ? 'Веб-платформа' : 'Veb Platforma') : (currentLang === 'en' ? 'System' : currentLang === 'ru' ? 'Система' : 'Sistem')}</span> · <span>${p.year}</span>
                 </div>
-                <h3 class="text-lg font-bold text-white group-hover:text-amber-400 transition-colors">${p.title}</h3>
-                <p class="mt-2 text-xs text-neutral-400 line-clamp-3 leading-relaxed">${p.summary}</p>
+                <h3 class="text-lg font-bold text-neutral-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">${p.title}</h3>
+                <p class="mt-2 text-xs text-neutral-600 dark:text-neutral-400 line-clamp-3 leading-relaxed">${p.summary}</p>
               </div>
-              <div class="pt-4 border-t border-neutral-800 flex flex-wrap gap-1.5 text-[11px] font-mono text-neutral-400">
+              <div class="pt-4 border-t border-neutral-200 dark:border-neutral-800 flex flex-wrap gap-1.5 text-[11px] font-mono text-neutral-600 dark:text-neutral-400">
                 ${p.tech.map(t => `<span>${t}</span>`).join(' / ')}
               </div>
             </div>
@@ -951,7 +994,7 @@
       }
 
       function filterProjCat(cat) {
-        document.querySelectorAll('#projects .flex button').forEach(b => b.className = 'px-4 py-2 text-xs sm:text-sm font-medium rounded-lg text-neutral-400 hover:text-white transition-all');
+        document.querySelectorAll('#projects .flex button').forEach(b => b.className = 'px-4 py-2 text-xs sm:text-sm font-medium rounded-lg text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-all');
         if(cat==='all') document.getElementById('pcat-all').className = 'px-4 py-2 text-xs sm:text-sm font-semibold rounded-lg bg-amber-400 text-neutral-950 transition-all';
         if(cat==='web') document.getElementById('pcat-web').className = 'px-4 py-2 text-xs sm:text-sm font-semibold rounded-lg bg-amber-400 text-neutral-950 transition-all';
         if(cat==='system') document.getElementById('pcat-system').className = 'px-4 py-2 text-xs sm:text-sm font-semibold rounded-lg bg-amber-400 text-neutral-950 transition-all';
@@ -965,15 +1008,15 @@
         const lData = localizedData[currentLang] || localizedData['az'];
         const list = document.getElementById('experience-list');
         list.innerHTML = lData.experiences.map(e => `
-          <div class="p-6 rounded-2xl bg-neutral-900/60 border border-neutral-800 space-y-3">
+          <div class="p-6 rounded-2xl bg-white dark:bg-neutral-900/60 border border-neutral-200 dark:border-neutral-800 space-y-3 shadow-sm">
             <div class="flex flex-wrap justify-between items-center">
-              <h4 class="text-lg font-bold text-white">${e.role}</h4>
-              <span class="text-xs font-mono text-amber-400 bg-amber-400/10 px-2.5 py-1 rounded-md">${e.period}</span>
+              <h4 class="text-lg font-bold text-neutral-900 dark:text-white">${e.role}</h4>
+              <span class="text-xs font-mono text-amber-600 dark:text-amber-400 bg-amber-400/10 px-2.5 py-1 rounded-md">${e.period}</span>
             </div>
-            <div class="text-xs text-neutral-400 font-semibold">${e.company} · ${e.loc}</div>
-            <p class="text-xs sm:text-sm text-neutral-300 leading-relaxed">${e.desc}</p>
-            <div class="flex flex-wrap gap-1.5 pt-2 text-[11px] font-mono text-neutral-400">
-              ${e.skills.map(s => `<span class="px-2.5 py-1 rounded bg-neutral-950 border border-neutral-800">${s}</span>`).join('')}
+            <div class="text-xs text-neutral-600 dark:text-neutral-400 font-semibold">${e.company} · ${e.loc}</div>
+            <p class="text-xs sm:text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">${e.desc}</p>
+            <div class="flex flex-wrap gap-1.5 pt-2 text-[11px] font-mono text-neutral-600 dark:text-neutral-400">
+              ${e.skills.map(s => `<span class="px-2.5 py-1 rounded bg-neutral-100 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800">${s}</span>`).join('')}
             </div>
           </div>
         `).join('');
@@ -983,15 +1026,15 @@
         const lData = localizedData[currentLang] || localizedData['az'];
         const grid = document.getElementById('articles-grid');
         grid.innerHTML = lData.articles.map(a => `
-          <div onclick="openArticleModal('${a.id}')" class="group cursor-pointer p-6 rounded-2xl bg-neutral-900/60 border border-neutral-800 hover:border-amber-400/50 transition-all flex flex-col justify-between space-y-5">
+          <div onclick="openArticleModal('${a.id}')" class="group cursor-pointer p-6 rounded-2xl bg-white dark:bg-neutral-900/60 border border-neutral-200 dark:border-neutral-800 hover:border-amber-400/50 transition-all flex flex-col justify-between space-y-5 shadow-sm">
             <div class="space-y-3">
-              <div class="flex items-center gap-2 text-xs text-neutral-400 font-mono">
-                <span class="text-amber-400 font-semibold">${a.cat}</span> · <span>${a.time} ${currentLang === 'en' ? 'read' : currentLang === 'ru' ? 'чтение' : 'oxu'}</span>
+              <div class="flex items-center gap-2 text-xs text-neutral-500 dark:text-neutral-400 font-mono">
+                <span class="text-amber-600 dark:text-amber-400 font-semibold">${a.cat}</span> · <span>${a.time} ${currentLang === 'en' ? 'read' : currentLang === 'ru' ? 'чтение' : 'oxu'}</span>
               </div>
-              <h3 class="text-lg font-bold text-white group-hover:text-amber-400 transition-colors">${a.title}</h3>
-              <p class="text-xs sm:text-sm text-neutral-400 leading-relaxed line-clamp-3">${a.excerpt}</p>
+              <h3 class="text-lg font-bold text-neutral-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">${a.title}</h3>
+              <p class="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed line-clamp-3">${a.excerpt}</p>
             </div>
-            <div class="pt-4 border-t border-neutral-800 flex items-center justify-between text-xs font-semibold text-neutral-300 group-hover:text-amber-400">
+            <div class="pt-4 border-t border-neutral-200 dark:border-neutral-800 flex items-center justify-between text-xs font-semibold text-neutral-800 dark:text-neutral-300 group-hover:text-amber-600 dark:group-hover:text-amber-400">
               <span>${currentLang === 'en' ? 'Read Article' : currentLang === 'ru' ? 'Читать статью' : 'Məqaləni Oxu'}</span> <span>→</span>
             </div>
           </div>

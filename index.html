@@ -37,6 +37,22 @@
       .wave-animate {
         animation: wavyEntrance 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
       }
+
+      @keyframes spreadGlow {
+        0%, 100% {
+          transform: scale(0.98);
+          opacity: 0.5;
+          filter: blur(22px);
+        }
+        50% {
+          transform: scale(1.15);
+          opacity: 0.95;
+          filter: blur(36px);
+        }
+      }
+      .animate-spread-glow {
+        animation: spreadGlow 3s ease-in-out infinite;
+      }
     </style>
   </head>
   <body class="bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100 antialiased selection:bg-amber-400 selection:text-neutral-950 transition-colors duration-200">
@@ -75,15 +91,7 @@
             <span id="theme-text" class="hidden sm:inline">Ağ</span>
           </button>
 
-          <button id="edit-profile-btn" class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-neutral-400 hover:text-white bg-neutral-900/50 hover:bg-neutral-800 border border-neutral-800 rounded-lg transition-colors">
-            <span>⚙️</span>
-            <span data-i18n-btn-edit>Redaktə</span>
-          </button>
 
-          <button id="resume-btn" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold text-neutral-950 bg-amber-400 hover:bg-amber-300 active:bg-amber-500 rounded-lg transition-colors shadow-md shadow-amber-400/10">
-            <span>📄</span>
-            <span data-i18n-btn-resume>Rezüme / CV</span>
-          </button>
 
           <button id="mobile-menu-btn" class="md:hidden p-2 text-neutral-300 hover:text-white rounded-lg hover:bg-neutral-900">
             ☰
@@ -159,9 +167,9 @@
             <!-- Hero Creative Visual Card -->
             <div class="lg:col-span-5 flex justify-center">
               <div class="relative w-full max-w-md">
-                <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-amber-500 to-amber-200 opacity-30 blur-xl"></div>
+                <div class="absolute -inset-2 rounded-3xl bg-gradient-to-r from-amber-500/80 via-neutral-400/70 to-amber-300/80 opacity-90 blur-2xl animate-spread-glow"></div>
                 <div class="relative rounded-2xl overflow-hidden border-0 bg-transparent shadow-none p-0">
-                  <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&auto=format&fit=crop&q=80" alt="Camal Manafov" class="w-full aspect-4/3 object-cover rounded-xl object-top shadow-xl" />
+                  <img src="src/assets/images/regenerated_image_1790931747522.png" alt="Camal Manafov" class="w-full aspect-4/3 object-cover rounded-xl object-top shadow-xl" />
                   <div class="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-white/90 dark:bg-neutral-950/90 backdrop-blur-md border border-neutral-200 dark:border-neutral-800 flex items-center justify-between shadow-lg">
                     <div>
                       <div class="text-sm font-bold text-neutral-900 dark:text-white" data-profile-name>Camal Manafov</div>
@@ -833,9 +841,8 @@
         renderExperience();
         renderArticles();
 
-        document.getElementById('resume-btn').addEventListener('click', openResumeModal);
-        document.getElementById('edit-profile-btn').addEventListener('click', openEditModal);
-        document.getElementById('mobile-menu-btn').addEventListener('click', toggleMobileMenu);
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        if(mobileMenuBtn) mobileMenuBtn.addEventListener('click', toggleMobileMenu);
 
         document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', () => {
           document.getElementById('mobile-menu').classList.add('hidden');

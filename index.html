@@ -350,21 +350,134 @@
         </div>
       </section>
 
-      <!-- Skills Section -->
-      <section id="skills" class="py-20 md:py-28 border-b border-neutral-200 dark:border-neutral-900 bg-white dark:bg-neutral-950">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-            <div>
-              <span class="text-xs font-mono uppercase tracking-widest text-amber-400 bg-amber-400/10 px-3 py-1 rounded-full border border-amber-400/20" data-i18n="skillsTag">Texnologiyalar</span>
-              <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white mt-3" data-i18n="skillsTitle">İstifadə Olunan Stack</h2>
-            </div>
-            <div class="relative w-full md:w-64">
-              <input type="text" id="skill-search" oninput="filterSkills()" placeholder="Texnologiya axtar..." class="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-neutral-200 placeholder:text-neutral-500 focus:outline-hidden focus:border-amber-400" />
-            </div>
-          </div>
+      <!-- Creative About & Strategic Solutions Section (Reeni Style) -->
+      <section id="skills" class="py-20 md:py-32 border-b border-neutral-200 dark:border-neutral-900 bg-white dark:bg-neutral-950 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+            
+            <!-- Left Side: Layered Creative Visual Composition (Reeni Style) -->
+            <div class="lg:col-span-5 relative flex justify-center">
+              <!-- Radiant Sunset/Crimson Ambient Orb (As seen in Reeni Screenshot) -->
+              <div class="pointer-events-none absolute -left-4 sm:left-4 top-1/2 -translate-y-1/2 w-64 sm:w-80 h-64 sm:h-80 bg-gradient-to-tr from-rose-500/85 via-pink-500/80 to-rose-400/90 rounded-full blur-[75px] opacity-80 animate-pulse" aria-hidden="true"></div>
 
-          <div id="skills-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Rendered by JS -->
+              <div class="relative w-full max-w-sm sm:max-w-md">
+                <!-- Top Card: Big Experience Metric Card -->
+                <div class="relative z-10 p-8 sm:p-10 rounded-3xl bg-white/95 dark:bg-neutral-900/90 backdrop-blur-xl border border-neutral-200/90 dark:border-neutral-800 shadow-2xl shadow-rose-500/10 text-center transition-all duration-300 hover:shadow-rose-500/20 hover:-translate-y-1">
+                  <div class="text-6xl sm:text-7xl font-black font-mono tracking-tight text-neutral-900 dark:text-white tabular-nums">
+                    5+
+                  </div>
+                  <div class="text-xl sm:text-2xl font-extrabold text-neutral-900 dark:text-neutral-100 mt-3 tracking-tight" data-i18n-reeni-exp-title>
+                    İl Peşəkar Təcrübə
+                  </div>
+                  <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-2 font-medium" data-i18n-reeni-exp-sub>
+                    Rəqəmsal Mühəndislik & Veb Arxitektura
+                  </p>
+                </div>
+
+                <!-- Bottom Overlapping Card (Left Offset) -->
+                <div class="relative z-20 -mt-10 sm:-mt-12 -ml-2 sm:-ml-6 max-w-[300px] p-4 sm:p-5 rounded-2xl bg-white dark:bg-neutral-900/95 backdrop-blur-xl border border-neutral-200/90 dark:border-neutral-800 shadow-xl shadow-rose-500/10 flex items-center gap-4 transition-all duration-300 hover:scale-105">
+                  <div class="w-14 h-14 rounded-full border-2 border-rose-500/70 dark:border-rose-400/80 flex items-center justify-center text-rose-600 dark:text-rose-400 text-2xl bg-rose-50 dark:bg-rose-950/50 shrink-0">
+                    📐
+                  </div>
+                  <div>
+                    <h4 class="text-base font-bold text-neutral-900 dark:text-white leading-tight">UI/UX & Full-Stack</h4>
+                    <p class="text-xs text-neutral-500 dark:text-neutral-400 font-mono mt-0.5">28+ Uğurlu Layihə</p>
+                  </div>
+                </div>
+
+                <!-- Top Right Floating Micro Badge -->
+                <div class="absolute -right-2 sm:-right-4 top-6 z-20 p-3 sm:p-3.5 rounded-2xl bg-white dark:bg-neutral-900/95 backdrop-blur-xl border border-neutral-200/90 dark:border-neutral-800 shadow-lg flex items-center gap-2.5 transition-all duration-300 hover:scale-105">
+                  <div class="w-7 h-7 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-500 flex items-center justify-center font-bold text-xs">
+                    ✓
+                  </div>
+                  <div class="text-xs font-bold text-neutral-900 dark:text-white">
+                    100% Razılıq
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Side: Content & Reeni Signature Feature Cards Grid -->
+            <div class="lg:col-span-7 space-y-7">
+              <div>
+                <span class="text-xs font-bold font-mono tracking-widest text-rose-600 dark:text-rose-400 uppercase bg-rose-50 dark:bg-rose-950/40 px-3.5 py-1.5 rounded-full border border-rose-200 dark:border-rose-900/50" data-i18n-reeni-badge>
+                  HAQQIMDA & XİDMƏTLƏR
+                </span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-neutral-900 dark:text-white leading-[1.15] mt-4" data-i18n-reeni-title>
+                  Biznesinizi Strateji Rəqəmsal Həllərlə <span class="text-transparent bg-clip-text bg-gradient-to-r from-rose-600 via-pink-500 to-amber-500 dark:from-rose-400 dark:via-pink-300 dark:to-amber-300">Zirvəyə Qaldırın</span>
+                </h2>
+                <p class="text-sm sm:text-base text-neutral-600 dark:text-neutral-300 leading-relaxed mt-3 max-w-2xl" data-i18n-reeni-sub>
+                  Müasir proqram təminatı, təmiz arxitektura və innovativ mühəndislik yanaşması ilə biznesinizin performansını, sürətini və bazar rəqabət qabiliyyətini ən yüksək səviyyəyə çatdırıram.
+                </p>
+              </div>
+
+              <!-- Reeni 2x2 Feature Cards Grid -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2">
+                <!-- Card 1 -->
+                <div onclick="navigateTo('services', 'fullstack')" class="cursor-pointer p-6 rounded-2xl bg-neutral-50/80 dark:bg-neutral-900/60 border border-neutral-200/90 dark:border-neutral-800 hover:border-rose-500/70 dark:hover:border-rose-400/80 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 relative group space-y-3">
+                  <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-rose-600 to-pink-500 text-white flex items-center justify-center text-xl shadow-md shadow-rose-500/30 group-hover:scale-110 transition-transform">
+                    📎
+                  </div>
+                  <h3 class="text-base sm:text-lg font-bold text-neutral-900 dark:text-white group-hover:text-rose-600 dark:group-hover:text-rose-400 transition-colors" data-i18n-reeni-c1-title>
+                    Biznes Həlləri & SaaS
+                  </h3>
+                  <p class="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed" data-i18n-reeni-c1-desc>
+                    Hər bir layihə dəqiqlik, fərdiləşdirilmiş yanaşma və biznesinizin hədəflərinə tam uyğunluqla icra olunur.
+                  </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div onclick="navigateTo('services', 'ecommerce')" class="cursor-pointer p-6 rounded-2xl bg-neutral-50/80 dark:bg-neutral-900/60 border border-neutral-200/90 dark:border-neutral-800 hover:border-rose-500/70 dark:hover:border-rose-400/80 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 relative group space-y-3">
+                  <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-rose-600 to-pink-500 text-white flex items-center justify-center text-xl shadow-md shadow-rose-500/30 group-hover:scale-110 transition-transform">
+                    📢
+                  </div>
+                  <h3 class="text-base sm:text-lg font-bold text-neutral-900 dark:text-white group-hover:text-rose-600 dark:group-hover:text-rose-400 transition-colors" data-i18n-reeni-c2-title>
+                    Strateji Tərəfdaşlıq
+                  </h3>
+                  <p class="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed" data-i18n-reeni-c2-desc>
+                    Müştəri tələblərini dərindən araşdıraraq satışları və istifadəçi konversiyasını artıran həllər təqdim edirəm.
+                  </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div onclick="navigateTo('services', 'uiux')" class="cursor-pointer p-6 rounded-2xl bg-neutral-50/80 dark:bg-neutral-900/60 border border-neutral-200/90 dark:border-neutral-800 hover:border-rose-500/70 dark:hover:border-rose-400/80 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 relative group space-y-3">
+                  <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-rose-600 to-pink-500 text-white flex items-center justify-center text-xl shadow-md shadow-rose-500/30 group-hover:scale-110 transition-transform">
+                    💻
+                  </div>
+                  <h3 class="text-base sm:text-lg font-bold text-neutral-900 dark:text-white group-hover:text-rose-600 dark:group-hover:text-rose-400 transition-colors" data-i18n-reeni-c3-title>
+                    Full-Stack Mühəndislik
+                  </h3>
+                  <p class="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed" data-i18n-reeni-c3-desc>
+                    React, Next.js və Node.js üzərindən sürətli, təhlükəsiz və genişlənə bilən müasir platformalar.
+                  </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div onclick="navigateTo('services', 'speed')" class="cursor-pointer p-6 rounded-2xl bg-neutral-50/80 dark:bg-neutral-900/60 border border-neutral-200/90 dark:border-neutral-800 hover:border-rose-500/70 dark:hover:border-rose-400/80 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 relative group space-y-3">
+                  <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-rose-600 to-pink-500 text-white flex items-center justify-center text-xl shadow-md shadow-rose-500/30 group-hover:scale-110 transition-transform">
+                    ⚡
+                  </div>
+                  <h3 class="text-base sm:text-lg font-bold text-neutral-900 dark:text-white group-hover:text-rose-600 dark:group-hover:text-rose-400 transition-colors" data-i18n-reeni-c4-title>
+                    Sürət & SEO Zəmanəti
+                  </h3>
+                  <p class="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed" data-i18n-reeni-c4-desc>
+                    Google PageSpeed 95+ bal, ultra-sürətli render və axtarış sistemlərində yüksək reytinq.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Bottom Actions -->
+              <div class="flex flex-wrap items-center gap-4 pt-3">
+                <button onclick="navigateTo('services')" class="inline-flex items-center gap-2 px-7 py-3.5 text-xs font-bold uppercase tracking-wider text-white bg-gradient-to-r from-rose-600 to-pink-600 hover:from-rose-500 hover:to-pink-500 active:scale-98 rounded-full shadow-lg shadow-rose-500/25 transition-all">
+                  <span data-i18n-reeni-btn-all>Bütün Xidmətlərlə Tanış Ol</span>
+                  <span>→</span>
+                </button>
+                <a href="#contact" onclick="navigateTo('home', 'contact'); return false;" class="inline-flex items-center gap-2 px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-neutral-800 dark:text-neutral-200 hover:text-neutral-950 dark:hover:text-white bg-neutral-100 dark:bg-neutral-900 hover:bg-neutral-200 dark:hover:bg-neutral-800 border border-neutral-300 dark:border-neutral-800 rounded-full transition-all">
+                  <span data-i18n-reeni-btn-consult>Konsultasiya Al</span>
+                </a>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
@@ -829,6 +942,15 @@
           s1Title: 'Full-Stack Veb Tətbiqlər', s1Desc: 'React, Next.js və Node.js üzərindən sürətli, etibarlı və genişlənə bilən müasir platformaların hazırlanması.',
           s2Title: 'UI/UX & Performans Optimizasiyası', s2Desc: 'İstifadəçi təcrübəsinin təkmilləşdirilməsi, səhifə yüklənmə sürətinin artırılması və SEO optimizasiyası.',
           s3Title: 'Texniki Arxiv & Məsləhət', s3Desc: 'Mövcud layihələrinizin kod bazasının auditi, təhlükəsizlik analizi və memarlıq məsləhətləri.',
+          reeniExpTitle: 'İl Peşəkar Təcrübə', reeniExpSub: 'Rəqəmsal Mühəndislik & Veb Arxitektura',
+          reeniBadge: 'HAQQIMDA & XİDMƏTLƏR',
+          reeniTitle: 'Biznesinizi Strateji Rəqəmsal Həllərlə <span class="text-transparent bg-clip-text bg-gradient-to-r from-rose-600 via-pink-500 to-amber-500 dark:from-rose-400 dark:via-pink-300 dark:to-amber-300">Zirvəyə Qaldırın</span>',
+          reeniSub: 'Müasir proqram təminatı, təmiz arxitektura və innovativ mühəndislik yanaşması ilə biznesinizin performansını, sürətini və bazar rəqabət qabiliyyətini ən yüksək səviyyəyə çatdırıram.',
+          reeniC1Title: 'Biznes Həlləri & SaaS', reeniC1Desc: 'Hər bir layihə dəqiqlik, fərdiləşdirilmiş yanaşma və biznesinizin hədəflərinə tam uyğunluqla icra olunur.',
+          reeniC2Title: 'Strateji Tərəfdaşlıq', reeniC2Desc: 'Müştəri tələblərini dərindən araşdıraraq satışları və istifadəçi konversiyasını artıran həllər təqdim edirəm.',
+          reeniC3Title: 'Full-Stack Mühəndislik', reeniC3Desc: 'React, Next.js və Node.js üzərindən sürətli, təhlükəsiz və genişlənə bilən müasir platformalar.',
+          reeniC4Title: 'Sürət & SEO Zəmanəti', reeniC4Desc: 'Google PageSpeed 95+ bal, ultra-sürətli render və axtarış sistemlərində yüksək reytinq.',
+          reeniBtnAll: 'Bütün Xidmətlərlə Tanış Ol', reeniBtnConsult: 'Konsultasiya Al',
           aboutTag: 'Haqqımda', aboutTitle: 'Rəqəmsal Dünyada Mükəmməllik Axtarışı',
           aboutDesc1: 'Mən Camal Manafov — 5 ildən artıq təcrübəyə malik peşəkar proqram mühəndisiyəm. Məqsədim hər bir müştərinin ideyasını möhkəm, estetik və yüksək sürətli rəqəmsal məhsula çevirməkdir.',
           aboutDesc2: 'Təmiz kod prinsipləri, sürətli render mexanizmləri və istifadəçi mərkəzli yanaşma ilə hər zaman gözləntiləri üstələməyə çalışıram.',
@@ -855,6 +977,15 @@
           s1Title: 'Full-Stack Web Apps', s1Desc: 'Developing fast, reliable, and scalable modern platforms using React, Next.js, and Node.js.',
           s2Title: 'UI/UX & Performance Optimization', s2Desc: 'Enhancing user experience, maximizing page load speeds, and implementing robust SEO standards.',
           s3Title: 'Technical Audit & Advisory', s3Desc: 'Codebase reviews, security analysis, and architectural consulting for your existing platforms.',
+          reeniExpTitle: 'Years Of Experience', reeniExpSub: 'Digital Engineering & Web Architecture',
+          reeniBadge: 'ABOUT ME & SERVICES',
+          reeniTitle: 'Boost Business Strategic <span class="text-transparent bg-clip-text bg-gradient-to-r from-rose-600 via-pink-500 to-amber-500 dark:from-rose-400 dark:via-pink-300 dark:to-amber-300">Solutions with Us</span>',
+          reeniSub: 'Expert software engineering and innovative digital architecture to scale your business performance, speed, and market leadership.',
+          reeniC1Title: 'Business Solutions & SaaS', reeniC1Desc: 'Each project showcases modern architecture, custom approach, and dedication to your business targets.',
+          reeniC2Title: 'Strategic Partnership', reeniC2Desc: 'Deep analysis of user and business needs to maximize sales, retention, and conversion rates.',
+          reeniC3Title: 'Full-Stack Engineering', reeniC3Desc: 'Fast, secure, and resilient web platforms powered by React, Next.js, and Node.js microservices.',
+          reeniC4Title: 'Speed & SEO Assurance', reeniC4Desc: 'Google PageSpeed 95+ score, ultra-fast rendering, and search engine optimization.',
+          reeniBtnAll: 'Explore All Services', reeniBtnConsult: 'Get Consultation',
           aboutTag: 'About Me', aboutTitle: 'The Pursuit of Excellence in the Digital Realm',
           aboutDesc1: 'I am Camal Manafov — a senior software engineer with 5+ years of commercial experience. My mission is turning visionary ideas into robust, aesthetic, and blazing-fast digital products.',
           aboutDesc2: 'Through clean code principles, optimized rendering engines, and human-centered design, I consistently exceed expectations.',
@@ -881,6 +1012,15 @@
           s1Title: 'Full-Stack Веб-приложения', s1Desc: 'Разработка быстрых, надежных и масштабируемых современных платформ на React, Next.js и Node.js.',
           s2Title: 'UI/UX & Оптимизация производительности', s2Desc: 'Улучшение пользовательского опыта, ускорение загрузки страниц и внедрение стандартов SEO.',
           s3Title: 'Технический аудит & Консультации', s3Desc: 'Проверка кода, анализ безопасности и архитектурный консалтинг для ваших проектов.',
+          reeniExpTitle: 'Лет опыта разработки', reeniExpSub: 'Цифровая инженерия и веб-архитектура',
+          reeniBadge: 'ОБО МНЕ & УСЛУГИ',
+          reeniTitle: 'Стратегические веб-решения для <span class="text-transparent bg-clip-text bg-gradient-to-r from-rose-600 via-pink-500 to-amber-500 dark:from-rose-400 dark:via-pink-300 dark:to-amber-300">роста вашего бизнеса</span>',
+          reeniSub: 'Современная программная инженерия, чистая архитектура и ориентированный на пользователя подход для достижения максимальной производительности.',
+          reeniC1Title: 'Бизнес-решения & SaaS', reeniC1Desc: 'Каждый проект разрабатывается с максимальной точностью и адаптацией под цели бизнеса.',
+          reeniC2Title: 'Стратегическое партнерство', reeniC2Desc: 'Глубокий анализ потребностей клиентов для повышения продаж и конверсии пользователей.',
+          reeniC3Title: 'Full-Stack разработка', reeniC3Desc: 'Быстрые, безопасные и масштабируемые веб-платформы на React, Next.js и Node.js.',
+          reeniC4Title: 'Скорость & SEO гарантия', reeniC4Desc: 'Оценка Google PageSpeed 95+, быстрая загрузка и высокое ранжирование.',
+          reeniBtnAll: 'Смотреть все услуги', reeniBtnConsult: 'Консультация',
           aboutTag: 'Обо мне', aboutTitle: 'Стремление к совершенству в цифровом пространстве',
           aboutDesc1: 'Я Джамал Манафов — старший инженер-программист с опытом работы более 5 лет. Моя цель — воплощать передовые идеи в надежные, эстетичные и быстрые цифровые продукты.',
           aboutDesc2: 'Благодаря принципам чистого кода, оптимизированным движкам рендеринга и ориентированному на человека дизайну я неизменно превосхожу ожидания.',
@@ -1743,6 +1883,7 @@
 
       function renderSkills(list) {
         const grid = document.getElementById('skills-grid');
+        if (!grid || !list) return;
         grid.innerHTML = list.map(s => `
           <div class="p-6 rounded-2xl bg-white dark:bg-neutral-900/60 border border-neutral-200 dark:border-neutral-800 space-y-4 flex flex-col justify-between hover:border-amber-400/40 transition-colors shadow-sm">
             <div>
@@ -1760,7 +1901,9 @@
       }
 
       function filterSkills() {
-        const q = document.getElementById('skill-search').value.toLowerCase();
+        const searchInput = document.getElementById('skill-search');
+        if (!searchInput) return;
+        const q = searchInput.value.toLowerCase();
         const lData = localizedData[currentLang] || localizedData['az'];
         const filtered = lData.skills.filter(s => s.name.toLowerCase().includes(q) || s.desc.toLowerCase().includes(q));
         renderSkills(filtered);

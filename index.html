@@ -85,9 +85,105 @@
       section[id] {
         scroll-margin-top: 88px;
       }
+
+      /* Renovex Style Preloader Animations */
+      @keyframes renovexOrbit1 {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      @keyframes renovexOrbit2 {
+        0% { transform: rotate(360deg); }
+        100% { transform: rotate(0deg); }
+      }
+      @keyframes renovexPulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+      }
+      @keyframes renovexDotPulse {
+        0%, 100% { transform: scale(0.85); opacity: 0.7; box-shadow: 0 0 10px rgba(255, 179, 0, 0.5); }
+        50% { transform: scale(1.3); opacity: 1; box-shadow: 0 0 22px rgba(255, 179, 0, 0.95); }
+      }
+      .animate-renovex-orbit-1 {
+        animation: renovexOrbit1 2.2s linear infinite;
+        transform-origin: center center;
+      }
+      .animate-renovex-orbit-2 {
+        animation: renovexOrbit2 3.2s linear infinite;
+        transform-origin: center center;
+      }
+      .animate-renovex-pulse {
+        animation: renovexPulse 2s ease-in-out infinite;
+      }
+      .animate-renovex-dot-pulse {
+        animation: renovexDotPulse 1.3s ease-in-out infinite;
+      }
+      .preloader-exit {
+        opacity: 0 !important;
+        transform: scale(1.04) !important;
+        pointer-events: none !important;
+      }
     </style>
   </head>
   <body class="bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100 antialiased selection:bg-amber-400 selection:text-neutral-950 transition-colors duration-200">
+
+    <!-- Renovex 4-Second Fullscreen Preloader -->
+    <div id="renovex-preloader" class="fixed inset-0 z-[999999] bg-[#0c0c0e] flex flex-col items-center justify-center transition-all duration-700 select-none">
+      <!-- Ambient Glow Behind Spinner -->
+      <div class="absolute w-72 h-72 rounded-full bg-amber-500/15 blur-[90px] pointer-events-none"></div>
+
+      <div class="relative flex flex-col items-center justify-center space-y-10">
+        
+        <!-- Renovex Spinner Graphic (Center Emblem + Orbital Rings) -->
+        <div class="relative w-36 h-36 sm:w-44 sm:h-44 flex items-center justify-center">
+          
+          <!-- Outer Orbital Ring 1 (Clockwise Segmented Arc) -->
+          <svg class="absolute inset-0 w-full h-full animate-renovex-orbit-1 pointer-events-none" viewBox="0 0 160 160">
+            <circle cx="80" cy="80" r="74" fill="none" stroke="rgba(255, 255, 255, 0.85)" stroke-width="2" stroke-linecap="round" stroke-dasharray="130 190 60 90" />
+          </svg>
+
+          <!-- Outer Orbital Ring 2 (Counter-Clockwise Segmented Arc) -->
+          <svg class="absolute -inset-3 w-[calc(100%+24px)] h-[calc(100%+24px)] animate-renovex-orbit-2 pointer-events-none" viewBox="0 0 180 180">
+            <circle cx="90" cy="90" r="84" fill="none" stroke="rgba(255, 255, 255, 0.35)" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="60 180 110 120" />
+          </svg>
+
+          <!-- Golden Yellow Center Circle Badge -->
+          <div class="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-br from-[#ffc107] via-[#ffb300] to-[#ffa000] shadow-[0_0_35px_rgba(255,179,0,0.45)] flex items-center justify-center animate-renovex-pulse">
+            <!-- Arched Architectural Geometric Logo Icon matching Renovex -->
+            <svg class="w-10 h-10 sm:w-12 sm:h-12 text-neutral-950" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Top Dot -->
+              <circle cx="32" cy="18" r="3.2" fill="currentColor"/>
+              <!-- Outer Arch -->
+              <path d="M22 47V31C22 25.4772 26.4772 21 32 21C37.5228 21 42 25.4772 42 31V47" stroke="currentColor" stroke-width="3.6" stroke-linecap="round"/>
+              <!-- Inner Arch -->
+              <path d="M28 47V33.5C28 31.2909 29.7909 29.5 32 29.5C34.2091 29.5 36 31.2909 36 33.5V47" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/>
+            </svg>
+          </div>
+
+        </div>
+
+        <!-- Lower Section: Golden Dot, Progress & Brand Text -->
+        <div class="flex flex-col items-center space-y-4">
+          <!-- Pulsing Golden Dot (as in screenshot) -->
+          <div id="renovex-dot" class="w-3.5 h-3.5 rounded-full bg-[#ffb300] shadow-[0_0_15px_#ffb300] animate-renovex-dot-pulse"></div>
+
+          <!-- Counter & Progress -->
+          <div class="flex flex-col items-center space-y-2">
+            <span id="renovex-counter" class="text-xs font-mono font-bold tracking-widest text-neutral-300">0%</span>
+            
+            <!-- Progress Line Bar -->
+            <div class="w-36 sm:w-48 h-1 rounded-full bg-neutral-800/80 overflow-hidden border border-neutral-800">
+              <div id="renovex-bar" class="h-full bg-gradient-to-r from-amber-500 via-amber-400 to-yellow-300 rounded-full transition-all duration-75 w-0"></div>
+            </div>
+
+            <!-- Brand Subtitle -->
+            <div class="text-[11px] font-mono uppercase tracking-[0.25em] text-neutral-500 pt-1">
+              Camal Manafov
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
 
     <!-- The7 Creative Light Navigation Header -->
     <header id="navbar" class="fixed top-0 inset-x-0 z-50 bg-white/90 dark:bg-neutral-950/90 backdrop-blur-xl border-b border-neutral-200/80 dark:border-neutral-800/80 transition-all duration-300">
@@ -123,10 +219,6 @@
             </a>
             <a href="#projects" onclick="navigateTo('home', 'projects'); return false;" class="nav-item group relative px-3.5 py-2 text-[13px] font-bold tracking-wider uppercase text-neutral-700 dark:text-neutral-300 hover:text-amber-600 dark:hover:text-amber-400 transition-colors" data-target="projects">
               <span data-i18n-nav-projects>Portfel</span>
-              <span class="nav-indicator absolute bottom-0 left-3 right-3 h-[2px] bg-amber-500 dark:bg-amber-400 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></span>
-            </a>
-            <a href="#experience" onclick="navigateTo('home', 'experience'); return false;" class="nav-item group relative px-3.5 py-2 text-[13px] font-bold tracking-wider uppercase text-neutral-700 dark:text-neutral-300 hover:text-amber-600 dark:hover:text-amber-400 transition-colors" data-target="experience">
-              <span data-i18n-nav-experience>Təcrübə</span>
               <span class="nav-indicator absolute bottom-0 left-3 right-3 h-[2px] bg-amber-500 dark:bg-amber-400 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></span>
             </a>
             <a href="#articles" onclick="navigateTo('home', 'articles'); return false;" class="nav-item group relative px-3.5 py-2 text-[13px] font-bold tracking-wider uppercase text-neutral-700 dark:text-neutral-300 hover:text-amber-600 dark:hover:text-amber-400 transition-colors" data-target="articles">
@@ -183,17 +275,13 @@
             <span data-i18n-nav-projects>Portfel</span>
             <span class="text-xs text-neutral-400 font-mono">04</span>
           </a>
-          <a href="#experience" onclick="navigateTo('home', 'experience'); return false;" class="mobile-link py-3 flex items-center justify-between text-sm font-bold uppercase tracking-wider text-neutral-700 dark:text-neutral-200 hover:text-amber-500 dark:hover:text-amber-400 transition-colors" data-target="experience">
-            <span data-i18n-nav-experience>Təcrübə</span>
-            <span class="text-xs text-neutral-400 font-mono">05</span>
-          </a>
           <a href="#articles" onclick="navigateTo('home', 'articles'); return false;" class="mobile-link py-3 flex items-center justify-between text-sm font-bold uppercase tracking-wider text-neutral-700 dark:text-neutral-200 hover:text-amber-500 dark:hover:text-amber-400 transition-colors" data-target="articles">
             <span data-i18n-nav-articles>Məqalələr</span>
-            <span class="text-xs text-neutral-400 font-mono">06</span>
+            <span class="text-xs text-neutral-400 font-mono">05</span>
           </a>
           <a href="#contact" onclick="navigateTo('home', 'contact'); return false;" class="mobile-link py-3 flex items-center justify-between text-sm font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 transition-colors" data-target="contact">
             <span data-i18n-nav-contact>Əlaqə</span>
-            <span class="text-xs text-amber-600 dark:text-amber-400 font-mono">07 →</span>
+            <span class="text-xs text-amber-600 dark:text-amber-400 font-mono">06 →</span>
           </a>
         </nav>
       </div>
@@ -471,30 +559,6 @@
         </div>
       </section>
 
-      <!-- Experience Section -->
-      <section id="experience" class="py-20 md:py-28 border-b border-neutral-900 bg-neutral-950/40">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="mb-14">
-            <span class="text-xs font-mono uppercase tracking-widest text-amber-400 bg-amber-400/10 px-3 py-1 rounded-full border border-amber-400/20" data-i18n="expTag">Karyera</span>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white mt-3" data-i18n="expTitle">Peşəkar Təcrübə</h2>
-          </div>
-
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-            <div class="lg:col-span-8 space-y-8" id="experience-list">
-              <!-- Rendered by JS -->
-            </div>
-            <div class="lg:col-span-4 p-6 rounded-2xl bg-neutral-900/60 border border-neutral-800 space-y-4">
-              <h3 class="text-lg font-bold text-white">🎓 Təhsil</h3>
-              <div class="space-y-2">
-                <div class="text-xs font-mono text-amber-400">2017 — 2021</div>
-                <div class="text-sm font-bold text-white">Kompüter Elmləri və İT</div>
-                <p class="text-xs text-neutral-400">Azərbaycan Dövlət Neft və Sənaye Universiteti</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <!-- Articles Section -->
       <section id="articles" class="py-20 md:py-28 border-b border-neutral-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -753,9 +817,6 @@
               </li>
               <li>
                 <a href="#projects" onclick="navigateTo('home', 'projects'); return false;" class="hover:text-amber-600 dark:hover:text-amber-400 block transition-colors" data-i18n-nav-projects>Works</a>
-              </li>
-              <li>
-                <a href="#experience" onclick="navigateTo('home', 'experience'); return false;" class="hover:text-amber-600 dark:hover:text-amber-400 block transition-colors" data-i18n-nav-experience>Careers</a>
               </li>
               <li>
                 <a href="#articles" onclick="navigateTo('home', 'articles'); return false;" class="hover:text-amber-600 dark:hover:text-amber-400 block transition-colors" data-i18n-nav-articles>Blog</a>
@@ -1906,7 +1967,43 @@
         if (success) success.classList.remove('hidden');
       }
 
+      function initRenovexPreloader() {
+        const preloader = document.getElementById('renovex-preloader');
+        if (!preloader) return;
+        
+        document.body.classList.add('overflow-hidden');
+        
+        const counterEl = document.getElementById('renovex-counter');
+        const barEl = document.getElementById('renovex-bar');
+        
+        const startTime = Date.now();
+        const duration = 4000; // 4 seconds exactly as requested
+        
+        const timer = setInterval(() => {
+          const elapsed = Date.now() - startTime;
+          const progress = Math.min(100, Math.floor((elapsed / duration) * 100));
+          
+          if (counterEl) counterEl.textContent = progress + '%';
+          if (barEl) barEl.style.width = progress + '%';
+          
+          if (elapsed >= duration) {
+            clearInterval(timer);
+            if (counterEl) counterEl.textContent = '100%';
+            if (barEl) barEl.style.width = '100%';
+            
+            setTimeout(() => {
+              preloader.classList.add('preloader-exit');
+              document.body.classList.remove('overflow-hidden');
+              setTimeout(() => {
+                preloader.style.display = 'none';
+              }, 700);
+            }, 100);
+          }
+        }, 25);
+      }
+
       function init() {
+        initRenovexPreloader();
         loadCmsSettings();
         applyTheme();
         applyLanguage();
@@ -1947,7 +2044,7 @@
         const navbar = document.getElementById('navbar');
         const navContainer = document.getElementById('navbar-container');
         const scrollProgress = document.getElementById('scroll-progress');
-        const sections = ['about', 'services', 'skills', 'projects', 'experience', 'articles', 'contact'];
+        const sections = ['about', 'services', 'skills', 'projects', 'articles', 'contact'];
         const navItems = document.querySelectorAll('.nav-item');
         const mobileLinks = document.querySelectorAll('.mobile-link');
 
@@ -2188,8 +2285,10 @@
       }
 
       function renderExperience() {
-        const lData = localizedData[currentLang] || localizedData['az'];
         const list = document.getElementById('experience-list');
+        if (!list) return;
+        const lData = localizedData[currentLang] || localizedData['az'];
+        if (!lData.experiences) return;
         list.innerHTML = lData.experiences.map(e => `
           <div class="p-6 rounded-2xl bg-white dark:bg-neutral-900/60 border border-neutral-200 dark:border-neutral-800 space-y-3 shadow-sm">
             <div class="flex flex-wrap justify-between items-center">

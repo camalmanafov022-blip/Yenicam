@@ -508,59 +508,6 @@
         </div>
       </section>
 
-      <!-- Contact Section -->
-      <section id="contact" class="py-20 md:py-28 relative bg-gradient-to-t from-neutral-900/30 to-neutral-950">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-            <div class="lg:col-span-5 space-y-6">
-              <span class="text-xs font-mono uppercase tracking-widest text-amber-400 bg-amber-400/10 px-3 py-1 rounded-full border border-amber-400/20" data-i18n="contactTag">Əlaqə</span>
-              <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white" data-i18n="contactTitle">Gəlin Layihənizi Müzakirə Edək</h2>
-              <p class="text-lg sm:text-xl font-bold text-amber-400 leading-relaxed tracking-wide" data-i18n="contactSub">ƏLAQƏ 077 815 14 50</p>
-              
-              <div class="p-6 rounded-2xl bg-neutral-900/80 border border-neutral-800 space-y-4">
-                <div class="flex items-center justify-between">
-                  <span class="text-xs font-mono text-neutral-400 uppercase" data-i18n="directEmail">Birbaşa E-poçt</span>
-                  <span class="text-xs font-mono text-emerald-400" data-i18n="activeStatus">● Aktiv</span>
-                </div>
-                <div class="flex items-center justify-between gap-3 p-3 bg-neutral-950 rounded-xl border border-neutral-800">
-                  <span class="font-mono text-xs sm:text-sm text-white truncate" data-profile-email>camalmanafov022@gmail.com</span>
-                  <button onclick="copyEmail()" data-i18n="btnCopy" class="px-3 py-1.5 text-xs font-semibold bg-neutral-800 hover:bg-neutral-700 text-neutral-200 rounded-lg">Kopyala</button>
-                </div>
-              </div>
-            </div>
-
-            <div class="lg:col-span-7">
-              <div class="p-8 rounded-2xl bg-neutral-900/60 border border-neutral-800 shadow-xl">
-                <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-5">
-                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label class="block text-xs font-medium text-neutral-300 mb-1.5" data-i18n="formName">Adınız</label>
-                      <input type="text" id="cf-name" required placeholder="Elvin Əhmədov" class="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-3 text-sm text-white focus:border-amber-400 focus:outline-hidden" />
-                    </div>
-                    <div>
-                      <label class="block text-xs font-medium text-neutral-300 mb-1.5" data-i18n="formEmail">E-poçt</label>
-                      <input type="email" id="cf-email" required placeholder="you@example.com" class="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-3 text-sm text-white focus:border-amber-400 focus:outline-hidden font-mono" />
-                    </div>
-                  </div>
-                  <div>
-                    <label class="block text-xs font-medium text-neutral-300 mb-1.5" data-i18n="formMsg">Mesajınız</label>
-                    <textarea id="cf-msg" rows="4" required placeholder="Layihə detallarını qeyd edin..." class="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-3 text-sm text-white focus:border-amber-400 focus:outline-hidden leading-relaxed"></textarea>
-                  </div>
-                  <button type="submit" data-i18n="formSubmit" class="w-full py-3.5 px-6 text-sm font-bold text-neutral-950 bg-amber-400 hover:bg-amber-300 rounded-xl transition-all shadow-md">
-                    Mesajı Göndər
-                  </button>
-                </form>
-                <div id="contact-success" class="hidden py-12 text-center space-y-3">
-                  <div class="w-12 h-12 rounded-full bg-emerald-500/10 text-emerald-400 flex items-center justify-center mx-auto text-xl font-bold">✓</div>
-                  <h3 class="text-xl font-bold text-white" data-i18n="successTitle">Təşəkkür edirəm!</h3>
-                  <p class="text-sm text-neutral-300" data-i18n="successDesc">Mesajınız qəbul edildi. Tezliklə əlaqə saxlayacağam.</p>
-                  <button onclick="resetContactForm()" data-i18n="btnNewMsg" class="px-4 py-2 text-xs font-semibold text-neutral-950 bg-amber-400 rounded-lg">Yeni Mesaj</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
       </div>
       <!-- END HOME VIEW CONTAINER -->
 
@@ -686,10 +633,10 @@
                   Fikrinizi bölüşün — ehtiyaclarınıza ən uyğun texnoloji həlli, vaxt cədvəlini və büdcə planını birlikdə müəyyənləşdirək.
                 </p>
                 <div class="flex flex-wrap items-center gap-4 pt-4">
-                  <a href="#contact" onclick="navigateTo('home', 'contact'); return false;" class="inline-flex items-center gap-2 px-8 py-4 text-xs font-bold uppercase tracking-wider text-neutral-950 bg-amber-400 hover:bg-amber-300 rounded-full transition-all shadow-lg shadow-amber-400/20">
+                  <button onclick="openConsultationModal()" class="inline-flex items-center gap-2 px-8 py-4 text-xs font-bold uppercase tracking-wider text-neutral-950 bg-amber-400 hover:bg-amber-300 rounded-full transition-all shadow-lg shadow-amber-400/20">
                     <span>Birbaşa Müzakirə Et</span>
                     <span>→</span>
-                  </a>
+                  </button>
                   <button onclick="navigateTo('home')" class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-neutral-300 hover:text-white bg-neutral-800 hover:bg-neutral-700 rounded-full transition-all">
                     Portfellə Tanış Ol
                   </button>
@@ -703,21 +650,312 @@
       <!-- END DEDICATED SERVICES PAGE VIEW -->
     </main>
 
-    <!-- Footer -->
-    <footer class="border-t border-neutral-900 bg-neutral-950 py-12">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
-        <div class="flex items-center gap-3">
-          <div class="w-8 h-8 rounded-lg bg-amber-400 text-neutral-950 font-bold flex items-center justify-center text-sm">CM</div>
-          <span class="text-base font-bold text-white" data-profile-name>Camal Manafov</span>
+    <!-- Pixfort Conseil Advisory Style Footer & Contact Hub -->
+    <footer id="contact" class="border-t border-neutral-200/90 dark:border-neutral-800/80 bg-white dark:bg-neutral-950 text-neutral-800 dark:text-neutral-200 pt-16 pb-12 sm:pt-20 sm:pb-16 relative overflow-hidden transition-colors duration-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8">
+          
+          <!-- Column 1: Brand & Contact Info (Pixfort Advisory Left Column) -->
+          <div class="lg:col-span-4 space-y-6">
+            <!-- Brand / Logo -->
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-neutral-950 dark:bg-white text-white dark:text-neutral-950 flex items-center justify-center font-bold text-base shadow-sm">
+                <!-- Sunburst Asterisk Icon -->
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                  <path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <span class="text-2xl font-black tracking-tight text-neutral-950 dark:text-white" data-profile-name>Camal Manafov</span>
+            </div>
+
+            <!-- Tagline -->
+            <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed font-normal" data-i18n-adv-tagline>
+              Ready to start your project? Let's connect today.
+            </p>
+
+            <!-- Vertical Bordered Details -->
+            <div class="space-y-3.5 pl-4 border-l-2 border-neutral-200 dark:border-neutral-800 text-xs sm:text-sm text-neutral-600 dark:text-neutral-400">
+              <div>
+                <span class="text-neutral-400 dark:text-neutral-500 text-xs block mb-0.5">Contact us at</span>
+                <a href="mailto:camalmanafov022@gmail.com" class="font-bold text-neutral-950 dark:text-white hover:text-amber-500 dark:hover:text-amber-400 transition-colors" data-profile-email>
+                  camalmanafov022@gmail.com
+                </a>
+              </div>
+
+              <div>
+                <span class="text-neutral-400 dark:text-neutral-500 text-xs block mb-0.5">Location / Office:</span>
+                <span class="font-medium text-neutral-800 dark:text-neutral-300">Nizami küç., Bakı / Remote Worldwide</span>
+              </div>
+
+              <div>
+                <span class="text-neutral-400 dark:text-neutral-500 text-xs block mb-0.5">Phone:</span>
+                <a href="tel:+994778151450" class="font-semibold text-neutral-950 dark:text-white hover:text-amber-500 dark:hover:text-amber-400 font-mono transition-colors">
+                  +994 (77) 815 14 50
+                </a>
+              </div>
+
+              <div class="pt-2">
+                <button onclick="openConsultationModal()" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold text-neutral-900 dark:text-white bg-neutral-100 dark:bg-neutral-900 hover:bg-amber-400 hover:text-neutral-950 dark:hover:bg-amber-400 dark:hover:text-neutral-950 border border-neutral-200 dark:border-neutral-800 shadow-xs transition-all active:scale-95">
+                  <span data-i18n-adv-schedule>Schedule a Consultation</span>
+                  <span>↗</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: Services Quick Links (Pixfort Advisory Services) -->
+          <div class="lg:col-span-3 sm:col-span-1 space-y-4">
+            <h4 class="text-base font-bold text-neutral-950 dark:text-white tracking-tight">
+              <a href="#/services" onclick="navigateTo('services'); return false;" class="hover:text-amber-500 transition-colors flex items-center justify-between group">
+                <span data-i18n-nav-services>Services</span>
+                <span class="text-xs text-neutral-400 group-hover:translate-x-1 transition-transform">→</span>
+              </a>
+            </h4>
+
+            <ul class="space-y-2.5 text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 font-medium">
+              <li>
+                <a href="#/services" onclick="navigateTo('services', 'fullstack'); return false;" class="hover:text-amber-600 dark:hover:text-amber-400 block transition-colors">Full-Stack Platformalar</a>
+              </li>
+              <li>
+                <a href="#/services" onclick="navigateTo('services', 'ecommerce'); return false;" class="hover:text-amber-600 dark:hover:text-amber-400 block transition-colors">E-Commerce Sistemləri</a>
+              </li>
+              <li>
+                <a href="#/services" onclick="navigateTo('services', 'uiux'); return false;" class="hover:text-amber-600 dark:hover:text-amber-400 block transition-colors">UI/UX Dizayn Sistemləri</a>
+              </li>
+              <li>
+                <a href="#/services" onclick="navigateTo('services', 'mobile'); return false;" class="hover:text-amber-600 dark:hover:text-amber-400 block transition-colors">Mobil PWA Tətbiqlər</a>
+              </li>
+              <li>
+                <a href="#/services" onclick="navigateTo('services', 'speed'); return false;" class="hover:text-amber-600 dark:hover:text-amber-400 block transition-colors">Sürət & SEO Optimizasiyası</a>
+              </li>
+              <li>
+                <a href="#/services" onclick="navigateTo('services', 'audit'); return false;" class="hover:text-amber-600 dark:hover:text-amber-400 block transition-colors">Texniki Audit & Kod Baxışı</a>
+              </li>
+              <li>
+                <a href="#/services" onclick="navigateTo('services', 'crm'); return false;" class="hover:text-amber-600 dark:hover:text-amber-400 block transition-colors">CRM & İdarəetmə Panelləri</a>
+              </li>
+              <li>
+                <a href="#/services" onclick="navigateTo('services', 'api'); return false;" class="hover:text-amber-600 dark:hover:text-amber-400 block transition-colors">API & AI İnteqrasiyaları</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Navigation & Resources -->
+          <div class="lg:col-span-2 sm:col-span-1 space-y-4">
+            <h4 class="text-base font-bold text-neutral-950 dark:text-white tracking-tight" data-i18n-adv-nav-title>
+              About & Links
+            </h4>
+
+            <ul class="space-y-2.5 text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 font-medium">
+              <li>
+                <a href="#home" onclick="navigateTo('home', 'about'); return false;" class="hover:text-amber-600 dark:hover:text-amber-400 block transition-colors" data-i18n-nav-about>About</a>
+              </li>
+              <li>
+                <a href="#projects" onclick="navigateTo('home', 'projects'); return false;" class="hover:text-amber-600 dark:hover:text-amber-400 block transition-colors" data-i18n-nav-projects>Works</a>
+              </li>
+              <li>
+                <a href="#experience" onclick="navigateTo('home', 'experience'); return false;" class="hover:text-amber-600 dark:hover:text-amber-400 block transition-colors" data-i18n-nav-experience>Careers</a>
+              </li>
+              <li>
+                <a href="#articles" onclick="navigateTo('home', 'articles'); return false;" class="hover:text-amber-600 dark:hover:text-amber-400 block transition-colors" data-i18n-nav-articles>Blog</a>
+              </li>
+              <li>
+                <button onclick="openResumeModal()" class="hover:text-amber-600 dark:hover:text-amber-400 block text-left transition-colors" data-i18n="btnResume">Resume / CV</button>
+              </li>
+              <li>
+                <button onclick="openConsultationModal()" class="hover:text-amber-600 dark:hover:text-amber-400 block text-left transition-colors" data-i18n-nav-contact>Contact</button>
+              </li>
+              <li>
+                <button onclick="openBegetGuide()" class="hover:text-amber-600 dark:hover:text-amber-400 block text-left transition-colors" data-i18n="footerGuide">Beget Hosting Guide</button>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Follow Us & Certifications (Pixfort Advisory Right Column) -->
+          <div class="lg:col-span-3 space-y-8 lg:pl-4 lg:border-l lg:border-neutral-200/90 dark:lg:border-neutral-800/80">
+            
+            <!-- Follow Us -->
+            <div class="space-y-3">
+              <span class="text-xs font-bold text-indigo-600 dark:text-indigo-400 tracking-wider uppercase" data-i18n-adv-follow>
+                Follow Us
+              </span>
+              
+              <!-- Social Icons (Facebook, X, Instagram, Dribbble/GitHub, YouTube) -->
+              <div class="flex items-center gap-3 pt-1">
+                <!-- Facebook -->
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-9 h-9 rounded-full bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 flex items-center justify-center text-neutral-800 dark:text-neutral-200 hover:text-white hover:bg-[#1877F2] hover:border-[#1877F2] transition-all">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+                
+                <!-- X / Twitter -->
+                <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X" class="w-9 h-9 rounded-full bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 flex items-center justify-center text-neutral-800 dark:text-neutral-200 hover:text-white hover:bg-neutral-950 dark:hover:bg-white dark:hover:text-neutral-950 transition-all">
+                  <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-9 h-9 rounded-full bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 flex items-center justify-center text-neutral-800 dark:text-neutral-200 hover:text-white hover:bg-gradient-to-tr hover:from-amber-500 hover:via-pink-500 hover:to-purple-600 transition-all">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+
+                <!-- Dribbble / GitHub -->
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="w-9 h-9 rounded-full bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 flex items-center justify-center text-neutral-800 dark:text-neutral-200 hover:text-white hover:bg-neutral-950 transition-all">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                </a>
+
+                <!-- YouTube / LinkedIn -->
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-9 h-9 rounded-full bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 flex items-center justify-center text-neutral-800 dark:text-neutral-200 hover:text-white hover:bg-[#0A66C2] hover:border-[#0A66C2] transition-all">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Certifications (B-Corp & Google Partner style) -->
+            <div class="space-y-3 pt-2">
+              <span class="text-xs font-bold text-indigo-600 dark:text-indigo-400 tracking-wider uppercase" data-i18n-adv-cert>
+                Certifications
+              </span>
+
+              <div class="flex items-center gap-4 pt-1">
+                <!-- Certified Corporation Badge -->
+                <div class="flex items-center gap-2.5 p-2 px-3 rounded-xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200/80 dark:border-neutral-800">
+                  <div class="w-8 h-8 rounded-full border-2 border-neutral-950 dark:border-white flex items-center justify-center font-black text-neutral-950 dark:text-white text-xs">
+                    ⚡
+                  </div>
+                  <div class="flex flex-col text-[10px] font-bold leading-tight text-neutral-900 dark:text-white uppercase tracking-tight">
+                    <span>Certified</span>
+                    <span class="text-neutral-500 dark:text-neutral-400 font-mono">Expert</span>
+                  </div>
+                </div>
+
+                <!-- Google Partner Badge -->
+                <div class="flex items-center gap-2.5 p-2 px-3 rounded-xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200/80 dark:border-neutral-800">
+                  <div class="w-2.5 h-8 bg-neutral-950 dark:bg-white rounded-full"></div>
+                  <div class="flex flex-col text-[11px] font-bold leading-tight text-neutral-900 dark:text-white tracking-tight">
+                    <span>Google</span>
+                    <span class="text-neutral-500 dark:text-neutral-400 font-normal -mt-0.5">Partner</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
         </div>
-        <div class="flex items-center gap-6 text-xs text-neutral-400">
-          <button onclick="openBegetGuide()" data-i18n="footerGuide" class="text-amber-400 hover:text-amber-300 underline underline-offset-4 font-medium">Beget Hosting Təlimatı</button>
-          <button onclick="window.scrollTo({top:0, behavior:'smooth'})" data-i18n="footerTop" class="p-2 rounded-xl bg-neutral-900 text-neutral-300 hover:text-white border border-neutral-800">↑ Yuxarı Qayıt</button>
+
+        <!-- Bottom Copyright & Quick Legal Row -->
+        <div class="pt-8 mt-12 border-t border-neutral-200 dark:border-neutral-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-500 dark:text-neutral-400">
+          <div>
+            © 2026 Camal Manafov. Bütün hüquqlar qorunur.
+          </div>
+
+          <div class="flex items-center gap-6">
+            <button onclick="openBegetGuide()" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Beget Hosting Qaydası</button>
+            <button onclick="openConsultationModal()" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Konsultasiya</button>
+            <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="hover:text-amber-600 dark:hover:text-amber-400 font-semibold transition-colors">↑ Yuxarı Qayıt</button>
+          </div>
         </div>
+
       </div>
     </footer>
 
+    <!-- Floating UI Actions (Pixfort Conseil Style) -->
+    <!-- Left Bottom Floating Back to Top -->
+    <button onclick="window.scrollTo({top:0, behavior:'smooth'})" aria-label="Back to Top" class="fixed bottom-6 left-6 z-40 w-11 h-11 rounded-full bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-xl flex items-center justify-center text-neutral-800 dark:text-neutral-200 hover:text-amber-500 hover:scale-110 active:scale-95 transition-all">
+      <span class="text-base font-bold">⌃</span>
+    </button>
+
+    <!-- Right Bottom Floating Quick Call / Action Button -->
+    <a href="tel:+994778151450" aria-label="Direct Phone Call" class="fixed bottom-6 right-6 z-40 w-12 h-12 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white shadow-xl shadow-indigo-600/30 flex items-center justify-center hover:scale-110 active:scale-95 transition-all text-lg">
+      <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+        <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+      </svg>
+    </a>
+
     <!-- Modals -->
+    <!-- Consultation Request Modal (Pixfort Conseil Advisory Style) -->
+    <div id="consultation-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+      <div class="relative w-full max-w-xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-3xl overflow-hidden shadow-2xl transition-all">
+        <!-- Header -->
+        <div class="flex items-center justify-between p-6 border-b border-neutral-100 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-950">
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-full bg-amber-400/20 text-amber-600 dark:text-amber-400 flex items-center justify-center font-bold text-sm">
+              💬
+            </div>
+            <div>
+              <h2 class="text-lg font-extrabold text-neutral-900 dark:text-white leading-tight" data-i18n-adv-modal-title>Konsultasiya Təyin Edin</h2>
+              <p class="text-xs text-neutral-500 dark:text-neutral-400 font-normal" data-i18n-adv-modal-sub>Layihəniz üzrə ən uyğun mühəndislik həllini müzakirə edək</p>
+            </div>
+          </div>
+          <button onclick="closeConsultationModal()" aria-label="Close" class="w-8 h-8 rounded-full bg-neutral-200/60 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 hover:text-neutral-950 dark:hover:text-white flex items-center justify-center text-sm transition-colors">
+            ✕
+          </button>
+        </div>
+
+        <!-- Form -->
+        <div class="p-6">
+          <form id="consultation-form" onsubmit="handleConsultationSubmit(event)" class="space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-semibold text-neutral-700 dark:text-neutral-300 mb-1" data-i18n="formName">Ad və Soyad</label>
+                <input type="text" id="consult-name" required placeholder="Məs: Rəşad Əliyev" class="w-full bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-neutral-900 dark:text-white focus:outline-hidden focus:border-amber-400" />
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-neutral-700 dark:text-neutral-300 mb-1" data-i18n="formEmail">E-poçt Ünvanı</label>
+                <input type="email" id="consult-email" required placeholder="name@company.com" class="w-full bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-neutral-900 dark:text-white font-mono focus:outline-hidden focus:border-amber-400" />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-semibold text-neutral-700 dark:text-neutral-300 mb-1">Əlaqə Nömrəsi</label>
+                <input type="tel" id="consult-phone" placeholder="+994 50 123 45 67" class="w-full bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-neutral-900 dark:text-white font-mono focus:outline-hidden focus:border-amber-400" />
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-neutral-700 dark:text-neutral-300 mb-1">Xidmət Sahəsi</label>
+                <select id="consult-service" class="w-full bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-neutral-900 dark:text-white focus:outline-hidden focus:border-amber-400">
+                  <option value="Full-Stack Platformalar & SaaS">Full-Stack Platformalar & SaaS</option>
+                  <option value="E-Commerce & Onlayn Mağazalar">E-Commerce & Onlayn Mağazalar</option>
+                  <option value="UI/UX Dizayn Sistemləri">UI/UX Dizayn Sistemləri</option>
+                  <option value="Mobil Veb Tətbiqlər & PWA">Mobil Veb Tətbiqlər & PWA</option>
+                  <option value="Sürət & SEO Optimizasiyası">Sürət & SEO Optimizasiyası (95+ PageSpeed)</option>
+                  <option value="Texniki Audit & Kod Baxışı">Texniki Audit & Kod Baxışı</option>
+                  <option value="CRM, ERP & İdarəetmə Panelləri">CRM, ERP & Daxili Panellər</option>
+                  <option value="Ümumi Konsultasiya & Məsləhət">Ümumi Konsultasiya & Məsləhət</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-neutral-700 dark:text-neutral-300 mb-1" data-i18n="formMsg">Layihə / Tələb Haqqında Qısa Məlumat</label>
+              <textarea id="consult-msg" rows="3" placeholder="Layihənizin məqsədləri, gözləntiləriniz və ya istədiyiniz təhvil müddəti..." class="w-full bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-neutral-900 dark:text-white leading-relaxed focus:outline-hidden focus:border-amber-400"></textarea>
+            </div>
+
+            <div class="pt-2 flex items-center justify-between gap-3">
+              <div class="text-[11px] text-neutral-500 font-mono flex items-center gap-1.5">
+                <span class="text-emerald-500">●</span> <span>Maks. 24 saat ərzində cavab</span>
+              </div>
+              <div class="flex gap-2">
+                <button type="button" onclick="closeConsultationModal()" class="px-4 py-2 text-xs font-semibold text-neutral-500 hover:text-neutral-900 dark:hover:text-white">
+                  Ləğv Et
+                </button>
+                <button type="submit" class="px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider text-neutral-950 bg-amber-400 hover:bg-amber-300 active:scale-95 shadow-md transition-all">
+                  Müraciəti Göndər →
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <div id="consultation-success" class="hidden py-8 text-center space-y-3">
+            <div class="w-12 h-12 rounded-full bg-emerald-500/10 text-emerald-500 flex items-center justify-center mx-auto text-xl font-bold">✓</div>
+            <h3 class="text-lg font-bold text-neutral-900 dark:text-white" data-i18n="successTitle">Müraciətiniz Qəbul Edildi!</h3>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400 max-w-sm mx-auto" data-i18n="successDesc">Tezliklə sizinlə qeyd etdiyiniz e-poçt və ya telefon nömrəsi ilə əlaqə saxlayacağam.</p>
+            <button onclick="closeConsultationModal()" class="mt-2 px-5 py-2 text-xs font-semibold text-neutral-950 bg-amber-400 rounded-xl">Tamam</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
     <div id="project-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
       <div class="relative w-full max-w-3xl bg-neutral-900 border border-neutral-800 rounded-2xl overflow-hidden shadow-2xl">
         <div class="flex items-center justify-between p-6 border-b border-neutral-800 bg-neutral-950">
@@ -919,6 +1157,13 @@
           reeniC3Title: 'Full-Stack Mühəndislik', reeniC3Desc: 'React, Next.js və Node.js üzərindən sürətli, təhlükəsiz və genişlənə bilən müasir platformalar.',
           reeniC4Title: 'Sürət & SEO Zəmanəti', reeniC4Desc: 'Google PageSpeed 95+ bal, ultra-sürətli render və axtarış sistemlərində yüksək reytinq.',
           reeniBtnAll: 'Bütün Xidmətlərlə Tanış Ol', reeniBtnConsult: 'Konsultasiya Al',
+          advTagline: "Layihənizi başlamağa hazırsınız? Gəlin bu gün əlaqə saxlayaq.",
+          advSchedule: "Konsultasiya Təyin Edin",
+          advNavTitle: "Bölmələr",
+          advFollow: "Bizi İzləyin",
+          advCert: "Zəmanət & Sertifikatlar",
+          advModalTitle: "Konsultasiya Təyin Edin",
+          advModalSub: "Layihəniz üzrə ən uyğun mühəndislik həllini müzakirə edək",
           aboutTag: 'Haqqımda', aboutTitle: 'Rəqəmsal Dünyada Mükəmməllik Axtarışı',
           aboutDesc1: 'Mən Camal Manafov — 5 ildən artıq təcrübəyə malik peşəkar proqram mühəndisiyəm. Məqsədim hər bir müştərinin ideyasını möhkəm, estetik və yüksək sürətli rəqəmsal məhsula çevirməkdir.',
           aboutDesc2: 'Təmiz kod prinsipləri, sürətli render mexanizmləri və istifadəçi mərkəzli yanaşma ilə hər zaman gözləntiləri üstələməyə çalışıram.',
@@ -1615,19 +1860,50 @@
       }
 
       function orderSpecificService(serviceTitle) {
-        navigateTo('home', 'contact');
-        setTimeout(() => {
-          const msgInput = document.getElementById('form-message') || document.querySelector('textarea[name="message"]') || document.querySelector('#contact textarea');
-          if(msgInput) {
-            const prefix = currentLang === 'en' 
-              ? `Hello Camal, I would like to inquire about the "${serviceTitle}" service for my project.` 
-              : currentLang === 'ru' 
-              ? `Здравствуйте Джамал, я хотел бы обсудить услугу "${serviceTitle}" для своего проекта.` 
-              : `Salam Camal bəy, "${serviceTitle}" xidməti üzrə layihəmi müzakirə etmək və təklif almaq istərdim.`;
-            msgInput.value = prefix;
-            msgInput.focus();
+        openConsultationModal(serviceTitle);
+      }
+
+      function openConsultationModal(prefillService) {
+        const modal = document.getElementById('consultation-modal');
+        const form = document.getElementById('consultation-form');
+        const success = document.getElementById('consultation-success');
+        if (form) form.classList.remove('hidden');
+        if (success) success.classList.add('hidden');
+
+        if (prefillService) {
+          const serviceSelect = document.getElementById('consult-service');
+          const msgInput = document.getElementById('consult-msg');
+          if (serviceSelect) {
+            for (let i = 0; i < serviceSelect.options.length; i++) {
+              if (serviceSelect.options[i].text.toLowerCase().includes(prefillService.toLowerCase()) ||
+                  prefillService.toLowerCase().includes(serviceSelect.options[i].value.toLowerCase())) {
+                serviceSelect.selectedIndex = i;
+                break;
+              }
+            }
           }
-        }, 300);
+          if (msgInput) {
+            msgInput.value = currentLang === 'en'
+              ? `Hello Camal, I would like to schedule a consultation regarding "${prefillService}".`
+              : currentLang === 'ru'
+              ? `Здравствуйте Джамал, я хотел бы проконсультироваться по поводу услуги "${prefillService}".`
+              : `Salam Camal bəy, "${prefillService}" xidməti üzrə konsultasiya almaq və detalları müzakirə etmək istərdim.`;
+          }
+        }
+        if (modal) modal.classList.remove('hidden');
+      }
+
+      function closeConsultationModal() {
+        const modal = document.getElementById('consultation-modal');
+        if (modal) modal.classList.add('hidden');
+      }
+
+      function handleConsultationSubmit(e) {
+        e.preventDefault();
+        const form = document.getElementById('consultation-form');
+        const success = document.getElementById('consultation-success');
+        if (form) form.classList.add('hidden');
+        if (success) success.classList.remove('hidden');
       }
 
       function init() {
